@@ -15,9 +15,10 @@
 
 <section class="land">
 <div class="container">
-	<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
-	<h1>Hive Communications</h1>
-	<p class="desc">Next level commenting stuff</p>
+	<div class="col-sm-12">
+		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
+		<h1>Hive Communications</h1>
+	</div>
 </div>
 </section>
 
@@ -26,7 +27,7 @@
 	<div class="col-sm-4 feats">	
 	
 		<!-- Added Features --> 
-		<label for="past">Added Features</label>
+		<label for="past">New Features</label>
 		<span class="detail"> (v 1.0)</span>
 		<ul id="past" class="feat-list added">
 			<li class="past"><i class="fa fa-circle-o"></i> Message Friends</li>
@@ -50,7 +51,7 @@
 				<li class="next"><i class="fa fa-circle-o"></i> User Suggestion<i class="fa fa-check sent"></i></li>
 				<li class="next suggest">
 					<li class="next"><i class="fa fa-circle-o"></i>
-					<input id="user-suggestion" type="text" placeholder="Make a request!"/>
+					<input id="user-suggestion" type="text" placeholder="Make a request!" class="form-control"/>
 					<a href="#" class="send">Submit</a>
 				</li>
 		</ul>
@@ -59,11 +60,14 @@
 	<div class="col-sm-8 plugin">
 	
 			<!-- earlier messages click -->
-			<div class="hve-earlier">
+			<!--
+<div class="hve-earlier">
 				<a href="#" onclick="get_msgs();">Load earlier messages</a>
 			</div>
+-->
 			
 			<div class="gradient"></div>
+			<!-- <div class="gradient bottom"></div> -->
 			<div class="feed-area">
 				
 					<!-- loading convo -->
@@ -74,6 +78,19 @@
 					<!-- Regular Message + Truncate -->
 					<div class="msg">
 						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem qui dolorem ...
+					<a href="#" class="truncate">See full message</a></p>
+						<div class="details">
+							<div class="author-img"><a href="#"><img src="img/profile.jpg" alt=""/></a></div>
+							<div class="author-name"><a href="#">HottieCali55</a></div>
+							<br>
+							<div class="timestamp">1 minute ago</div>
+							<a href="#"><i class="fa report fa-exclamation-triangle"></i></a>
+						</div> <!-- /.details -->
+					</div>
+					
+					<!-- Regular Message + Truncate -->
+					<div class="msg">
+						<p>Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem qui dolorem ...
 					<a href="#" class="truncate">See full message</a></p>
 						<div class="details">
 							<div class="author-img"><a href="#"><img src="img/profile.jpg" alt=""/></a></div>
@@ -120,7 +137,8 @@
 					<a href="#" class="btn user"><i class="fa fa-comment-o"></i>Login or Register</a>
 					<a href="#" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
 				</div>
-				<div class="hve-regin">
+			<!--
+	<div class="hve-regin">
 			<form method="post">
 				<span class="header">Register</span><br>
 				<span class="desc">We promise you won't lose your comment!</span><br>
@@ -138,6 +156,7 @@
 				<a href="#" class="already-member">Already a member?</a>
 			</form>
 	</div>	
+-->
 			</div>
 	</div> <!-- /.plugin -->
 </div> <!-- /.container -->
@@ -145,24 +164,21 @@
 
 <section class="beta">
 <div class="container">
-	<div class="sm-col-12">
-		<h2>Hive is now looking for Beta Testers</h2>
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+		<h2>Hive is looking for Beta Testers!</h2>
 		<p>Description here about hive thing</p>
-		<div class="col-xs-12 col-sm-6 col-sm-offset-3">
 			<form>
-				<label for="name" class="col-sm-4">Name</label>
-				<input id="name" type="text" class="col-sm-8"/>
-				<label for="email" class="col-sm-4">Email</label>
-				<input id="email" type="email" class="col-sm-8"/>
+				<input id="name" type="text" placeholder="name" class="form-control"/>
+				<input id="email" type="email" placeholder="email" class="form-control" required=""/>
+				<a href="#" class="btn">Give me access!</a>
 			</form>
 		</div>
-	</div>
 </div>
 </section>
 
 <footer>
 <div class="container">
-
+	<div class="copyright">&#169; Hive Mobile Inc. 2014</div>
 </div>
 </footer>
 

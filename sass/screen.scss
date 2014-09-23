@@ -14,11 +14,5 @@
 @import 'general.scss';
 @import 'index.scss';
 
-/*
-$sprites: sprite-map("sprites/social/*.png");          
-$sprites2x: sprite-map("sprites-retina/social/*.png");  
-
-.social-fb { @include retina-sprite(fb, $hover: true, $active: true); }
-.social-in { @include retina-sprite(in, $hover: true, $active: true); }
-.social-tw { @include retina-sprite(tw, $hover: true, $active: true); }
-*/
+// plugin
+@import 'plugin-styles.scss';

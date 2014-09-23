@@ -1,0 +1,65 @@
+/*
+Error: No files were found in the load path matching "sprites/social/*.png". Your current load paths are: /Users/Rurka/Dropbox/мережа/Projects/GetHiveApp.com/img
+        on line 18 of /Users/Rurka/Dropbox/мережа/Projects/GetHiveApp.com/sass/screenX.scss
+
+13: // mine
+14: @import 'general.scss';
+15: @import 'index.scss';
+16: 
+17: 
+18: $sprites: sprite-map("sprites/social/*.png");          
+19: $sprites2x: sprite-map("sprites-retina/social/*.png");  
+20: 
+21: /*
+22: .social-fb { @include retina-sprite(fb, $hover: true, $active: true); }
+23: .social-in { @include retina-sprite(in, $hover: true, $active: true); }
+
+Backtrace:
+/Users/Rurka/Dropbox/мережа/Projects/GetHiveApp.com/sass/screenX.scss:18
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/sprite_importer.rb:89:in `files'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/sass_extensions/sprites/sprite_map.rb:19:in `from_uri'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/sass_extensions/functions/sprites.rb:78:in `sprite_map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/script/tree/funcall.rb:140:in `_perform'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/script/tree/node.rb:50:in `perform'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:458:in `visit_variable'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:20:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/engine.rb:268:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass-import-once/lib/compass/import-once/engine.rb:17:in `block in render'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass-import-once/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass-import-once/lib/compass/import-once/engine.rb:16:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/plugin/compiler.rb:209:in `each'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/sass_compiler.rb:40:in `compile!'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/commands/update_project.rb:49:in `perform'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/commands/base.rb:18:in `execute'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/commands/project_base.rb:19:in `execute'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/bin/compass:51:in `block in <main>'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/bin/compass:65:in `call'
+/Applications/CodeKit.app/Contents/Resources/engines/compass/compass/bin/compass:65:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: No files were found in the load path matching \"sprites/social/*.png\". Your current load paths are: /Users/Rurka/Dropbox/мережа/Projects/GetHiveApp.com/img\A         on line 18 of /Users/Rurka/Dropbox/мережа/Projects/GetHiveApp.com/sass/screenX.scss\A \A 13: // mine\A 14: @import 'general.scss';\A 15: @import 'index.scss';\A 16: \A 17: \A 18: $sprites: sprite-map(\"sprites/social/*.png\");          \A 19: $sprites2x: sprite-map(\"sprites-retina/social/*.png\");  \A 20: \A 21: /*\A 22: .social-fb { @include retina-sprite(fb, $hover: true, $active: true); }\A 23: .social-in { @include retina-sprite(in, $hover: true, $active: true); }"; }

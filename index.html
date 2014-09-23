@@ -15,9 +15,9 @@
 
 <section class="land">
 <div class="container">
-	[logo]
+	<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
 	<h1>Hive Communications</h1>
-	<p class="desc">Description of Hive</p>
+	<p class="desc">Next level commenting stuff</p>
 </div>
 </section>
 
@@ -27,34 +27,42 @@
 	
 		<!-- Added Features --> 
 		<label for="past">Added Features</label>
-		<p>Version 1.0 (Current)</p>
+		<span class="detail"> (v 1.0)</span>
 		<ul id="past" class="feat-list added">
-			<li class="past">Talk to friends</li>
-			<li class="past">Talk to friends</li>
-			<li class="past">Talk to friends</li>
+			<li class="past"><i class="fa fa-circle-o"></i> Message Friends</li>
+			<li class="past"><i class="fa fa-circle-o"></i> Attach Image Support</li>
+			<li class="past"><i class="fa fa-circle-o"></i> Better Reporting Functions</li>
 		</ul>
 		
 		<!-- In Progress -->
 		<label for="now">In Progress</label>
-		<p>Vrsion 1.1 - October 5, 2014</p>
+		<span class="detail"> (v 1.1)</span>
 		<ul id="now" class="feat-list in-prog">
-			<li class="now">Something else</li>
-			<li class="now">Something else</li>
+			<li class="now"><i class="fa fa-circle-o-notch fa-spin"></i></i> Getting Girls</li>
+			<li class="now"><i class="fa fa-circle-o-notch fa-spin"></i></i> Follow Friends</li>
 		</ul>
 		
 		<!-- Upcoming -->
 		<label for="next">Feature Requests</label>
 		<ul id="next" class="feat-list next">
-				<li class="next">Awesome gifs</li>
-				<li class="next">Awesome gifs</li>
-				<label for="user-suggestion">Request a feature!</label>
-				<li class="next">
-					<input id="user-suggestion" type="text"/>
+				<li class="next"><i class="fa fa-circle-o"></i> Gif Support</li>
+				<li class="next"><i class="fa fa-circle-o"></i> PDF Attachment Support</li>
+				<li class="next"><i class="fa fa-circle-o"></i> User Suggestion<i class="fa fa-check sent"></i></li>
+				<li class="next suggest">
+					<li class="next"><i class="fa fa-circle-o"></i>
+					<input id="user-suggestion" type="text" placeholder="Make a request!"/>
+					<a href="#" class="send">Submit</a>
 				</li>
 		</ul>
 		
 	</div> <!-- /.feats -->
 	<div class="col-sm-8 plugin">
+	
+			<!-- earlier messages click -->
+			<div class="hve-earlier">
+				<a href="#" onclick="get_msgs();">Load earlier messages</a>
+			</div>
+			
 			<div class="gradient"></div>
 			<div class="feed-area">
 				
@@ -62,10 +70,7 @@
 					<div class="hve-load"> Joining the conversation<br>
 						<i class="fa fa-circle-o-notch fa-spin"></i>
 					</div>
-					<!-- earlier messages click -->
-					<div class="hve-earlier">
-						<a href="#" onclick="get_msgs();">Load earlier messages</a>
-					</div>
+					
 					<!-- Regular Message + Truncate -->
 					<div class="msg">
 						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem qui dolorem ...
@@ -105,8 +110,7 @@
 			<div class="post-area">
 				<div class="hve-post">
 					<div class="textarea">
-						<textarea placeholder="What do you think?">
-						</textarea>
+						<textarea placeholder="What do you think?"></textarea>
 						<!--
 						<div class="attach">
 							<a href="#"><i class="fa fa-paperclip"></i></a>

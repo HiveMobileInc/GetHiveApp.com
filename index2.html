@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Hive</title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="description" content="___________________">
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300,100' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+</head>
+<body>
+
+<section class="header">
+<div class="container">
+	<div class="col-sm-12">
+		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
+		<h1>Hive Communications</h1>
+	</div>
+</div>
+</section>
+
+<section class="desc">
+	
+</section>
+
+<section class="app">
+<div class="container">
+	<div class="col-sm-4 feats">	
+	
+		<!-- Added Features --> 
+		<label for="past">New Features</label>
+		<span class="detail"> (v 1.0)</span>
+		<ul id="past" class="feat-list added">
+			<li class="past"><i class="fa fa-circle-o"></i> Message Friends</li>
+			<li class="past"><i class="fa fa-circle-o"></i> Attach Image Support</li>
+			<li class="past"><i class="fa fa-circle-o"></i> Better Reporting Functions</li>
+		</ul>
+		
+		<!-- In Progress -->
+		<label for="now">In Progress</label>
+		<span class="detail"> (v 1.1)</span>
+		<ul id="now" class="feat-list in-prog">
+			<li class="now"><i class="fa fa-circle-o-notch fa-spin"></i></i> Getting Girls</li>
+			<li class="now"><i class="fa fa-circle-o-notch fa-spin"></i></i> Follow Friends</li>
+		</ul>
+		
+		<!-- Upcoming -->
+		<label for="next">Feature Requests</label>
+		<ul id="next" class="feat-list next">
+				<li class="next"><i class="fa fa-circle-o"></i> Gif Support</li>
+				<li class="next"><i class="fa fa-circle-o"></i> PDF Attachment Support</li>
+				<li class="next"><i class="fa fa-circle-o"></i> User Suggestion<i class="fa fa-check sent"></i></li>
+				<li class="next suggest">
+					<li class="next"><i class="fa fa-circle-o"></i>
+					<input id="user-suggestion" type="text" placeholder="Make a request!" class="form-control"/>
+					<a href="#" class="send">Submit</a>
+				</li>
+		</ul>
+		
+	</div> <!-- /.feats -->
+	<div class="col-sm-8 plugin">
+	
+			<!-- earlier messages click -->
+			<!--
+<div class="hve-earlier">
+				<a href="#" onclick="get_msgs();">Load earlier messages</a>
+			</div>
+-->
+			
+			<div class="gradient"></div>
+			<!-- <div class="gradient bottom"></div> -->
+			<div class="feed-area">
+				
+					<!-- loading convo -->
+					<div class="hve-load"> Joining the conversation<br>
+						<i class="fa fa-circle-o-notch fa-spin"></i>
+					</div>
+					
+					<!-- Regular Message + Truncate -->
+					<div class="msg">
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem qui dolorem ...
+					<a href="#" class="truncate">See full message</a></p>
+						<div class="details">
+							<div class="author-img"><a href="#"><img src="img/profile.jpg" alt=""/></a></div>
+							<div class="author-name"><a href="#">HottieCali55</a></div>
+							<br>
+							<div class="timestamp">1 minute ago</div>
+							<a href="#"><i class="fa report fa-exclamation-triangle"></i></a>
+						</div> <!-- /.details -->
+					</div>
+					
+					<!-- Regular Message + Truncate -->
+					<div class="msg">
+						<p>Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem qui dolorem ...
+					<a href="#" class="truncate">See full message</a></p>
+						<div class="details">
+							<div class="author-img"><a href="#"><img src="img/profile.jpg" alt=""/></a></div>
+							<div class="author-name"><a href="#">HottieCali55</a></div>
+							<br>
+							<div class="timestamp">1 minute ago</div>
+							<a href="#"><i class="fa report fa-exclamation-triangle"></i></a>
+						</div> <!-- /.details -->
+					</div>
+						<!-- Report Function -->	
+						<div class="msg">
+				<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+				<div class="details">
+					<div class="author-img"><a href="#"><img src="img/profile.jpg" alt=""/></a></div>
+					<div class="author-name"><a href="#">HottieCali55winnings</a></div>
+					<br>
+					<div class="timestamp">1 minute ago</div>
+					
+					<a href="#"><i class="fa report fa-exclamation-triangle"></i></a>
+					<span class="report-label" style="color:#989898;">Report for:</span>	
+					<ul class="report">
+							<li><a href="#">Spam</a></li>
+							<li><a href="#">Offensive</a></li>
+							<li><a href="#">Racist</a></li>
+							<li><a href="#">Copyright</a></li>
+							<li><a href="#">Racist</a></li>
+							<li><a href="#">Copyright</a></li>
+							<li><a href="#" class="close"><i class="fa fa-times"></i> Close</a></li>
+					</ul>
+				</div>
+			</div>	
+				
+			</div>
+			<div class="post-area">
+				<div class="hve-post">
+					<div class="textarea">
+						<textarea placeholder="What do you think?"></textarea>
+						<!--
+						<div class="attach">
+							<a href="#"><i class="fa fa-paperclip"></i></a>
+						</div>
+						-->
+					</div>
+					<a href="#" class="btn user"><i class="fa fa-comment-o"></i>Login or Register</a>
+					<a href="#" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
+				</div>
+			<!--
+	<div class="hve-regin">
+			<form method="post">
+				<span class="header">Register</span><br>
+				<span class="desc">We promise you won't lose your comment!</span><br>
+				
+				<label for="username">Username</label>
+				<input id="username" type="text" name="username" placeholder="username"><br>
+				
+				<label for="email">Email</label>
+				<input id="email" type="email" name="email" placeholder="email"><br>
+				
+				<label for="password">Password</label>
+				<input id="password" type="password" name="password" placeholder="password"><br>
+				
+				<a href="#" class="btn">Join the Conversation!</a>
+				<a href="#" class="already-member">Already a member?</a>
+			</form>
+	</div>	
+-->
+			</div>
+	</div> <!-- /.plugin -->
+</div> <!-- /.container -->
+</section>
+
+<section class="beta">
+<div class="container">
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+		<h2>Hive is looking for Beta Testers!</h2>
+		<p>Description here about hive thing</p>
+			<form>
+				<input id="name" type="text" placeholder="name" class="form-control"/>
+				<input id="email" type="email" placeholder="email" class="form-control" required=""/>
+				<a href="#" class="btn">Give me access!</a>
+			</form>
+		</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+	<div class="copyright">&#169; Hive Mobile Inc. 2014</div>
+</div>
+</footer>
+
+<script src="js/min/index-min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

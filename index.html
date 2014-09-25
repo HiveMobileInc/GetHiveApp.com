@@ -23,7 +23,7 @@
 <div class="container">
 	<div class="col-sm-8 col-sm-offset-2">
 		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
-		<h1>Multi-use lightning fast Plugin for Messaging & Commenting</h1>
+		<h1>Multi-use lightning fast Plugin for Messaging &amp; Commenting</h1>
 	</div>
 </div>
 </section>
@@ -99,10 +99,29 @@
 	<div class="post-area">
 		<div class="hve-post">
 			<div class="textarea"><textarea placeholder="Type your message!"></textarea></div>
-			<a href="#" class="btn user"><i class="fa fa-comment-o"></i>Login or Register</a>
+			<a href="#" onclick="show_regin();" class="btn user"><i class="fa fa-comment-o"></i>Login or Register</a>
 			<a href="#" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
 		</div>
 	</div>
+
+	<div id="hve-regin" class="hve-regin none">
+		<form method="post">
+			<span class="header">Register</span><br>
+			<span class="desc">We promise you won't lose your comment!</span><br>
+			
+			<label for="username">Username</label>
+			<input id="username" type="text" name="username" placeholder="username"><br>
+			
+			<label for="email">Email</label>
+			<input id="email" type="email" name="email" placeholder="email"><br>
+			
+			<label for="password">Password</label>
+			<input id="password" type="password" name="password" placeholder="password"><br>
+			
+			<a href="#" class="btn">Join the Conversation!</a>
+			<a href="#" class="already-member">Already a member?</a>
+		</form>
+	</div>	
 			
 </div> <!-- /.plugin -->
 </div> <!-- /.container -->
@@ -186,6 +205,14 @@
 	        return false; 
 	    }
 	});
+
+	function show_regin () {
+		$('#hve-regin').removeClass('none');
+		$('html, body').animate({
+		    scrollTop: $('#hve-regin').offset().top - 10
+		 }, 200);
+	    return false;
+	};
 
 	// catch hive loaded
 	function hve_loaded () {

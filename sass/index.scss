@@ -29,14 +29,14 @@
 
 @media (max-width: 600px) {
 
-.landing {
-	.logo {
-		width:130px;
+	.landing {
+		.logo {
+			width:130px;
+		}
+		h1 {
+			font-size:1.8em;
+		}
 	}
-	h1 {
-		font-size:1.8em;
-	}
-}
 }//
 
 // __________________________________________________ DESC
@@ -159,7 +159,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		height:300px;
 		overflow: auto;
 		position: relative;
-		padding:7em 5% 0 5%;
+		padding:2em 5% 0 5%;
 		margin:2em 0 0 0;
 	}
 	.hve-earlier {
@@ -182,13 +182,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 @media (max-width: 600px) {
 	
-.plugin {
-	margin-bottom:3.5em;
+section.app .plugin {
+		margin-bottom:3.5em;
 
-	.feed-area {
-		padding: 2em 5% 0 5%;
+		.feed-area {
+			padding: 2em 5% 0 5%;
+		}
 	}
-}
 }//
 
 

@@ -177,8 +177,11 @@
 </footer>
 
 <script src="js/min/index-min.js"></script>
+<script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script> 
 	$('section.landing').anystretch();
+	
+	// handle submitting features
 	var rqft = $('#rqft');
 	rqft.keyup(function (e) {
 	    if (e.keyCode == 13) {
@@ -188,6 +191,11 @@
 	        return false; 
 	    }
 	});
+
+	// catch hive loaded
+	function hve_loaded () {
+		console.log('hve loaded');
+	};
 </script>
 </body>
 </html>

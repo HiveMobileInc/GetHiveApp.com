@@ -132,10 +132,10 @@
 	</div>
 	<div class="col-sm-4 col-md-4">
 		<label>Upcoming</label>
-		<ul>
+		<ul id="fts">
 			<li><i class="fa fa-circle-o req"></i>User suggestion example</li>
 			<li><i class="fa fa-circle-o req"></i>When they submit something</li>
-			<li><input class="form-control" placeholder="Request a feature!"/></li>
+			<li id="rqftb"><input id="rqft" class="form-control" placeholder="Request a feature!"/></li>
 		</ul>
 	</div>
 </div>
@@ -177,7 +177,18 @@
 </footer>
 
 <script src="js/min/index-min.js"></script>
-<script> $("section.landing").anystretch(); </script>
+<script> 
+	$('section.landing').anystretch();
+	var rqft = $('#rqft');
+	rqft.keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	if (rqft.val().length < 3) return false;
+	        $('#rqftb').before('<li><i class="fa fa-circle-o req"></i>' + rqft.val() + '</li>');
+	        rqft.val('');
+	        return false; 
+	    }
+	});
+</script>
 </body>
 </html>
 

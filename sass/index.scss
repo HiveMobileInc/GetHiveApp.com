@@ -27,6 +27,18 @@
 }
 
 
+@media (max-width: 600px) {
+
+.landing {
+	.logo {
+		width:130px;
+	}
+	h1 {
+		font-size:1.8em;
+	}
+}
+}//
+
 // __________________________________________________ DESC
 
 
@@ -168,6 +180,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 
+@media (max-width: 600px) {
+	
+.plugin {
+	margin-bottom:3.5em;
+
+	.feed-area {
+		padding: 2em 5% 0 5%;
+	}
+}
+}//
+
+
 
 // APP APP APP OVERRRRRIDES >>> WATCHOUT.
 
@@ -249,6 +273,18 @@ section.features {
 	
 }
 
+@media (max-width: 600px) {
+	
+section.features {
+	padding:0 0 3em 0;
+	
+	ul {
+		margin:0 0 3em 0;
+	}
+}
+	
+}
+
 
 // __________________________________________________ BETAA
 // __________________________________________________ 
@@ -286,6 +322,12 @@ section.features {
 	}
 }
 
+@media (max-width: 600px) {
+	
+	.beta {
+		padding:2em 0 3em 0;
+	}
+}
 
 
 
@@ -306,6 +348,16 @@ ul.legal {
 }
 
 
+@media (max-width: 600px) {
+	
+	footer {
+		padding:1em;
+	
+		.copyright {
+			float:left;
+		}
+	}
+}//
 
 
 

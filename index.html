@@ -178,6 +178,20 @@
 	        return false; 
 	    }
 	});
+	var username = $('#username');
+	var password = $('#password');
+	username.keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	password.focus();
+	        return false; 
+	    }
+	});
+	password.keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	regin_click();
+	        return false; 
+	    }
+	});
 
 	// grab msg template
 	var msg_tmp = $('#msg-tmp').html();
@@ -188,9 +202,9 @@
 		if (bndl != null) return post_as_user();
 		$('#hve-regin').removeClass('none');
 		$('html, body').animate({scrollTop: $('#hve-regin').offset().top - 30}, 200);
+		username.focus();
 	    return false;
 	};
-
 	var bool_reg = true;
 	function already_click () {
 		if (bool_reg) {
@@ -204,8 +218,8 @@
 		return false;
 	};
 	function regin_click () {
-		var u = $('#username').val();
-		var p = $('#password').val();
+		var u = username.val();
+		var p = password.val();
 		function cb (err, creds) {
 			if (err) throw err;
 			bndl = creds;
@@ -233,7 +247,7 @@
 		else old_mrk.after(html);
 	};
 	function post_as_user () {
-		post_message(url, $('#hve-message').val(), null, null, posted, true);
+		post_message(url, $('#hve-message').val(), null, null, posted, false);
 		return false;
 	};
 	function post_as_guest () {

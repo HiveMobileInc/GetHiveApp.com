@@ -75,8 +75,8 @@
 	<div class="post-area">
 		<div class="hve-post">
 			<div class="textarea"><textarea id="hve-message" placeholder="Type your message!"></textarea></div>
-			<a href="#" onclick="return show_regin();" class="btn user"><i class="fa fa-comment-o"></i><span id="btn-user-text">Login or Register</span></a>
-			<a href="#" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
+			<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i class="fa fa-comment-o"></i><span id="btn-user-text">Login or Register</span></a>
+			<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
 		</div>
 	</div>
 
@@ -234,10 +234,19 @@
 		else old_mrk.after(html);
 	};
 	function disable_post () {
-
+		msg_entry.prop('disabled', true);
+		$('#hve-regin').prop('disabled', true);
+		$('#btn-post-user').prop('disabled', true);
+		$('#btn-post-guest').prop('disabled', true);
 	};
 	function enable_post (clear) {
-
+		msg_entry.prop('disabled', false);
+		$('#hve-regin').prop('disabled', false);
+		$('#btn-post-user').prop('disabled', false);
+		$('#btn-post-guest').prop('disabled', false);
+		if (clear) {
+			msg_entry.val('');
+		}
 	};
 	function post_as_user () {
 		disable_post();
@@ -250,9 +259,13 @@
 		return false;
 	};
 	function posted (err, msg) {
-		if (err) throw err;
+		if (err) {
+			enable_post(false);
+			throw err;
+		}
 		for (var m = 0; m < msg.length; m++)
 			add_msg(msg[m], true);
+		enable_post(true);
 	};
 
 	var url = 'gethiveapp.com';

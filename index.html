@@ -75,14 +75,14 @@
 	<div class="post-area">
 		<div class="hve-post">
 			<div class="textarea"><textarea id="hve-message" placeholder="Type your message!"></textarea></div>
-			<a href="#" onclick="return show_regin();" class="btn user"><i class="fa fa-comment-o"></i><span id="btn-user-text">Login or Register</span></a>
-			<a href="#" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
+			<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i class="fa fa-comment-o"></i><span id="btn-user-text">Login or Register</span></a>
+			<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
 		</div>
 	</div>
 
 	<div id="hve-regin" class="hve-regin none">
 		<form method="post">
-			<span id="regin-header" class="header">Register</span><br>
+			<span id="regin-header" class="header">Register or Login</span><br>
 			<span class="desc">We promise you won't lose your comment!</span><br>
 			
 			<label for="username">Username</label>
@@ -91,8 +91,7 @@
 			<label for="password">Password</label>
 			<input id="password" type="password" name="password" placeholder="password"><br>
 			
-			<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a>
-			<a id="regin-already" href="#" onclick="return already_click();" class="already-member">Already a member?</a>
+			<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
 		</form>
 	</div>	
 			
@@ -180,43 +179,45 @@
 	        return false; 
 	    }
 	});
+	var username = $('#username');
+	var password = $('#password');
+	username.keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	password.focus();
+	        return false; 
+	    }
+	});
+	password.keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	regin_click();
+	        return false; 
+	    }
+	});
 
 	// grab msg template
 	var msg_tmp = $('#msg-tmp').html();
 	var old_mrk = $('#msg-tmp');
 	var new_mrk = $('#new-mrk');
 
+	// grab msg
+	var msg_entry = $('#hve-message');
+
 	function show_regin () {
 		if (bndl != null) return post_as_user();
 		$('#hve-regin').removeClass('none');
 		$('html, body').animate({scrollTop: $('#hve-regin').offset().top - 30}, 200);
+		username.focus();
 	    return false;
 	};
-
-	var bool_reg = true;
-	function already_click () {
-		if (bool_reg) {
-			$('#regin-header').text('Login');
-			$('#regin-already').text('Not a member yet?');
-		} else { 
-			$('#regin-header').text('Register');
-			$('#regin-already').text('Already a member?');
-		}
-		bool_reg = !bool_reg;
-		return false;
-	};
 	function regin_click () {
-		var u = $('#username').val();
-		var p = $('#password').val();
-		function cb (err, creds) {
+		regin(username.val(), password.val(), function (err, creds) {
 			if (err) throw err;
 			bndl = creds;
 			$('#hve-regin').addClass('none');
 			$('#btn-user-text').text(creds.profile.display_name);
-			$('html, body').animate({scrollTop: $('#hve-message').offset().top - 30}, 200);
-		};
-		if (bool_reg) register(u, p, cb);
-		else login(u, p, cb);
+			$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);
+			msg_entry.focus();
+		});
 		return false;
 	};
 	function toggle_rep (id) {
@@ -234,18 +235,40 @@
 		if (newmsg) new_mrk.before(html);
 		else old_mrk.after(html);
 	};
+	function disable_post () {
+		msg_entry.prop('disabled', true);
+		$('#hve-regin').prop('disabled', true);
+		$('#btn-post-user').prop('disabled', true);
+		$('#btn-post-guest').prop('disabled', true);
+	};
+	function enable_post (clear) {
+		msg_entry.prop('disabled', false);
+		$('#hve-regin').prop('disabled', false);
+		$('#btn-post-user').prop('disabled', false);
+		$('#btn-post-guest').prop('disabled', false);
+		if (clear) {
+			msg_entry.val('');
+		}
+		msg_entry.focus();
+	};
 	function post_as_user () {
-		post_message(url, $('#hve-message').val(), null, null, posted, true);
+		disable_post();
+		post_message(url, msg_entry.val(), null, null, posted, false);
 		return false;
 	};
 	function post_as_guest () {
-		post_message(url, $('#hve-message').val(), null, null, posted, true);
+		disable_post();
+		post_message(url, msg_entry.val(), null, null, posted, true);
 		return false;
 	};
 	function posted (err, msg) {
-		if (err) throw err;
+		if (err) {
+			enable_post(false);
+			throw err;
+		}
 		for (var m = 0; m < msg.length; m++)
 			add_msg(msg[m], true);
+		enable_post(true);
 	};
 
 	var url = 'gethiveapp.com';

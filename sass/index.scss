@@ -117,6 +117,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	
 	.post-area {
 		padding:1em 0 0 0;
+		
+		img.profile-preview {
+			width: 2.3em;
+			height:auto;
+			margin:0 .5em 0 4%;
+		}
 	}
 }
 

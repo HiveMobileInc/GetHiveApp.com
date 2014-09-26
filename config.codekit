@@ -123,6 +123,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/guest.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/img\/guest.png",
+		"outputAbbreviatedPath": "\/img\/guest.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/logo-w.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -207,6 +218,17 @@
 		"initialSize": 147123,
 		"inputAbbreviatedPath": "\/img\/texture@2x.png",
 		"outputAbbreviatedPath": "\/img\/texture@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/user.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/img\/user.png",
+		"outputAbbreviatedPath": "\/img\/user.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

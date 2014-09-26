@@ -145,6 +145,7 @@ section.app .plugin {
 .hve-post .textarea textarea {
 	padding:2% 2% 0 2% !important;
 	width:100% !important;
+	@include border-radius(3em);
 }
 .msg .details {
 	margin:0 !important;

@@ -159,8 +159,9 @@ section.app .plugin {
 .hve-post .btn.user {
 	margin:0 4% 0 .5em;
 }
-.hve-regin {
-	margin: 0 0 2.5em 0;
+.hve-regin form {
+	display: inline-block;
+	margin:1em 0 2.5em 0 !important;
 }
 .hve-regin input {
 	width:100% !important;

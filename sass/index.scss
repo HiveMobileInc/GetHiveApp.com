@@ -60,65 +60,6 @@ section.desc {
 	width:100%; height:auto;
 }
 
-// __________________________________________________ FEATSS
-
-
-/*
-.feats {
-	
-	label {
-		font-size:1.5em;
-		font-weight: 400;
-		margin: 0 0 -.5em 0;
-	}
-	span.detail {
-		font-size:.95em;
-		color:#ababab;
-		padding:0 0 0 .3em;
-	}
-	ul {
-		list-style: none;
-		padding:.35em 0 0 .4em;
-		margin:0 0 1.5em 0;
-		font-size:1.05em;
-		line-height: 1.8em;
-	}
-	li {
-		color:#7f7f7f;
-	}
-	li i {
-		margin:0 .5em 0 0;
-	}
-	li.suggest {
-		margin:.3em 0 0 0;
-	}
-	li.past i {
-		color:#65d46e;
-	}
-	li.now i {
-		color:#FAC316;
-		font-size: .92em;
-	}
-	li.next i {
-		color:#ff6969;
-	}
-	input {
-		margin:0 0 0 .1em;
-		padding: 0 .6em 0 .6em;
-		border:1px solid #c5c5c5;
-		@include border-radius(3px);
-	}
-	li a.send {
-		padding: 0 0 0 .3em;
-	}
-	li i.sent {
-		color:#8d8d8d;
-		margin: 0 0 0 .3em;
-	}
-}
-*/
-
-
 
 // __________________________________________________ PLUGINN
 
@@ -266,6 +207,13 @@ section.features {
 	}
 	li i.req {
 		color:gray;
+	}
+	li i.sending,
+	li i.sent {
+		color:#95DB71;
+	}
+	li i.sent {
+		font-size:1em;
 	}
 	input {
 		font-size: 1em;

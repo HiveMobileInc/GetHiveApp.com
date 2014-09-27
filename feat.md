@@ -3,7 +3,7 @@
 + 'SHRIKE': Scalable Language Agnostic Text Search
 + Exploring Really Big Search: Available Options & Further Reading
 + Local Search: Fixing a Broken Standard
-+ Attaching Conversations to Everything
++ Attaching Conversations to Everything [https://medium.com/p/bc94926f2317/edit]()
 + Making Live Iterations in a Production Environment
 + Hive Goes Responsive HTML5: A Mobile-First Browser Plugin is Born
 + Analytics Everywhere: Developing a Business Insights Engine

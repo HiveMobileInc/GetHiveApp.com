@@ -39,7 +39,7 @@
 				<div class="msg">
 					<p>HMSG</p>
 					<div class="details">
-						<div class="author-img"><a href="#"><img src="HPRFIMG" alt=""/></a></div>
+						<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
 						<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
 						<br>
 						<div class="timestamp">HCREATEDAGO</div>
@@ -64,7 +64,12 @@
 	<div class="post-area">
 		<div class="hve-post">
 			<div class="textarea"><textarea id="hve-message" placeholder="Type your message!"></textarea></div>
-			<a href="#"><img src="img/user.png" class="profile-preview" alt=""/><span>Profile Image</span></a>
+
+			<span id="ava-editor" class="none">
+				<canvas id="edit-avatar-can" class="profile-preview" width="128" height="128"></canvas><input id="edit-avatar" type="file" accept="image/*">
+			</span>
+
+
 			<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i class="fa fa-comment-o"></i><span id="btn-user-text">Login or Register</span></a>
 			<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
 		</div>
@@ -197,6 +202,7 @@
 			bndl = creds;
 			$('#hve-regin').addClass('none');
 			$('#btn-user-text').text(creds.profile.display_name);
+			$('#ava-editor').removeClass('none');
 			$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);
 			msg_entry.focus();
 		});
@@ -210,10 +216,11 @@
 	var hop = 1;
 	function add_msg (msg, newmsg) {
 		console.log(msg);
-		var html = msg_tmp.split('HID')         .join(hop++)
-		                  .split('HMSG')        .join(msg.message)
-		                  .split('HDISPLAYNAME').join(msg.author.display_name)
-		                  .split('HCREATEDAGO') .join(msg.created_ago);
+		var html = msg_tmp.split('HID')          .join(hop++)
+		                  .split('HMSG')         .join(msg.message)
+		                  .split('img/guest.png').join(msg.author.avatar + tkn())
+		                  .split('HDISPLAYNAME') .join(msg.author.display_name)
+		                  .split('HCREATEDAGO')  .join(msg.created_ago);
 		if (newmsg) new_mrk.before(html);
 		else old_mrk.after(html);
 	};
@@ -262,6 +269,20 @@
 			for (var b = 0; b < base.length; b++)
 				add_msg(base[b], true);
 		}, true);
+	};
+
+	document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
+	var ava_can = document.getElementById('edit-avatar-can');
+	function new_avatar (e) {
+		read_img(e.target.files[0], function (img) {
+			draw_avatar(img, ava_can, ava_can.getContext('2d'));
+
+			edit_user(null, null, null, null, ava_can.toDataURL('image/png'), function (err, prof) {
+				if (err) throw err;
+				else bndl.profile = prof;
+				console.log(prof);
+			});
+		});
 	};
 </script>
 </body>

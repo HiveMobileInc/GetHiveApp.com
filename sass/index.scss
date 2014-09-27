@@ -2,7 +2,7 @@
 // __________________________________________________ LANDINGG
 
 .landing {
-	padding: 4em 0 17em 0;
+	padding: 4em 0 11em 0;
 	color:#fff;
 	text-align: center;
 	display: block; // NO NEED IF YOU fix section:display:inline-block
@@ -73,8 +73,9 @@ section.app .plugin {
 	border: 1px solid #eee;
 	overflow: hidden;
 	font-size: 1.1em;
-	margin-top: -13em;
+	margin-top:-4em;
 	margin-bottom:3.5em;
+	box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.15);
 	@include border-radius(10px);
 	
 	.gradient {
@@ -97,8 +98,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	}
 
 	.feed-area {
-		height:300px;
-		overflow: auto;
+		max-height:700px;
+		overflow: hidden;
 		position: relative;
 		padding:2em 5% 0 5%;
 		margin:2em 0 0 0;
@@ -178,38 +179,46 @@ section.app .plugin {
 }
 
 
-// __________________________________________________ FEATURES
+// __________________________________________________ FEATURESS
 
 section.features {
 	padding:2em 0 6em 0;
 	display: block; // NOT NECCESSARY FIX section in other css
 	color:#e5e5e5;
+	margin-top:-6em;
+	
+	div {
+		padding:0;
+	}
 	
 	h2 {
 		width: 100%;
-		text-align: center;
-		font-size: 2.5em;
+		font-size: 2.3em;
 		font-weight: 300;
-		margin: 0 0 1em 0;
+		padding:0;
+		color:#fff;
+		margin: 0 0 1.5em 0;
 	}
 	span {
 		display: inline;
 		font-size:1.1em;
 		padding:0 0 0 .4em;
+		color:rgb(182, 182, 182)
 	}
 	label {
 		font-size: 1.5em;
 		font-weight: 600;
+		color:rgb(114, 114, 114);
 	}
 	ul {
-		margin:.3em 0 0 0;
+		margin:.3em 0 2em 0;
 	}
 	li {
 	 list-style: none;
 	 font-size: 1.2em;
 	 line-height: 1.3em;
 	 margin: 0 0 .7em 0;
-	 color:rgb(184, 184, 184);
+	 color:#919191;
 	}
 	li i {
 		margin:0 .7em 0 0;

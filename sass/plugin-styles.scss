@@ -193,11 +193,8 @@ ul.report {
 	margin: 0 0 1em 0;
 	
 	.textarea {
-		border:1px solid #bbb;
-		width: 96%;
-		max-width:96%;
-		margin:0 0 1em 0;
-		padding:2%;
+		border: 1px solid #D3D3D3;
+		margin: 0 0 .7em 0;
 		@include border-radius(.3em);
 	}
 	
@@ -342,6 +339,49 @@ ul.report {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hve-post .textarea textarea {
+	padding:2% 2% 0 2% !important;
+	width:100% !important;
+	@include border-radius(3em);
+}
+.msg {
+	margin:0 0 1.7em 0 !important;
+}
+.msg .details {
+	margin:0 !important;
+}
+.hve-regin form {
+	display: inline-block;
+	margin:1em 0 2.5em 0 !important;
+}
+.hve-regin input {
+	width:100% !important;
+}
+.close {
+	font-size: 1.1em;
+	float:none;
+	text-shadow: none;
+	opacity:1;
+	font-weight: 400;
+}
+.hve-post .btn {
+	padding: .55em 1.1em .45em .65em !important;
+}
 
 
 

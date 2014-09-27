@@ -287,10 +287,10 @@
 	};
 
 	function report_msg (mid, report, hid) {
+		$('#' + hid).attr('class', 'none')
+            .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
 		report_message(url, mid, report, function (err, res) {
 			if (err) throw err;
-			$('#' + hid).attr('class', 'none')
-			            .before('<p><i>Reported</i></p>');
 		});
 		return false;
 	};

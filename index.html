@@ -36,7 +36,7 @@
 			</div>
 
 			<span id="msg-tmp" class="none">
-				<div class="msg">
+				<div id="msg-con-HID" class="msg">
 					<p>HMSG</p>
 					<div class="details">
 						<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
@@ -48,10 +48,10 @@
 						<span id="hve-rep-HID" class="none">
 							<span class="report-label" style="color:#989898;">Report for:</span>	
 							<ul class="report">
-									<li><a href="#">Spam</a></li>
-									<li><a href="#">Harassment</a></li>
-									<li><a href="#">Copyright Infringement</a></li>
-									<li><a href="#">Racism</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
 									<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close"><i class="fa fa-times"></i> Close</a></li>
 							</ul>
 						</span>
@@ -217,6 +217,7 @@
 	function add_msg (msg, newmsg) {
 		console.log(msg);
 		var html = msg_tmp.split('HID')          .join(hop++)
+		                  .split('MID')          .join(msg.mid)
 		                  .split('HMSG')         .join(msg.message)
 		                  .split('img/guest.png').join(msg.author.avatar + tkn())
 		                  .split('HDISPLAYNAME') .join(msg.author.display_name)
@@ -284,29 +285,15 @@
 			});
 		});
 	};
+
+	function report_msg (mid, report, hid) {
+		report_message(url, mid, report, function (err, res) {
+			if (err) throw err;
+			$('#' + hid).attr('class', 'none')
+			            .before('<p><i>Reported</i></p>');
+		});
+		return false;
+	};
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

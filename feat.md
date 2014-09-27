@@ -1,4 +1,4 @@
-+ ✓ 'FOXES': Scalable Language Agnostic Text Classification ([https://medium.com/@adrnsly/foxes-8f567794ad08](link))
++ [https://medium.com/@adrnsly/foxes-8f567794ad08](✓) 'FOXES': Scalable Language Agnostic Text Classification
 + Exploring Really Big Classification: Available Options & Further Reading
 + 'SHRIKE': Scalable Language Agnostic Text Search
 + Exploring Really Big Search: Available Options & Further Reading

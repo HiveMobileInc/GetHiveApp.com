@@ -183,6 +183,7 @@ ul.report {
 }
 
 
+
 // ______________________________________________________ POST
 // ______________________________________________________ (write message)
 
@@ -262,6 +263,20 @@ ul.report {
 		.fa {
 			font-size:1.2em;
 		}
+	}
+}
+
+// ______________________________________________________ Post-area
+// ______________________________________________________ EXTRAS
+// ______________________________________________________ container
+
+
+.post-area {
+
+	.extra {
+		width:100%;
+		display: inline-block;
+		position: relative;
 	}
 }
 
@@ -349,7 +364,6 @@ ul.report {
 // Everything container
 span#ava-editor {
 	float:left;
-	position:relative;
 }
 
 // Container
@@ -358,7 +372,7 @@ span#ava-editor {
 	height:60px;
 	overflow: hidden;
 	display: inline-block;
-	border:1px solid pink;
+/* 	border:1px solid pink; */
 	position:relative;
 	
 	label {
@@ -373,16 +387,17 @@ span#ava-editor {
 }
 // For Dev purposes
 .edit-avatar-container:hover {
-	background:#ececec;
+	/* background:#ececec; */
 }
 
 // Choose File Button
 input#edit-avatar {
-	margin:-30px 0 0 0;
-	height:90px;
 	width:100%;
 	position:relative;
 	z-index: 1;
+	margin: -30px 0 0 0;
+	height: 100px;
+	/* background:rgba(255,255,0,0.55); */
 }
 input#edit-avatar:focus {
 	outline:none;

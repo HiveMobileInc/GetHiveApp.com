@@ -27,10 +27,10 @@
 
 <section class="app light">
 <div class="container">	
-	<div class="col-xs-12 col-sm-6 col-md-7 col-lg-6 col-lg-offset-1 plugin">
 
+<div class="col-xs-12 col-sm-6 col-md-7 col-lg-6 col-lg-offset-1 plugin">
 		<div id="feed" class="feed-area">
-
+		
 			<div class="hve-load" id="hve-load"> Joining the conversation<br>
 				<i class="fa fa-circle-o-notch fa-spin"></i>
 			</div>
@@ -64,38 +64,35 @@
 	<div class="post-area">
 		<div class="hve-post">
 			<div class="textarea"><textarea id="hve-message" placeholder="Type your message!"></textarea></div>
-
 			<span id="ava-editor" class="none">
 				<canvas id="edit-avatar-can" class="profile-preview" width="60" height="60"></canvas>
 				<input id="edit-avatar" type="file" accept="image/*"/>
 			</span>
-
-
 			<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i class="fa fa-comment-o"></i><span id="btn-user-text">Login or Register</span></a>
 			<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
 		</div>
 	</div>
-
+	
 	<div id="hve-regin" class="hve-regin none">
 		<form method="post">
 			<span id="regin-header" class="header">Register or Login</span><br>
 			<span class="desc">We promise you won't lose your comment!</span><br>
-			
 			<label for="username">Username</label>
 			<input id="username" type="text" name="username" placeholder="username"><br>
-
 			<label for="password">Password</label>
 			<input id="password" type="password" name="password" placeholder="password"><br>
-			
 			<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
 		</form>
 	</div>				
 			
-</div> 
+</div> <!-- plugin -->
 
-<section class="features col-xs-12 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-1">
-	<h2 class="col-xs-12">Hive App Features</h2>
-	<div class="col-sm-12">
+<div class="features col-xs-12 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-1">
+<div class="panel-group" id="accordion">
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><h2>Hive App Features</h2></a>  
+  <div id="collapseOne" class="panel-collapse collapse out">
+    <div class="panel-body">
+      <div class="col-sm-12">
 		<label>Newly Added</label><span>(v 1.0)</span>
 		<ul>
 			<li><i class="fa fa-circle"></i>Post messages as guest</li>
@@ -108,7 +105,7 @@
 	<div class="col-sm-12">
 		<label>In Progress</label><span>(v 1.1)</span>
 		<ul>
-			<li><i class="fa fa-circle-o-notch fa-spin"></i></i>Image Attachments</li>
+			<li><i class="fa fa-circle-o-notch fa-spin"></i>Image Attachments</li>
 		</ul>
 	</div>
 	<div class="col-sm-12">
@@ -119,11 +116,13 @@
 			<li id="rqftb"><input id="rqft" class="form-control" placeholder="Request a feature!"/></li>
 		</ul>
 	</div>
-</section>
-
+    </div>
+  </div>
+</div>
+</div> <!-- features -->
 
 </div>
-</section>
+</section> <!-- app -->
 
 <footer class="light">
 <div class="container">
@@ -136,12 +135,12 @@
 </div>
 </footer>
 
-<div id="beta-modal" class="modal beta fade" tabindex="-1" role="dialog" aria-labelledby="Hive Needs Beta Testers" aria-hidden="true">
+<div id="beta-modal" class="modal beta fade" tabindex="-1" role="dialog" aria-labelledby="HiveBeta" aria-hidden="true">
   <div class="modal-dialog beta">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="Hive Needs Beta Testers">Hive Beta</h4>
+        <h4 class="modal-title" id="HiveBeta">Hive Beta</h4>
       </div>
       <div class="modal-body">
 				Shoot us your contact and our lovely engineer will be in touch with you shortly! Oh, and we'll throw in some free swag for your much appreciated help!

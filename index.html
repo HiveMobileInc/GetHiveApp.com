@@ -40,7 +40,9 @@
 			<div class="panel-body">
 		  	
 		  	<ul>
-		  		<li>Blog title winning</li>
+		  		<li><a href="#">Attaching Conversations to Everything</a></li>
+		  		<li><a href="#">The Report Button: Protecting Content Copyrights & User's Human Rights</a></li>
+		  		<li><a href="#">Analytics Everywhere: Developing a Business Insights Engine</a></li>
 		  	</ul>
 		  	
 			</div>
@@ -88,8 +90,13 @@
 		<div class="hve-post">
 			<div class="textarea"><textarea id="hve-message" placeholder="Type your message!"></textarea></div>
 			<span id="ava-editor" class="none">
+				<a href="#">
+					<div class="edit-avatar-container">
+						<input id="edit-avatar" type="file" accept="image/*"/>
+						<label for="edit-avatar">Change profile image</label>
+					</div>
+				</a>
 				<canvas id="edit-avatar-can" class="profile-preview" width="60" height="60"></canvas>
-				<input id="edit-avatar" type="file" accept="image/*"/>
 			</span>
 			<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i class="fa fa-comment-o none"></i><span id="btn-user-text">Login or Register</span></a>
 			<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>

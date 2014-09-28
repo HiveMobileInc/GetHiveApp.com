@@ -34,3 +34,11 @@ section {
 	width:100%; // Review this later..
 	display: inline-block; // Destroy this later..
 }
+
+@media (max-width: 600px) {
+	
+	.col-xxs-12 {
+		width:100%;
+		margin:0;
+	}
+}

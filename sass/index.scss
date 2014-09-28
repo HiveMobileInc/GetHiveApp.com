@@ -113,7 +113,7 @@ section.app .plugin {
 	
 section.app .plugin {
 		margin-bottom:3.5em;
-		margin-top:-7em;
+		margin-top: -4em;
 
 		.feed-area {
 			padding: 2em 5% 0 5%;
@@ -201,7 +201,7 @@ section.app .plugin {
 	
 	.features {
 		padding:0 0 3em 0;
-		margin:0;
+		margin-top: -8em;
 		
 		ul {
 			margin:0 0 3em 0;
@@ -277,7 +277,7 @@ ul.legal {
 @media (max-width: 600px) {
 	
 	footer {
-		padding:1em;
+		padding:1em 0;
 	
 		.copyright {
 			float:left;

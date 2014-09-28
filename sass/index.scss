@@ -203,7 +203,7 @@ section.features {
 
 
 img.beta-banner {
-	width:200px;
+	width:180px;
 	height:auto;
 	position:absolute;
 	top:0;
@@ -218,47 +218,22 @@ img.beta-banner {
 }
 
 
-
-
-.beta {
-	padding:6em 0;
-	text-align: center;
-	font-size:1.2em;
+.modal-dialog {
 	
-	h2 {
-		font-size:35px;
-	}	
-	p {
-		color:gray;
-		font-size:1.1em;
-		line-height: 1em;
+	h4.modal-title {
+		font-size: 2em;
+		font-weight: 600;
 	}
-	form {
-		margin: 1em 0 0 0;
-	}
-	input {
-		margin:0 0 .5em 0;
-		font-size: 1.1em;
-	}
-	.btn {
-		background:$blue1;
-		color:#fff;
-		width:100%;
-		font-size: 1.2em;
-	}
-	.btn:hover {
-		background:$blue2;
-		color:#fff;
+	.modal-body {
+		font-size:1.3em;
+		
+		input {
+			max-width: 20em;
+			margin:.7em 0 0 0;
+			font-size: .9em;
+		}
 	}
 }
-
-@media (max-width: 600px) {
-	
-	.beta {
-		padding:2em 0 3em 0;
-	}
-}
-
 
 
 // __________________________________________________ FOOTERR

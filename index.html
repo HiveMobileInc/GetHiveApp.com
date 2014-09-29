@@ -293,8 +293,10 @@
 			enable_post(false);
 			throw err;
 		}
-		for (var m = 0; m < msg.length; m++)
+		for (var m = 0; m < msg.length; m++) {
+			conv.splice(0, 0, msg[m]);
 			add_msg(msg[m], true);
+		}
 		enable_post(true);
 	};
 

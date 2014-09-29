@@ -51,6 +51,22 @@
 	font-size: 1.2em;
 }
 
+.hve-type .type {
+	background:#9e9e9e;
+	padding:.3em;
+	font-size:.75em;
+	line-height: 1em;
+	color:#fff;
+	z-index: 9;
+	left:50%;
+	text-align: center;
+	position: absolute;
+}
+
+.hve-type:hover .type {
+	display: block !important;
+}
+
 
 // ______________________________________________________ MESSAGES
 // ______________________________________________________ in 

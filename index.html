@@ -110,11 +110,13 @@
 					<span id="ava-editor" class="none">
 						<a href="#">
 							<div class="edit-avatar-container">
-								<input id="edit-avatar" type="file" accept="image/*"/>
-								<label for="edit-avatar">Change profile image</label>
+								<input id="edit-avatar" style="display:none;" type="file" accept="image/*"/>
 							</div>
 						</a>
-						<canvas id="edit-avatar-can" onclick="return document.getElementById('edit-avatar');" class="profile-preview" width="60" height="60"></canvas>
+
+						<canvas id="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
+						<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change profile image</a>
+
 					</span>
 					<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i id="regin-icon" class="fa fa-sign-in"></i><span id="btn-user-text">Login or Register</span></a>
 					<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>

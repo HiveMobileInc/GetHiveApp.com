@@ -3,27 +3,30 @@
 
 .landing {
 	padding: 4em 0 9em 0;
-	color:#fff;
+	color: #fff;
 	text-align: center;
 	display: block; // NO NEED IF YOU fix section:display:inline-block
 
 	.logo {
-		width:135px;
-		height:auto;
+		width: 135px;
+		height: auto;
 		display: block;
 		margin:0 auto;
 	}
 	h1 {
-		font-size: 2.4em;
+		font-size: 2.5em;
 		font-weight: 400;
 		line-height: 1.3em;
-		text-shadow: 1.5px 1.5px 0 #4197D1;
-		margin-top:.7em;
+		text-shadow: 1.5px 1.5px 0 #4197D1;	
+		width:100%;
+		text-align: center;
+		margin: .7em auto 0 auto;
 	}
 	p.desc {
-		font-weight: 400;
-		font-size:1.3em;
-		width:40%;
+		font-weight: 300;
+		font-size:1.5em;
+		width:600px;
+		max-width: 100%;
 		margin:1em auto 0 auto;
 		text-shadow: 1.5px 1.5px 0 #4197D1;
 	}
@@ -85,22 +88,26 @@ section.app .plugin {
 	@include border-radius(10px);
 
 	.feed-area {
-		overflow: hidden;
 		position: relative;
-		padding:2em 0 0 0;
+		padding:3em 0 0 0;
 	}
 	.hve-earlier,
 	.hve-new {
 		z-index: 2;
 		height:3em;
 		margin:0;
-		@include border-top-radius(10px);
+		font-size:.9em;
+		position: absolute;
+	}
+	.hve-earlier {
+		top:1.2em;
 	}
 	.hve-new {
 		width: 100%;
 		text-align: center;
 		height: auto;
 		padding: 0;
+		bottom: -.1em;
 	}
 	
 	.post-area {

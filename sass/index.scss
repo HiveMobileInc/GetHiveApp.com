@@ -32,6 +32,8 @@
 @media (max-width: 600px) {
 
 	.landing {
+		padding:4em 0;
+		
 		.logo {
 			width:130px;
 		}
@@ -353,12 +355,13 @@ img.beta-banner {
 // __________________________________________________ 
 
 footer {
-	padding:2em 0;
+	padding:1.5em 0;
 	color:#858585
 }
 
 ul.legal {
 	display: inline;
+	float:left;
 }
 .copyright {
 	float:right;

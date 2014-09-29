@@ -157,13 +157,35 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/hive_logo_preview.jpg": {
+	"\/img\/hive-logo_blue.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1.26205e+06,
-		"inputAbbreviatedPath": "\/img\/hive_logo_preview.jpg",
-		"outputAbbreviatedPath": "\/img\/hive_logo_preview.jpg",
+		"inputAbbreviatedPath": "\/img\/hive-logo_blue.jpg",
+		"outputAbbreviatedPath": "\/img\/hive-logo_blue.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/hive_logo_blue.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 236602,
+		"inputAbbreviatedPath": "\/img\/hive_logo_blue.jpg",
+		"outputAbbreviatedPath": "\/img\/hive_logo_blue.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/hive_logo_blue.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/img\/hive_logo_blue.png",
+		"outputAbbreviatedPath": "\/img\/hive_logo_blue.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -58,13 +58,14 @@
 <div class="plugin col-xxs-12 col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-lg-6 col-lg-offset-1">
 <div id="feed" class="feed-area">
 			
-			<div class="hve-type"><i class="fa fa-globe"></i></div>
+			<div class="hve-type" style="cursor:help;" title="This is a public conversation."><i class="fa fa-globe"></i></div>
 			
 			<div class="hve-load" id="hve-load"> Joining the conversation<br>
 				<i class="fa fa-circle-o-notch fa-spin"></i>
 			</div>
 			
-			<div class="hve-earlier"><a href="#">Show more messages</a></div>
+			<div class="hve-earlier none" id="hve-earlier"><a href="#" onclick="return hve_earlier();">Show earlier messages</a></div>
+			<div class="hve-earlier none" id="hve-earlier-load"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 
 			<span id="msg-tmp" class="none">
 				<div id="msg-con-HID" class="msg">
@@ -90,7 +91,7 @@
 				</div>
 			</span>
 			<span id="new-mrk"></span>
-			<div class="hve-new"><a href="#">5 new messages</a></div>
+			<div class="hve-new none" id="hve-new"><a href="#" id="hve-new-text" onclick="return show_new();">5 new messages</a></div>
 		</div>
 		
 	<div class="post-area">
@@ -178,7 +179,7 @@
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script> 
 	$('section.landing').anystretch();
-	
+
 	// handle submitting features
 	var rqft = $('#rqft');
 	rqft.keyup(function (e) {
@@ -211,6 +212,15 @@
 
 	// grab msg
 	var msg_entry = $('#hve-message');
+	msg_entry.focus();
+
+	// grab earlier
+	var earlier = $('#hve-earlier');
+	var earlier_load = $('#hve-earlier-load');
+
+	// grab new
+	var newlink = $('#hve-new');
+	var newtext = $('#hve-new-text');
 
 	function show_regin () {
 		if (bndl != null) return post_as_user();
@@ -285,14 +295,62 @@
 	};
 
 	var url = 'gethiveapp.com';
+	var heart = 5000;
 	// catch hive loaded
 	function hve_loaded () {
 		get_conversation_base(url,  function (err, base) {
 			if (err) throw err;
 			$('#hve-load').addClass('none');
+			if (base.length == page_size)
+				earlier.removeClass('none');
 			for (var b = 0; b < base.length; b++)
 				add_msg(base[b], false);
+			setTimeout(hve_newer, heart);
 		}, true);
+	};
+	function hve_earlier () {
+		earlier.addClass('none');
+		earlier_load.removeClass('none');
+		get_older_messages(url, function (err, older) {
+			earlier_load.addClass('none');
+			if (err || older.length == page_size)
+				earlier.removeClass('none');
+			if (err) throw err;
+			for (var o = 0; o < older.length; o++)
+				add_msg(older[o], false);
+		});
+		return false;
+	};
+	var new_cache = [];
+	function hve_newer () {
+		get_newer_messages(url, function (err, newer) {
+			if (err) { 
+				throw err;
+				return setTimeout(hve_newer, heart);
+			}
+			for (var n = newer.length - 1; n >= 0; n--){
+				for (var c = 0; c < conv.length; c++){
+					if (conv[c].mid == newer[n].mid){
+						newer.splice(n, 1);
+						break;
+					}
+				}
+			}
+			if (newer.length == 0)
+				return setTimeout(hve_newer, heart);
+			new_cache = new_cache.concat(newer);
+			newlink.removeClass('none');
+			newtext.text('Show ' + new_cache.length + ' new message' + (new_cache.length == 1 ? '' : 's'));
+			if (newer.length == page_size) return setTimeout(hve_newer, 500);
+			else return setTimeout(hve_newer, heart);
+		});
+	};
+	function show_new () {
+		for (var n = 0; n < new_cache.length; n++)
+			add_msg(new_cache[n], true);
+		new_cache = [];
+		newlink.addClass('none');
+		return false;
 	};
 
 	document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);

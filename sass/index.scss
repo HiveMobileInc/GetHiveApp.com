@@ -272,6 +272,27 @@ section.app .plugin {
 
 
 
+a.beta-btn {
+	background: #FF7373;
+	color: #fff;
+	padding: 12px 18px;
+	width: 100%;
+	display: block;
+	font-size: 1.3em;
+	text-align: center;
+	margin: 26px 0 0 0;
+	@include opacity(.9);
+	@include border-radius(.3em);
+}
+
+a.beta-btn:hover {
+	@include opacity(1);
+}
+
+
+
+
+
 img.beta-banner {
 	width:180px;
 	height:auto;

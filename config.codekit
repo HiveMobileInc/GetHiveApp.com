@@ -157,6 +157,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/hive_logo_preview.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.26205e+06,
+		"inputAbbreviatedPath": "\/img\/hive_logo_preview.jpg",
+		"outputAbbreviatedPath": "\/img\/hive_logo_preview.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/img.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -197,17 +208,6 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/img\/profile-success.png",
 		"outputAbbreviatedPath": "\/img\/profile-success.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/profile.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 7246,
-		"inputAbbreviatedPath": "\/img\/profile.jpg",
-		"outputAbbreviatedPath": "\/img\/profile.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -288,6 +288,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
+		},
+	"\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/index_Old_FeatsTabAboveThePluginOnMobile.html": {
 		"fileType": 8192,

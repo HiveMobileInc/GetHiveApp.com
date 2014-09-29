@@ -332,14 +332,6 @@
 				throw err;
 				return setTimeout(hve_newer, heart);
 			}
-			for (var n = newer.length - 1; n >= 0; n--){
-				for (var c = 0; c < conv.length; c++){
-					if (conv[c].mid == newer[n].mid){
-						newer.splice(n, 1);
-						break;
-					}
-				}
-			}
 			if (newer.length == 0)
 				return setTimeout(hve_newer, heart);
 			new_cache = new_cache.concat(newer);

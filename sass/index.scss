@@ -190,92 +190,6 @@ section.app .plugin {
 
 
 
-// __________________________________________________ FEATURESS
-
-/*
-.features {
-
-	padding:2em 0 6em 0;
-	display: block; // NOT NECCESSARY FIX section in other css
-	color:#e5e5e5;
-	margin-top:-6em;
-	
-	div {
-		padding:0;
-	}
-	
-	h2 {
-		width: 100%;
-		font-size: 2.3em;
-		font-weight: 300;
-		padding:0;
-		color:#fff;
-		margin: 0 0 1.5em 0;
-	}
-	span {
-		display: inline;
-		font-size:1.1em;
-		padding:0 0 0 .4em;
-		color:rgb(182, 182, 182)
-	}
-	label {
-		font-size: 1.5em;
-		font-weight: 600;
-		color:rgb(114, 114, 114);
-	}
-	ul {
-		margin:.3em 0 2em 0;
-	}
-	li {
-	 list-style: none;
-	 font-size: 1.2em;
-	 line-height: 1.3em;
-	 margin: 0 0 .7em 0;
-	 color:#919191;
-	}
-	li i {
-		margin:0 .7em 0 0;
-		font-size: .85em;
-		color:$blue1;
-	}
-	li i.req {
-		color:gray;
-	}
-	li i.sending,
-	li i.sent {
-		color:#95DB71;
-	}
-	li i.sent {
-		font-size:1em;
-	}
-	input {
-		font-size: 1em;
-	}	
-}
-
-@media (min-width: 768px) {
-
-	.features {
-	
-		.collapse {
-			display: block !important;
-		}
-	}
-}
-
-@media (max-width: 768px) {
-	
-	.features {
-		padding:0 0 3em 0;
-		margin-top: -8em;
-		
-		ul {
-			margin:0 0 3em 0;
-		}
-	}
-} 
-*/
-
 
 // __________________________________________________ BETAA
 // __________________________________________________ 
@@ -313,9 +227,6 @@ a.beta-btn.mobile {
 	}
 }
 
-
-
-
 img.beta-banner {
 	width:180px;
 	height:auto;
@@ -324,32 +235,79 @@ img.beta-banner {
 	right:0;
 }
 
-@media (max-width: 600px) {
-
-	img.beta-banner {
-		width:140px;
-	}
-}
 
 
-.modal-dialog {
+#beta-modal .modal-dialog {
+	text-align: center;
+	max-width:500px;
+	width:100%;
+	margin:3em auto;
 	
+	.modal-header {
+		border:none;
+	}
 	h4.modal-title {
-		font-size: 2em;
-		font-weight: 600;
+		margin:.3em 0 0 0;
+		font-size: 2.5em;
+		font-weight: 400;
 	}
 	.modal-body {
+		padding-top:0;
 		font-size:1.3em;
 		
-		input {
-			max-width: 20em;
-			margin:.7em 0 0 0;
-			font-size: .9em;
+		form {
+			margin: 1.5em auto 1.5em auto;
+			display: block;
+			width: 100%;
+			max-width: 330px;
+			
+			input {
+				max-width: 20em;
+				font-size: .9em;
+				margin: 0 0 .5em 0;
+			}
+			
+			a.send {
+				width:100%;
+				margin:.7em 0 0 0;
+				background:#FF7373;
+				padding:.5em;
+				display: block;
+				color:#fff;
+				font-size: .9em;
+				@include opacity(.9);
+				@include border-radius(.3em);
+			}
+			a.send:hover {
+				color:#fff;
+				@include opacity(1);
+			}
+		}
+	}
+	.modal-footer {
+		border:none;
+		
+		button {
+			margin:0 auto;
 		}
 	}
 }
 
 @media (max-width: 600px) {
+
+#beta-modal .modal-dialog {
+	width:94%;
+	margin:1.5em auto 0 auto;
+	
+	.modal-body form {
+		margin: 1.5em auto .5em auto;
+	}
+}
+
+
+	img.beta-banner {
+		width:140px;
+	}
 	
 	.modal-dialog {
 		

@@ -163,6 +163,18 @@ section.app .plugin {
 
 // __________________________________________________ SIDEBARR
 
+
+@media (min-width: 1200px) {
+	
+	.sidebar {
+		
+		.ul.blog li {
+			font-size:1.15em;
+		}
+	}
+}
+
+
 .sidebar {
 	margin-top:1em;
 	
@@ -170,6 +182,9 @@ section.app .plugin {
 		color: #7E7E7E;
 		font-size: 1.6em;
 		font-weight: 600;
+		margin:1em 0;
+		width:100%;
+		float:left;
 	}
 	.panel-collapse .panel-body {
 		padding:0 !important;

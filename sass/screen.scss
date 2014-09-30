@@ -5,16 +5,13 @@
 @import "compass/css3/transition";
 @import "compass/css3/transform";
 @import "compass/utilities/sprites";
-@import "_retina-sprites.scss";
 
-// theirs
-@import 'bootstrap.min.scss';
-@import 'bootstrap-theme.min.scss';
-@import 'font-awesome.scss';
+// foreign
+@import "assets/_retina-sprites.scss";
+@import 'assets/bootstrap.min.scss';
+@import 'assets/bootstrap-theme.min.scss';
+@import 'assets/font-awesome.scss';
 
-// mine
+// native
 @import 'general.scss';
-@import 'index.scss';
-
-// plugin
-@import 'plugin-styles.scss';
+@import 'footer.scss';

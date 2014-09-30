@@ -294,6 +294,45 @@ a.beta-btn.mobile {
 	display: none;
 }
 
+.beta-banner {
+	position: absolute;
+	top:0;
+	right:0;
+	width:300px;
+	height:200px;
+	overflow: hidden;
+		
+	div {
+		width: 20em;
+		height: 3em;
+		text-align: center;
+		right: -2.5em;
+		top: 1.5em;
+		position: relative;
+		background: #FF7373;
+		color: #fff;
+		font-size: 1.3em;
+		line-height: 3.3em;
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.30);
+		text-shadow: 1px 1px 1px rgb(167, 84, 84);
+		@include rotate(35deg);
+	}
+}
+
+@media (max-width: 600px) {
+
+	.beta-banner {
+		
+		div {
+			font-size: 1.1em;
+			line-height: 2.9em;
+			font-weight: 600;
+			height: 2.7em;
+			right: -5.8em;
+		}
+	}
+}
+
 @media (max-width: 768px) {
 
 	a.beta-btn.desktop {
@@ -303,15 +342,6 @@ a.beta-btn.mobile {
 		display: inline-block;
 	}
 }
-
-img.beta-banner {
-	width:180px;
-	height:auto;
-	position:absolute;
-	top:0;
-	right:0;
-}
-
 
 
 #beta-modal .modal-dialog {
@@ -396,11 +426,6 @@ p.success-desc {
 	}
 }
 
-
-	img.beta-banner {
-		width:140px;
-	}
-	
 	.modal-dialog {
 		
 		.modal-body {

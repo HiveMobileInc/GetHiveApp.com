@@ -445,6 +445,15 @@ canvas#edit-avatar-can {
 	top: 4px;
 }
 
+@media (max-width: 600px) {
+	
+	.edit-ava-text {
+		left: 0;
+		width: 81px;
+		top: 42px;
+	}
+}
+
 
 
 

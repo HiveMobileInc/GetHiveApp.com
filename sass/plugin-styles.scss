@@ -387,6 +387,7 @@ ul.report {
 // Everything container
 span#ava-editor {
 	float:left;
+	height:60px;
 }
 
 // Container
@@ -451,6 +452,9 @@ canvas#edit-avatar-can {
 		left: 0;
 		width: 81px;
 		top: 42px;
+	}
+	.hve-post .btn.user {
+		margin: 0 0 0.5em .5em;
 	}
 }
 

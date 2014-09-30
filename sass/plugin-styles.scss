@@ -432,6 +432,17 @@ canvas#edit-avatar-can {
 	left: 0;
 	top:0;
 	z-index: 0;
+	width:40px;
+	height:40px;
+}
+
+.edit-ava-text {
+	width: 95px;
+	position: relative;
+	left: 44px;
+	line-height: 1.2em;
+	font-size: .95em;
+	top: 4px;
 }
 
 

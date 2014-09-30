@@ -130,7 +130,7 @@
 						<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
 						<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
 						<div id="edit-ava-text" class="edit-ava-text none">
-							<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change profile image</a>
+							<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
 						</div>
 					</span>
 
@@ -174,8 +174,10 @@
 					<a class="send" href="#" onclick="return submod();">Let's do this!</a>
 				</form>
       </div>
-      <div class="modal-body none" id="mod-good">
-			<br><br>Rad, we got your deets friend.<br><br>
+      <div class="modal-body none" id="mod-good" class="mod-good">
+      <i class="fa fa-paper-plane success"></i>
+      <p class="success">Success!</p>
+			<p class="success-desc">We got your deets friend. Talk soon.</p>
 	  </div>
     </div>
   </div>

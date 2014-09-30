@@ -370,6 +370,21 @@ img.beta-banner {
 	}
 }
 
+// ________________________________ MODAL FEEDBACK
+
+.fa.success {
+	font-size: 3em;
+	margin:.3em 0 0 0;
+	color: rgb(98, 202, 106);
+}
+p.success {
+	font-size:1.5em;
+	color:gray;
+}
+p.success-desc {
+	margin:0 0 1em 0;
+}
+
 @media (max-width: 600px) {
 
 #beta-modal .modal-dialog {

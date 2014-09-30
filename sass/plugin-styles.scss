@@ -215,7 +215,6 @@ ul.report {
 	width:100%;
 	display: inline-block;
 	padding: 0 0 .25em 0; // for the bottom of the native button:focus fuz
-	margin: 0 0 1em 0;
 	
 	.textarea {
 		border: 1px solid #D3D3D3;
@@ -387,7 +386,6 @@ ul.report {
 // Everything container
 span#ava-editor {
 	float:left;
-	height:60px;
 }
 
 // Container
@@ -433,25 +431,28 @@ canvas#edit-avatar-can {
 	left: 0;
 	top:0;
 	z-index: 0;
-	width:40px;
-	height:40px;
+	width:35px;
+	height:35px;
 }
 
 .edit-ava-text {
-	width: 95px;
+	width: 85px;
 	position: relative;
-	left: 44px;
-	line-height: 1.2em;
+	left: 40px;
+	line-height: 1.1em;
 	font-size: .95em;
-	top: 4px;
+	top: .1em;
 }
 
 @media (max-width: 600px) {
 	
+	span#ava-editor {
+		height:70px;
+	}
 	.edit-ava-text {
 		left: 0;
-		width: 81px;
-		top: 42px;
+		width: 52px;
+		top: 37px;
 	}
 	.hve-post .btn.user {
 		margin: 0 0 0.5em .5em;

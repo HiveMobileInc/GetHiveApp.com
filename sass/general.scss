@@ -8,6 +8,11 @@ $green11 	: #64C770; // green1 same but slightly lighter
 
 $red1 		: #FF6E6E; // light red (pink)
 
+html,
+body {
+	height:100%
+}
+
 .none 		{display: none;}
 .dark			{background:url('../img/texture.png');}
 .light		{background:url('../img/texture2.png');}

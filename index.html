@@ -166,14 +166,16 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="HiveBeta">Hive Beta</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="mod-body">
 			Shoot us your contact and our lovely engineer will be in touch with you shortly! (Oh, and we'll throw in some free swag for your much appreciated help!)
 				<form>
-					<input id="name" type="text" placeholder="name" class="form-control"/>
-					<input id="email" type="email" placeholder="email" class="form-control" required=""/>
-					<a class="send" href="#">Let's do this!</a>
+					<input id="sub-name" type="text" placeholder="name" class="form-control"/>
+					<input id="sub-email" type="email" placeholder="email" class="form-control" required=""/>
+					<a class="send" href="#" onclick="return submod();">Let's do this!</a>
 				</form>
       </div>
+      <div class="modal-body none" id="mod-good">
+			<br><br>Rad, we got your deets friend.<br><br>
     </div>
   </div>
 </div>
@@ -219,6 +221,18 @@
 	    if (e.keyCode == 13) {
 	    	regin_click();
 	        return false; 
+	    }
+	});
+
+	$('#sub-name').keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	$('#sub-email').focus();
+	        return false; 
+	    }
+	});
+	$('#sub-email').keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	return submod();
 	    }
 	});
 
@@ -390,6 +404,15 @@
             .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
 		report_message(url, mid, report, function (err, res) {
 			if (err) throw err;
+		});
+		return false;
+	};
+
+	function submod () {
+		pst('rye?', {name: $('#sub-name').val(), email: $('#sub-email').val()}, function (err, bdy) {
+			if (err) throw err;
+			$('#mod-body').addClass('none');
+			$('#mod-good').removeClass('none');
 		});
 		return false;
 	};

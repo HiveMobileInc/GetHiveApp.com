@@ -126,11 +126,10 @@
 			</div>
 			<div class="extra">
 					
-			<!-- sorry mike! can you make this pretty again? i took out lots of extra tags-->
 					<span id="ava-editor" class="ava-editor" class="none">
 						<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
 						<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
-						<div class="edit-ava-text none">
+						<div id="edit-ava-text" class="edit-ava-text none">
 							<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change profile image</a>
 						</div>
 					</span>
@@ -261,6 +260,7 @@
 				console.log('img get');
 				draw_avatar(img, ava_can, ava_can.getContext('2d'));
 				$('#ava-editor').removeClass('none');
+				$('#edit-ava-text').removeClass('none');
 			});
 		});
 		return false;
@@ -373,10 +373,10 @@
 
 	document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
 	var ava_can = document.getElementById('edit-avatar-can');
+
 	function new_avatar (e) {
 		read_img(e.target.files[0], function (img) {
 			draw_avatar(img, ava_can, ava_can.getContext('2d'));
-
 			edit_user(null, null, null, null, ava_can.toDataURL('image/png'), function (err, prof) {
 				if (err) throw err;
 				else bndl.profile = prof;

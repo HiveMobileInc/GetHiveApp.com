@@ -3,7 +3,7 @@
 
 
 
-.landing {
+.landing.generate {
 	margin: 4em 0 3em 0;
 	color: #fff;
 	float:left;
@@ -11,7 +11,7 @@
 	display: block; // NO NEED IF YOU fix section:display:inline-block
 
 	.logo {
-		width: 135px;
+		width: 125px;
 		height: auto;
 		display: block;
 		margin:0 auto;
@@ -114,24 +114,10 @@ form.generate .faded {
 	@include opacity(.4);
 }
 
-@media (max-width: 600px) {
-	
-	.landing.generate {
-	
-		h1 {
-			font-size: 1.8em;
-		}
-	}
-	
-	form.generate {
-		padding:0;
-	}
-}
-
 
 footer.generate {
 	color:#cccccc;
-	margin:5em 0 0 0;
+	margin:4em 0 0 0;
 	
 	a {
 		color:#fff;
@@ -139,6 +125,28 @@ footer.generate {
 }
 
 
+@media (max-width: 600px) {
+	
+	.landing.generate {
+		margin:1.5em 0;
+		
+		.logo {
+			width:110px;
+		}
+		h1 {
+			font-size: 1.8em;
+			margin: .5em auto 0 auto;
+		}
+	}
+	
+	form.generate {
+		padding:0;
+	}
+	
+	footer.generate .col-xxs-12 { 
+		padding:0;
+	}
+}
 
 
 

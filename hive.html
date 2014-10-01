@@ -14,24 +14,95 @@
 		<meta property="og:type" content="website" />
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'/>
 		<link rel="shortcut icon" href="img/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="css/generate.css"/>
+		<link rel="stylesheet" type="text/css" href="css/hive.css"/>
 </head>
 <body>
 
 
-
-
-
-
-
-
-<footer class="light">
 <div class="container">
-<div class="col-xxs-12 col-lg-10 col-lg-offset-1">
-		<ul class="legal">Get in touch!  
-<SCRIPT type="text/javascript">eval(unescape('%76%61%72%20%73%3D%27%61%6D%6C%69%6F%74%68%3A%40%69%65%67%68%74%76%69%61%65%70%70%63%2E%6D%6F%27%3B%76%61%72%20%72%3D%27%27%3B%66%6F%72%28%76%61%72%20%69%3D%30%3B%69%3C%73%2E%6C%65%6E%67%74%68%3B%69%2B%2B%2C%69%2B%2B%29%7B%72%3D%72%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2B%31%2C%69%2B%32%29%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2C%69%2B%31%29%7D%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%3C%61%20%68%72%65%66%3D%22%27%2B%72%2B%27%22%3E%68%69%40%67%65%74%68%69%76%65%61%70%70%2E%63%6F%6D%3C%2F%61%3E%27%29%3B'))</SCRIPT>
-		</ul>
-		<span class="copyright">&#169; 2014 Hive Mobile Inc.</span>
+
+<div class="plugin col-xxs-12 col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+	<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
+	
+<div id="feed" class="feed-area">
+			
+			<div class="hve-load" id="hve-load"> Joining the conversation<br>
+				<i class="fa fa-circle-o-notch fa-spin"></i>
+			</div>
+			
+			<div class="hve-earlier none" id="hve-earlier"><a href="#" onclick="return hve_earlier();">Show earlier messages</a></div>
+			<div class="hve-earlier none" id="hve-earlier-load"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
+			<span id="msg-tmp" class="none">
+				<div id="msg-con-HID" class="msg">
+					<p>HMSG</p>
+					<div class="details">
+						<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
+						<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
+						<br>
+						<div class="timestamp">HCREATEDAGO</div>
+						
+						<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
+						<span id="hve-rep-HID" class="none">
+							<span class="report-label" style="color:#989898;">Report for:</span>	
+							<ul class="report">
+									<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
+									<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
+							</ul>
+						</span>
+					</div>
+				</div>
+			</span>
+			<span id="new-mrk"></span>
+			<div class="hve-new none" id="hve-new"><a href="#" id="hve-new-text" onclick="return show_new();">5 new messages</a></div>
+		</div>
+		
+	<div class="post-area">
+		<div class="hve-post">
+			<div class="textarea">
+				<textarea id="hve-message" placeholder="Type your message!"></textarea>
+			</div>
+			<div class="extra">
+					
+					<span id="ava-editor" class="ava-editor" class="none">
+						<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
+						<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
+						<div id="edit-ava-text" class="edit-ava-text none">
+							<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
+						</div>
+					</span>
+
+					<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i id="regin-icon" class="fa fa-sign-in"></i><span id="btn-user-text">Login or Register</span></a>
+					<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="hve-regin" class="hve-regin none">
+		<form method="post">
+			<span id="regin-header" class="header">Register or Login</span><br>
+			<span class="desc">We promise you won't lose your comment!</span><br>
+			<label for="username">Username</label>
+			<input id="username" type="text" name="username" placeholder="username"><br>
+			<label for="password">Password</label>
+			<input id="password" type="password" name="password" placeholder="password"><br>
+			<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
+		</form>
+	</div>				
+			
+</div>
+
+
+</div>
+
+
+<footer class="generate">
+<div class="container">
+<div class="col-xxs-12 col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+		<span class="copyright">&#169; 2014 <a href="http://gethiveapp.com">Hive Mobile</a> Inc.</span>
 </div>
 </div>
 </footer>
@@ -41,9 +112,7 @@
 <script type="text/javascript">
    $('#type').tooltip();
 </script>
-<script> 
-	$('section.landing').anystretch();
-
+<script>
 	// handle submitting features
 	var rqft = $('#rqft');
 	rqft.keyup(function (e) {

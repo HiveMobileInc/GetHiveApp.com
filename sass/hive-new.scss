@@ -1,0 +1,35 @@
+// essentials
+@import 'screen.scss';
+@import 'plugin.scss';
+@import 'index.scss';
+
+.plugin {
+	font-size:1.1em;
+	padding:3.5em 0;
+	
+	textarea {
+		min-height: 80px;
+	}
+}
+.hve-earlier {
+	position: absolute;
+	height:3em;
+	line-height: 3em;
+	top:-1.7em;
+}
+footer {
+	font-size:.8em;
+}
+
+@media (max-width: 600px) {
+	
+	.plugin {
+		padding: 3.5em 0;
+	}
+	footer {
+	
+		.col-xxs-12 {
+			padding:0;
+		}
+	}
+}

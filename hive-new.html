@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Hive | <!-- Hive name --> </title>
+		<meta charset="UTF-8" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="description" content=" "/> <!-- 150 Character Limit description of the Hive -->
+		<meta property="og:title" content=" "/> <!-- Hive name -->
+		<meta property="og:site_name" content="Hive - Enable Conversations Everywhere"/>
+		<meta property="og:description" content=" "/> <!-- 150 Character Limit description of the Hive -->
+		<meta property="og:url" content=" "> <!-- URL of the hive -->
+		<meta property="og:image" content="http://hivemobileinc.github.io/GetHiveApp.com/img/hive_logo_blue.png"/>
+		<meta property="og:type" content="website"/>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'/>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/hive.css"/>
+</head>
+<body>
+
+
+<div class="container">
+
+<div class="plugin col-xxs-12 col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+	<div class="header">
+		<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
+		<div class="hve-name none">UX Design Conventions</div>
+	</div>
+	<div id="feed" class="feed-area">
+
+			<div class="hve-load" id="hve-load"> Joining the conversation<br>
+				<i class="fa fa-circle-o-notch fa-spin"></i>
+			</div>
+			
+			<div class="hve-earlier none" id="hve-earlier"><a href="#" onclick="return hve_earlier();">Show earlier messages</a></div>
+			<div class="hve-earlier none" id="hve-earlier-load"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
+			<span id="msg-tmp" class="none">
+				<div id="msg-con-HID" class="msg">
+					<p>HMSG</p>
+					<div class="details">
+						<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
+						<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
+						<br>
+						<div class="timestamp">HCREATEDAGO</div>
+						
+						<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
+						<span id="hve-rep-HID" class="none">
+							<span class="report-label" style="color:#989898;">Report for:</span>	
+							<ul class="report">
+									<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
+									<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
+									<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
+							</ul>
+						</span>
+					</div>
+				</div>
+			</span>
+			<span id="new-mrk"></span>
+			<div class="hve-new none" id="hve-new"><a href="#" id="hve-new-text" onclick="return show_new();">5 new messages</a></div>
+		</div>
+		
+	<div class="post-area">
+		<div class="hve-post">
+			<div class="textarea">
+				<textarea id="hve-message" placeholder="Type your message!"></textarea>
+			</div>
+			<div class="extra">
+					
+					<span id="ava-editor" class="ava-editor" class="none">
+						<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
+						<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
+						<div id="edit-ava-text" class="edit-ava-text none">
+							<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
+						</div>
+					</span>
+
+					<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i id="regin-icon" class="fa fa-sign-in"></i><span id="btn-user-text">Login or Register</span></a>
+					<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="hve-regin" class="hve-regin none">
+		<form method="post">
+			<span id="regin-header" class="header">Register or Login</span><br>
+			<span class="desc">We promise you won't lose your comment!</span><br>
+			<label for="username">Username</label>
+			<input id="username" type="text" name="username" placeholder="username"><br>
+			<label for="password">Password</label>
+			<input id="password" type="password" name="password" placeholder="password"><br>
+			<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
+		</form>
+	</div>				
+			
+</div>
+
+
+</div>
+
+
+<footer class="generate">
+<div class="container">
+<div class="col-xxs-12 col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+		<span class="copyright">&#169; 2014 <a href="http://gethiveapp.com">Hive Mobile</a> Inc.</span>
+</div>
+</div>
+</footer>
+
+<script src="js/min/index-min.js"></script>
+<script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
+<script type="text/javascript">
+   $('#type').tooltip();
+</script>
+<script>
+	// handle submitting features
+	var rqft = $('#rqft');
+	rqft.keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	if (rqft.val().length < 3) return false;
+	        $('#rqftb').before('<li><i class="fa fa-circle-o req"></i>' + rqft.val() + '</li>');
+	        rqft.val('');
+	        return false; 
+	    }
+	});
+	var username = $('#username');
+	var password = $('#password');
+	username.keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	password.focus();
+	        return false; 
+	    }
+	});
+	password.keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	regin_click();
+	        return false; 
+	    }
+	});
+
+	$('#sub-name').keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	$('#sub-email').focus();
+	        return false; 
+	    }
+	});
+	$('#sub-email').keyup(function (e) {
+	    if (e.keyCode == 13) {
+	    	return submod();
+	    }
+	});
+
+	// grab msg template
+	var msg_tmp = $('#msg-tmp').html();
+	var old_mrk = $('#msg-tmp');
+	var new_mrk = $('#new-mrk');
+
+	// grab msg
+	var msg_entry = $('#hve-message');
+	msg_entry.focus();
+
+	// grab earlier
+	var earlier = $('#hve-earlier');
+	var earlier_load = $('#hve-earlier-load');
+
+	// grab new
+	var newlink = $('#hve-new');
+	var newtext = $('#hve-new-text');
+
+	function show_regin () {
+		if (bndl != null) return post_as_user();
+		$('#hve-regin').removeClass('none');
+		$('html, body').animate({scrollTop: $('#hve-regin').offset().top - 30}, 200);
+		username.focus();
+	    return false;
+	};
+	function regin_click () {
+		regin(username.val(), password.val(), function (err, creds) {
+			if (err) throw err;
+			bndl = creds;
+			$('#regin-icon').attr('class', 'fa fa-comment-o');
+			$('#hve-regin').addClass('none');
+			$('#btn-user-text').text(creds.profile.display_name);
+			$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
+			msg_entry.focus();
+			console.log('img ask');
+			dl_img(creds.profile.avatar + tkn(), function (img) {
+				console.log('img get');
+				draw_avatar(img, ava_can, ava_can.getContext('2d'));
+				$('#ava-editor').removeClass('none');
+				$('#edit-ava-text').removeClass('none');
+			});
+		});
+		return false;
+	};
+	function toggle_rep (id) {
+		var e = $('#' + id);
+		e.toggleClass('none');
+		return false;
+	};
+	var hop = 1;
+	function add_msg (msg, newmsg) {
+		console.log(msg);
+		var html = msg_tmp.split('HID')          .join(hop++)
+		                  .split('MID')          .join(msg.mid)
+		                  .split('HMSG')         .join(msg.message)
+		                  .split('img/guest.png').join(msg.author.avatar + tkn())
+		                  .split('HDISPLAYNAME') .join(msg.author.display_name)
+		                  .split('HCREATEDAGO')  .join(msg.created_ago);
+		if (newmsg) new_mrk.before(html);
+		else old_mrk.after(html);
+	};
+	function disable_post () {
+		msg_entry.prop('disabled', true);
+		$('#hve-regin').prop('disabled', true);
+		$('#btn-post-user').prop('disabled', true);
+		$('#btn-post-guest').prop('disabled', true);
+	};
+	function enable_post (clear) {
+		msg_entry.prop('disabled', false);
+		$('#hve-regin').prop('disabled', false);
+		$('#btn-post-user').prop('disabled', false);
+		$('#btn-post-guest').prop('disabled', false);
+		if (clear) {
+			msg_entry.val('');
+		}
+		msg_entry.focus();
+	};
+	function post_as_user () {
+		disable_post();
+		post_message(url, msg_entry.val(), null, null, posted, false);
+		return false;
+	};
+	function post_as_guest () {
+		disable_post();
+		post_message(url, msg_entry.val(), null, null, posted, true);
+		return false;
+	};
+	function posted (err, msg) {
+		if (err) {
+			enable_post(false);
+			throw err;
+		}
+		for (var m = 0; m < msg.length; m++) {
+			conv.splice(0, 0, msg[m]);
+			add_msg(msg[m], true);
+		}
+		enable_post(true);
+	};
+
+	var url = decodeURIComponent(window.location.href.split('url=')[1]);
+	var heart = 5000;
+	// catch hive loaded
+	function hve_loaded () {
+		get_conversation_base(url,  function (err, base) {
+			if (err) throw err;
+			$('#hve-load').addClass('none');
+			if (base.length == page_size)
+				earlier.removeClass('none');
+			for (var b = 0; b < base.length; b++)
+				add_msg(base[b], false);
+			setTimeout(hve_newer, heart);
+		}, true);
+	};
+	function hve_earlier () {
+		earlier.addClass('none');
+		earlier_load.removeClass('none');
+		get_older_messages(url, function (err, older) {
+			earlier_load.addClass('none');
+			if (err || older.length == page_size)
+				earlier.removeClass('none');
+			if (err) throw err;
+			for (var o = 0; o < older.length; o++)
+				add_msg(older[o], false);
+		});
+		return false;
+	};
+	var new_cache = [];
+	function hve_newer () {
+		get_newer_messages(url, function (err, newer) {
+			if (err) { 
+				throw err;
+				return setTimeout(hve_newer, heart);
+			}
+			if (newer.length == 0)
+				return setTimeout(hve_newer, heart);
+			new_cache = new_cache.concat(newer);
+			newlink.removeClass('none');
+			newtext.text('Show ' + new_cache.length + ' new message' + (new_cache.length == 1 ? '' : 's'));
+			if (newer.length == page_size) return setTimeout(hve_newer, 500);
+			else return setTimeout(hve_newer, heart);
+		});
+	};
+	function show_new () {
+		for (var n = 0; n < new_cache.length; n++)
+			add_msg(new_cache[n], true);
+		new_cache = [];
+		newlink.addClass('none');
+		return false;
+	};
+
+	document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
+	var ava_can = document.getElementById('edit-avatar-can');
+
+	function new_avatar (e) {
+		read_img(e.target.files[0], function (img) {
+			draw_avatar(img, ava_can, ava_can.getContext('2d'));
+			edit_user(null, null, null, null, ava_can.toDataURL('image/png'), function (err, prof) {
+				if (err) throw err;
+				else bndl.profile = prof;
+				console.log(prof);
+			});
+		});
+	};
+
+	function report_msg (mid, report, hid) {
+		$('#' + hid).attr('class', 'none')
+            .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
+		report_message(url, mid, report, function (err, res) {
+			if (err) throw err;
+		});
+		return false;
+	};
+
+	function submod () {
+		pst('rye?', {name: $('#sub-name').val(), email: $('#sub-email').val()}, function (err, bdy) {
+			if (err) throw err;
+			$('#mod-body').addClass('none');
+			$('#mod-good').removeClass('none');
+		});
+		return false;
+	};
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53846051-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

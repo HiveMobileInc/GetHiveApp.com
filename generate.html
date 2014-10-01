@@ -75,11 +75,18 @@
 <script src="js/min/index-min.js"></script>
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script type="text/javascript">
-   $('.copy').tooltip();
+  $('.copy').tooltip();
 </script>
-<script> 
+<script>
+	$(window).resize(function() {
+	    $('body').height($(window).height());
+	});
+	$(window).trigger('resize');
+</script>
+<script>
 	$('body').anystretch();
-
+</script>
+<script>
 	// handle submitting features
 	var rqft = $('#rqft');
 	rqft.keyup(function (e) {

@@ -30,9 +30,11 @@
 
 <section class="generate-link">
 	<div class="container">
-		<form class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
-		
-			<!-- Good morning :) --> 
+	
+		<!-- Good morning :) --> 
+	
+		<!-- So on iOS, it the keyboard has a "Go" button, and when tapped, it submits. I put this thing below. It's not a solution, but it basically stops the "Go" from sending. My searches aren't pulling up anything good. Maybe you know how to make "Go" just close the keyboard. That would be optimal.. --> 
+		<form method="post" onsubmit="return false;" class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
 		
 			<!-- Once Link generates: add class " .faded " to " div.top " below -->
 			<div class="top">

@@ -1,7 +1,6 @@
 // essentials
-@import 'screen.scss';
-@import 'plugin.scss';
-@import 'index.scss';
+@import '_base';
+@import '_plugin';
 
 .plugin {
 	font-size:1.1em;

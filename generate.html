@@ -1,188 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<title>Hive | Enabling Cross-Platform Communication</title>
+		<title>Hive | Create your Conversation</title>
 		<meta charset="UTF-8" />
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
-		<meta name="description" content="Enable Conversations everywhere with Hive: An intuitive communication platform that works in every situation, and on device and operating system."/>
-		<meta property="og:title" content="Hive - Enable Conversations Anywhere"/>
+		<meta name="description" content="Enable Conversations everywhere with Hive: Generate your conversation link now."/>
+		<meta property="og:title" content="Enable Conversations Anywhere - Generate yours now."/>
 		<meta property="og:site_name" content="Hive"/>
-		<meta property="og:description" content="Enable Conversations everywhere with Hive: An intuitive communication platform that works in every situation, and on device and operating system."/>
+		<meta property="og:description" content="Enable Conversations everywhere with Hive: An intuitive communication platform that works in every situation, and on device and operating system. Generate your conversation link now."/>
 		<meta property="og:url" content="http://hivemobileinc.github.io/GetHiveApp.com/">
 		<meta property="og:image" content="http://hivemobileinc.github.io/GetHiveApp.com/img/hive_logo_blue.png"/>
 		<meta property="og:type" content="website" />
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'/>
 		<link rel="shortcut icon" href="img/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/generate.css"/>
 </head>
-<body>
+<body data-stretch="img/bg-full.jpg">
 
 
-<section class="landing" data-stretch="img/bg2.jpg">
+
+
+<section class="landing">
 	<div class="container">
 		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
-		<h1>Enable Conversations Everywhere.</h1>
-		<p class="desc">Hive is a communication platform applicable to any situation, on every device and operating system.</p>
-		<p class="desc">Comment on a blog or article, or simply chat with your friends.</p>
-		<div class="beta-banner"><a href="#" data-toggle="modal" data-target="#beta-modal"><div>Get Early Access</div></a></div>
+		<h1>Create your hive</h1>
+		<!-- <p class="desc"></p> -->
 	</div>
 </section>
 
-
-<section class="app light">
-<div class="container">	
-	
-	
-
-
-<div class="sidebar col-xxs-12 col-xs-12 col-sm-4 col-sm-offset-0 col-lg-3 col-lg-offset-1">
-	<div class="desktop">	
-			<h2>Early Access Features</h2> 
-		  	<ul class="beta">
-		  		<li>Mobile-first reactive moderation platform.</li>
-		  		<li>Embed a single conversation across multiple social networks.</li>
-		  		<li>Enterprise grade analytics and audience explorer.</li>
-		  	</ul>
-		  	<a href="#" class="beta-btn" data-toggle="modal" data-target="#beta-modal">Get early access to hive!</a>	
-			<h2>Recent Posts</h2> 
-		  	<ul class="blog">
-		  		<li><a href="#"><img src="img/img.jpg" alt=""/>Attaching Conversations to Everything</a></li>
-		  		<li><a href="#"><img src="img/profile3.jpg" alt=""/>The Report Button: Protecting Content Copyrights & User's Human Rights</a></li>
-		  		<li><a href="#"><img src="img/profile2.jpg" alt=""/>Analytics Everywhere: Developing a Business Insights Engine</a></li>
-		  	</ul>
-	</div>
-	<div id="accordion" class="panel-group mobile">	
-			<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><h2>Early Access Features<i class="fa fa-sort-desc"></i></h2></a>  
-			<div id="collapseOne" class="panel-collapse collapse out">
-				<div class="panel-body">
-			  	<ul class="beta">
-			  		<li>Mobile-first reactive moderation platform.</li>
-			  		<li>Embed a single conversation across multiple social networks.</li>
-			  		<li>Enterprise grade analytics and audience explorer.</li>
-			  	</ul>
-			  	<a href="#" class="beta-btn" data-toggle="modal" data-target="#beta-modal">Get early access to hive!</a>
-				</div>
-			</div>
-			<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><h2>Recent Posts<i class="fa fa-sort-desc"></i></h2></a>  
-			<div id="collapseTwo" class="panel-collapse collapse out">
-				<div class="panel-body">
-			  	<ul class="blog">
-			  		<li><a href="#"><img src="img/img.jpg" alt=""/>Attaching Conversations to Everything</a></li>
-			  		<li><a href="#"><img src="img/profile3.jpg" alt=""/>The Report Button: Protecting Content Copyrights &amp; User's Human Rights</a></li>
-			  		<li><a href="#"><img src="img/profile2.jpg" alt=""/>Analytics Everywhere: Developing a Business Insights Engine</a></li>
-			  	</ul>
-				</div>
-			</div>
-	</div>
-</div> <!-- sidebar -->
-
-
-
-<div class="plugin col-xxs-12 col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-lg-6 col-lg-offset-1">
-	<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
-	
-<div id="feed" class="feed-area">
-			
-			<div class="hve-load" id="hve-load"> Joining the conversation<br>
-				<i class="fa fa-circle-o-notch fa-spin"></i>
-			</div>
-			
-			<div class="hve-earlier none" id="hve-earlier"><a href="#" onclick="return hve_earlier();">Show earlier messages</a></div>
-			<div class="hve-earlier none" id="hve-earlier-load"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-
-			<span id="msg-tmp" class="none">
-				<div id="msg-con-HID" class="msg">
-					<p>HMSG</p>
-					<div class="details">
-						<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
-						<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
-						<br>
-						<div class="timestamp">HCREATEDAGO</div>
-						
-						<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
-						<span id="hve-rep-HID" class="none">
-							<span class="report-label" style="color:#989898;">Report for:</span>	
-							<ul class="report">
-									<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
-									<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
-							</ul>
-						</span>
-					</div>
-				</div>
-			</span>
-			<span id="new-mrk"></span>
-			<div class="hve-new none" id="hve-new"><a href="#" id="hve-new-text" onclick="return show_new();">5 new messages</a></div>
-		</div>
+<section class="generate-link">
+	<div class="container">
+		<form class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
 		
-	<div class="post-area">
-		<div class="hve-post">
-			<div class="textarea">
-				<textarea id="hve-message" placeholder="Type your message!"></textarea>
-			</div>
-			<div class="extra">
-					
-					<span id="ava-editor" class="ava-editor" class="none">
-						<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
-						<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
-						<div id="edit-ava-text" class="edit-ava-text none">
-							<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
-						</div>
-					</span>
-
-					<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i id="regin-icon" class="fa fa-sign-in"></i><span id="btn-user-text">Login or Register</span></a>
-					<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
-			</div>
-		</div>
-	</div>
-	
-	<div id="hve-regin" class="hve-regin none">
-		<form method="post">
-			<span id="regin-header" class="header">Register or Login</span><br>
-			<span class="desc">We promise you won't lose your comment!</span><br>
-			<label for="username">Username</label>
-			<input id="username" type="text" name="username" placeholder="username"><br>
-			<label for="password">Password</label>
-			<input id="password" type="password" name="password" placeholder="password"><br>
-			<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
-		</form>
-	</div>				
+			<!-- Good morning :) --> 
 			
+			<!-- When the link is generated, class " .faded " needs added to " div.top ", just below -->
+			<div class="top">
+			<input type="text" placeholder="hive title" class="form-control hve-name"/>
+			
+			<!-- toggle " .selected " class -->
+			<button class="hve-type-btn selected col-xs-5"><i class="fa fa-globe"></i>Public</button>
+			<button class="hve-type-btn col-xs-5 col-xs-offset-2"><i class="fa fa-lock"></i>Private</button>
+		
+			<!-- toggle .none class -->
+			<p class="desc public"><i class="fa fa-info-circle"></i>Everyone will be able to see this conversation.</p>
+			<p class="desc private none"><i class="fa fa-info-circle"></i>One on one private conversations will be created from the link.</p>
+			
+			<!-- hide when link is generated -->
+			<button class="send col-xs-12">Create <span>#DopeMonkeys</span></button>
+			</div>
+			
+			<!-- Remove " .none " class when link generates -->
+			<div class="bottom none">
+				<div class="send col-xs-12">Done! See below</div>
+				<div class="hve-link col-xs-12">
+					http://see.rest/DopeMonkeys
+					<button class="copy" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard">
+						<i class="fa fa-clipboard"></i>
+					</button>
+				</div>
+				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start a conversation!</p>
+			</div>
+		</form>
 	</div>
-
-
-
-</div>
 </section>
 
-<div id="beta-modal" class="modal beta fade" tabindex="-1" role="dialog" aria-labelledby="HiveBeta" aria-hidden="true">
-  <div class="modal-dialog beta">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="HiveBeta">Hive Beta</h4>
-      </div>
-      <div class="modal-body" id="mod-body">
-			Shoot us your contact and our lovely engineer will be in touch with you shortly! (Oh, and we'll throw in some free swag for your much appreciated help!)
-				<form>
-					<input id="sub-name" type="text" placeholder="name" class="form-control"/>
-					<input id="sub-email" type="email" placeholder="email" class="form-control" required=""/>
-					<a class="send" href="#" onclick="return submod();">Let's do this!</a>
-				</form>
-      </div>
-      <div class="modal-body none" id="mod-good" class="mod-good">
-      <i class="fa fa-paper-plane success"></i>
-      <p class="success">Success!</p>
-			<p class="success-desc">We got your deets friend. Talk soon.</p>
-	  </div>
-    </div>
-  </div>
-</div>
 
-<footer class="light">
+<footer class="generate">
 <div class="container">
 <div class="col-xxs-12 col-lg-10 col-lg-offset-1">
 		<ul class="legal">Get in touch!  
@@ -196,10 +81,16 @@
 <script src="js/min/index-min.js"></script>
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script type="text/javascript">
-   $('#type').tooltip();
+   $('.copy').tooltip();
+</script>
+<script type="text/javascript">
+	$(window).resize(function() {
+	    $('body').height($(window).height());
+	});
+	$(window).trigger('resize');
 </script>
 <script> 
-	$('section.landing').anystretch();
+	$('body').anystretch();
 
 	// handle submitting features
 	var rqft = $('#rqft');
@@ -428,5 +319,6 @@
   ga('create', 'UA-53846051-3', 'auto');
   ga('send', 'pageview');
 </script>
+
 </body>
 </html>

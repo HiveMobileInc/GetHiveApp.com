@@ -16,7 +16,7 @@
 	font-weight: 400;
 	color: rgb(146,146,146);
 	text-align: center;
-	margin:3em 0 0 0;
+	margin: 1em 0 .8em 0;
 
 	i {
 		line-height: 1.7em;
@@ -31,7 +31,6 @@
 	width:100%;
 	
 	a {
-		background: #fff;
 		padding:0 .6em;
 	}
 }
@@ -42,6 +41,30 @@
 		padding: 0 1em;
 		min-width: 17em;
 	}
+}
+
+.hve-type {
+	position: absolute;
+	right: .6em;
+	top: .5em;
+	color: #dbdbdb;
+	font-size: 1.2em;
+}
+
+.hve-type .type {
+	background:#9e9e9e;
+	padding:.3em;
+	font-size:.75em;
+	line-height: 1em;
+	color:#fff;
+	z-index: 9;
+	left:50%;
+	text-align: center;
+	position: absolute;
+}
+
+.hve-type:hover .type {
+	display: block !important;
 }
 
 
@@ -88,9 +111,10 @@
 			color:rgb(134, 134, 134);
 		}
 		.timestamp {
-			color: #B9B9B9;
 			font-size:.8em;
 			margin: 0 0.6em 0 0;
+			line-height: .8em;
+			color:#DFDFDF
 		}
 	}
 	.truncate {
@@ -182,6 +206,7 @@ ul.report {
 }
 
 
+
 // ______________________________________________________ POST
 // ______________________________________________________ (write message)
 
@@ -190,14 +215,10 @@ ul.report {
 	width:100%;
 	display: inline-block;
 	padding: 0 0 .25em 0; // for the bottom of the native button:focus fuz
-	margin: 0 0 1em 0;
 	
 	.textarea {
-		border:1px solid #bbb;
-		width: 96%;
-		max-width:96%;
-		margin:0 0 1em 0;
-		padding:2%;
+		border: 1px solid #D3D3D3;
+		margin: 0 0 .7em 0;
 		@include border-radius(.3em);
 	}
 	
@@ -264,6 +285,20 @@ ul.report {
 		.fa {
 			font-size:1.2em;
 		}
+	}
+}
+
+// ______________________________________________________ Post-area
+// ______________________________________________________ EXTRAS
+// ______________________________________________________ container
+
+
+.post-area {
+
+	.extra {
+		width:100%;
+		display: inline-block;
+		position: relative;
 	}
 }
 
@@ -342,6 +377,118 @@ ul.report {
 }
 
 
+
+
+// ______________________________________________________ EDIT
+// ______________________________________________________ PROFILE
+// ______________________________________________________ img
+
+// Everything container
+span#ava-editor {
+	float:left;
+}
+
+// Container
+.edit-avatar-container {
+	width:160px;
+	height:60px;
+	overflow: hidden;
+	display: inline-block;
+/* 	border:1px solid pink; */
+	position:relative;
+	
+	label {
+		position: absolute;
+		top: 13px;
+		width: 94px;
+		right: 0;
+		font-weight: 400;
+		font-size: .95em;
+		line-height: 1.2em;
+	}
+}
+// For Dev purposes
+.edit-avatar-container:hover {
+	/* background:#ececec; */
+}
+
+// Choose File Button
+input#edit-avatar {
+	width:100%;
+	position:relative;
+	z-index: 1;
+	margin: -30px 0 0 0;
+	height: 100px;
+	/* background:rgba(255,255,0,0.55); */
+}
+input#edit-avatar:focus {
+	outline:none;
+}
+
+// Avatar Image
+canvas#edit-avatar-can {
+	position: absolute;
+	left: 0;
+	top:0;
+	z-index: 0;
+	width:35px;
+	height:35px;
+}
+
+.edit-ava-text {
+	width: 85px;
+	position: relative;
+	left: 40px;
+	line-height: 1.1em;
+	font-size: .95em;
+	top: .1em;
+}
+
+@media (max-width: 600px) {
+	
+	span#ava-editor {
+		height:70px;
+	}
+	.edit-ava-text {
+		left: 0;
+		width: 52px;
+		top: 37px;
+	}
+	.hve-post .btn.user {
+		margin: 0 0 0.5em .5em;
+	}
+}
+
+
+
+.hve-post .textarea textarea {
+	padding:2% 2% 0 2% !important;
+	width:100% !important;
+	@include border-radius(3em);
+}
+.msg {
+	margin:0 0 1.7em 0 !important;
+}
+.msg .details {
+	margin:0 !important;
+}
+.hve-regin form {
+	display: inline-block;
+	margin:1em 0 2.5em 0 !important;
+}
+.hve-regin input {
+	width:100% !important;
+}
+.close-report {
+	font-size: 1.1em;
+	float:none;
+	text-shadow: none;
+	opacity:1;
+	font-weight: 400;
+}
+.hve-post .btn {
+	padding: .55em 1.1em .45em .65em !important;
+}
 
 
 

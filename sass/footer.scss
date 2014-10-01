@@ -1,0 +1,29 @@
+
+footer {
+	padding:1.5em 0;
+	color:#858585
+}
+
+ul.legal {
+	display: inline;
+	float:left;
+	padding:0;
+}
+.copyright {
+	float:right;
+}
+
+
+@media (max-width: 600px) {
+	
+	footer {
+		padding:1em 0;
+	
+		.copyright {
+			float:left;
+		}
+	}
+}
+
+
+

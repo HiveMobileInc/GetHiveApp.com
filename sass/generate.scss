@@ -1,0 +1,156 @@
+// essentials
+@import 'screen.scss';
+
+
+.landing {
+	padding: 4em 0;
+	color: #fff;
+	text-align: center;
+	display: block; // NO NEED IF YOU fix section:display:inline-block
+
+	.logo {
+		width: 135px;
+		height: auto;
+		display: block;
+		margin:0 auto;
+	}
+	h1 {
+		font-size: 2.5em;
+		font-weight: 400;
+		line-height: 1.3em;
+		text-shadow: 1.5px 1.5px 0 #4197D1;	
+		width:100%;
+		text-align: center;
+		margin: .7em auto 0 auto;
+	}
+/*
+	p.desc {
+		font-weight: 300;
+		font-size:1.5em;
+		width:600px;
+		max-width: 100%;
+		margin:1em auto 0 auto;
+		text-shadow: 1.5px 1.5px 0 #4197D1;
+	}
+*/
+}
+
+
+
+.generate-link {
+	font-size: 1.2em;
+	color:#fff;
+	
+	.hve-name {
+		font-size: 1.2em;
+		padding: 0.5em;
+		height: 2em;
+	}
+	.hve-type-btn {
+		text-align: center;
+		margin-top:1em;
+		border:1px solid #f4f4f4;
+		padding:.4em 0;
+		color:#f4f4f4;
+		background:none;
+		@include border-radius(.4em);
+			
+		i {
+			margin:0 .3em 0 0;
+		}
+	}
+	.hve-type-btn.selected {
+		background:#fff;
+		color: rgb(0, 163, 255);
+	}
+	p.desc {
+		float: left;
+		margin: 1em 0;
+		font-weight: 300;
+		padding:0 0 0 1.5em;
+		line-height: 1.4em;
+		
+		i {
+			margin:0 .5em 0 -1.4em;
+		}
+	}
+	.send {
+		background: #0bd0a8;
+		box-shadow: 1px 1px 2px #3472b3;
+		border: none;
+		padding: .6em;
+		text-align: center;
+		text-shadow: 0px 1px 1px #1D7744;
+		font-size: 1.1em;
+		@include border-radius(.4em);
+		
+		span {
+			font-weight: 600;
+		}
+	}
+	.hve-link {
+		background: #fff;
+		color: gray;
+		margin: 1em 0 0 0;
+		padding: .7em;
+		position: relative;
+		font-size: .95em;
+		box-shadow: 0 0 20px #fff;
+		@include border-radius(.4em);
+		
+		.copy {
+			background: none;
+			display: inline;
+			border:none;
+			padding:0;
+			color:$blue1;
+			font-weight: 600;
+			position:absolute;
+			right: .5em;
+			font-size: 1.1em;
+			text-decoration: underline;
+			
+			i {
+				// HIDDING FOR NOW
+				margin:0 .2em 0 0;
+				font-size: .9em;
+			}
+		}
+	}
+	.faded {
+		@include opacity(.4);
+	}
+}
+
+@media (max-width: 600px) {
+	
+	form.generate {
+		padding:0;
+	}
+}
+
+
+footer.generate {
+	color:#d4d4d4;
+	bottom:0;
+	margin:7em 0 0 0;
+	
+	a {
+		color:#fff;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

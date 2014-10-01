@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+	<input id="edit-avatar" style="display:none;" type="file" accept="image/*"/>
+	<canvas id="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer; border: solid 1px pink;" width="60" height="60"></canvas>
+</span>
+
+</body>
+	<footer>
+		<script src="js/min/index-min.js"></script>
+		<script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
+		<script> 
+
+			document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
+			var ava_can = document.getElementById('edit-avatar-can');
+			function new_avatar (e) {
+				read_img(e.target.files[0], function (img) {
+					draw_avatar(img, ava_can, ava_can.getContext('2d'));
+					pst('guest_avatar?', {kansascity: 'special', avatar: ava_can.toDataURL('image/png')}, function (err, bdy) {
+						if (err) throw err;
+						console.log(bdy);
+					});
+				});
+			};
+		</script>
+	</footer>
+</html>

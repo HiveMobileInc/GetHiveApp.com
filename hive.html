@@ -248,7 +248,7 @@
 		enable_post(true);
 	};
 
-	var url = 'gethiveapp.com';
+	var url = decodeURIComponent(window.location.href.split('url=')[1]);
 	var heart = 5000;
 	// catch hive loaded
 	function hve_loaded () {

@@ -31,25 +31,35 @@
 <section class="generate-link">
 	<div class="container">
 	
+	
+
 		<!-- Good morning :) --> 
 	
 		<!-- So on iOS, it the keyboard has a "Go" button, and when tapped, it submits. I put this thing below. It's not a solution, but it basically stops the "Go" from sending. My searches aren't pulling up anything good. Maybe you know how to make "Go" just close the keyboard. That would be optimal.. --> 
 		<form method="post" onsubmit="return false;" class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
 		
-			<!-- Once Link generates: add class " .faded " to " div.top " below -->
 			<div id="con-main" class="top">
-			<input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
-			
-			<!-- toggle .selected class -->
-			<button id="btn-pub" class="hve-type-btn selected col-xs-5"><i class="fa fa-globe"></i>Public</button>
-			<button id="btn-pri" class="hve-type-btn col-xs-5 col-xs-offset-2"><i class="fa fa-lock"></i>Private</button>
-		
-			<!-- toggle .none class -->
-			<p id="dsc-pub" class="desc public"><i class="fa fa-info-circle"></i>Everyone will be able to see this conversation.</p>
-			<p id="dsc-pri" class="desc private none"><i class="fa fa-info-circle"></i>Only the people you invite will be able to see this conversation.</p>
-			
-			<!-- add .none to this button when generates -->
-			<button id="btn-create" class="send col-xs-12">Create <span id="txt-title">Your Conversation</span></button>
+
+				<span id="regin">
+					<input id="username" class="form-control hve-name" type="text" name="username" placeholder="username"/><br>
+					<input id="password" class="form-control hve-name" type="password" name="password" placeholder="password"/><br>
+					<button id="btn-regin" class="btn">Login or Register</button>
+				</span>
+
+				<span id="gen" class="none">
+
+					<img id="avatar" src="img/guest.png" style="margin: 10px;"/>
+
+					<input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
+					
+					<button id="btn-pub" class="hve-type-btn selected col-xs-5"><i class="fa fa-globe"></i>Public</button>
+					<button id="btn-pri" class="hve-type-btn col-xs-5 col-xs-offset-2"><i class="fa fa-lock"></i>Private</button>
+				
+					<p id="dsc-pub" class="desc public"><i class="fa fa-info-circle"></i>Everyone will be able to see this conversation.</p>
+					<p id="dsc-pri" class="desc private none"><i class="fa fa-info-circle"></i>Only the people you invite will be able to see this conversation.</p>
+					
+					<button id="btn-create" class="send col-xs-12">Create <span id="txt-title">Your Conversation</span></button>
+				</span>
 			</div>
 			
 			<!-- remove " .none " class on " div.bottom " on generate success -->
@@ -112,15 +122,18 @@
 	    }
   	});
   	btn_create.click(function () {
-  		generated('http://see.rest/IANFM23849203');
+  		create_conversation(null, inp_title.val(), btn_pub.hasClass('selected') ? 'public' : 'private', function (err, bdy) {
+  			if (err) throw err;
+  			generated(bdy);
+  		});
   		return false;
   	});
 
-  	function generated (url) {
-  		$('#gen-url').text(url);
+  	function generated (bdy) {
   		$('#con-main').addClass('faded');
   		$('#con-gen').removeClass('none');
   		btn_create.addClass('none');
+		$('#gen-url').text(bdy.created.url_short);
   		setTimeout(function () {highlight(document.getElementById('gen-url'));}, 10);
   	};
 
@@ -155,29 +168,16 @@
 	        return false; 
 	    }
 	});
-	function show_regin () {
-		if (bndl != null) return post_as_user();
-		$('#hve-regin').removeClass('none');
-		$('html, body').animate({scrollTop: $('#hve-regin').offset().top - 30}, 200);
-		username.focus();
-	    return false;
-	};
+	$('#btn-regin').click(regin_click);
+	var con_regin = $('#regin');
+	var gen = $('#gen');
 	function regin_click () {
 		regin(username.val(), password.val(), function (err, creds) {
 			if (err) throw err;
 			bndl = creds;
-			$('#regin-icon').attr('class', 'fa fa-comment-o');
-			$('#hve-regin').addClass('none');
-			$('#btn-user-text').text(creds.profile.display_name);
-			$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
-			msg_entry.focus();
-			console.log('img ask');
-			dl_img(creds.profile.avatar + tkn(), function (img) {
-				console.log('img get');
-				draw_avatar(img, ava_can, ava_can.getContext('2d'));
-				$('#ava-editor').removeClass('none');
-				$('#edit-ava-text').removeClass('none');
-			});
+			con_regin.addClass('none');
+			gen.removeClass('none');
+			$('#avatar').attr('src', bndl.profile.avatar + tkn());
 		});
 		return false;
 	};

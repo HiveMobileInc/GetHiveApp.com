@@ -32,7 +32,7 @@
 <section class="generate-link">
 	<div class="container">
 		<form class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
-			<span class="top">
+			<div class="top">
 			<input type="text" placeholder="hive title" class="form-control hve-name"/>
 			
 			<!-- toggle .selected class -->
@@ -45,15 +45,15 @@
 			
 			<!-- toggle .none class -->
 			<button class="send col-xs-12">Create <span>#DopeMonkeys</span></button>
-			</span>
-			<span class="bottom">
+			</div>
+			<div class="bottom">
 				<div class="send col-xs-12">Done! See below</div>
 				<div class="hve-link col-xs-12">
 					http://see.rest/DopeMonkeys
-					<button class="copy"><i class="fa fa-clipboard"></i></button>
+					<button class="copy" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"><i class="fa fa-clipboard"></i></button>
 				</div>
 				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start a conversation!</p>
-			</span>
+			</div>
 		</form>
 	</div>
 </section>

@@ -38,9 +38,6 @@
 
 
 
-
-
-
 .generate-link {
 	font-size: 1.2em;
 	color:#fff;
@@ -98,21 +95,23 @@
 		margin: 1em 0 0 0;
 		padding: .5em;
 		position: relative;
+		box-shadow: 0 0 20px #fff;
 		@include border-radius(.4em);
 		
 		.copy {
-			background: none;
-			display: inline;
 			border:none;
-			padding:0;
+			background:none;
 			color:$blue1;
 			font-weight: 600;
 			position:absolute;
-			right:0;
+			right:.5em;
 		}
 	}
 }
 
+form.generate .faded {
+	@include opacity(.4);
+}
 
 
 

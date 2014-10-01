@@ -196,21 +196,9 @@
 <script src="js/min/index-min.js"></script>
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script type="text/javascript">
-   $('#type').tooltip();
-</script>
-<script> 
+    $('#type').tooltip();
 	$('section.landing').anystretch();
 
-	// handle submitting features
-	var rqft = $('#rqft');
-	rqft.keyup(function (e) {
-	    if (e.keyCode == 13) {
-	    	if (rqft.val().length < 3) return false;
-	        $('#rqftb').before('<li><i class="fa fa-circle-o req"></i>' + rqft.val() + '</li>');
-	        rqft.val('');
-	        return false; 
-	    }
-	});
 	var username = $('#username');
 	var password = $('#password');
 	username.keyup(function (e) {

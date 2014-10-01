@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<title>Hive | Create your Conversation</title>
+		<title>Hive | Create your Hive</title>
 		<meta charset="UTF-8" />
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -24,7 +24,7 @@
 <section class="landing generate">
 	<div class="container">
 		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
-		<h1>Create your hive</h1>
+		<h1>Create Your Hive</h1>
 	</div>
 </section>
 
@@ -37,29 +37,28 @@
 		<form method="post" onsubmit="return false;" class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
 		
 			<!-- Once Link generates: add class " .faded " to " div.top " below -->
-			<div class="top">
-			<input type="text" placeholder="hive title" class="form-control hve-name"/>
+			<div id="con-main" class="top">
+			<input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
 			
 			<!-- toggle .selected class -->
-			<button class="hve-type-btn selected col-xs-5"><i class="fa fa-globe"></i>Public</button>
-			<button class="hve-type-btn col-xs-5 col-xs-offset-2"><i class="fa fa-lock"></i>Private</button>
+			<button id="btn-pub" class="hve-type-btn selected col-xs-5"><i class="fa fa-globe"></i>Public</button>
+			<button id="btn-pri" class="hve-type-btn col-xs-5 col-xs-offset-2"><i class="fa fa-lock"></i>Private</button>
 		
 			<!-- toggle .none class -->
-			<p class="desc public"><i class="fa fa-info-circle"></i>Everyone will be able to see this conversation.</p>
-			<p class="desc private none"><i class="fa fa-info-circle"></i>One on one private conversations will be created from the link.</p>
+			<p id="dsc-pub" class="desc public"><i class="fa fa-info-circle"></i>Everyone will be able to see this conversation.</p>
+			<p id="dsc-pri" class="desc private none"><i class="fa fa-info-circle"></i>Only the people you invite will be able to see this conversation.</p>
 			
 			<!-- add .none to this button when generates -->
-			<button class="send col-xs-12">Create <span>#DopeMonkeys</span></button>
+			<button id="btn-create" class="send col-xs-12">Create <span id="txt-title">Your Conversation</span></button>
 			</div>
 			
 			<!-- remove " .none " class on " div.bottom " on generate success -->
-			<div class="bottom none">
-				<div class="send col-xs-12">All done!</div>
+			<div id="con-gen" class="bottom none">
 				<div class="hve-link col-xs-12">
-					http://see.rest/DopeMonkeys
-					<button class="copy"><i class="fa fa-clipboard" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"></i></button>
+					<span id="gen-url" onclick="return highlight(this);">http://see.rest/URL</span>
+					<button class="copy" ><i class="fa fa-clipboard" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"></i></button>
 				</div>
-				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start a conversation!</p>
+				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start the conversation!</p>
 			</div>
 		</form>
 	</div>
@@ -82,25 +81,66 @@
 <script src="js/min/index-min.js"></script>
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script type="text/javascript">
-  $('.fa-clipboard').tooltip();
-</script>
-<script>
-	$('body').anystretch();
-</script>
-<script>
+  	var btn_pub = $('#btn-pub');
+  	var btn_pri = $('#btn-pri');
+  	var dsc_pub = $('#dsc-pub');
+  	var dsc_pri = $('#dsc-pri');
+  	btn_pub.click(function () {
+  		btn_pub.addClass('selected');
+  		dsc_pub.removeClass('none');
+  		btn_pri.removeClass('selected');
+  		dsc_pri.addClass('none');
+  	});
+  	btn_pri.click(function () {
+  		btn_pub.removeClass('selected');
+  		dsc_pub.addClass('none');
+  		btn_pri.addClass('selected');
+  		dsc_pri.removeClass('none');
+  	});
 
-</script>
-<script>
-	// handle submitting features
-	var rqft = $('#rqft');
-	rqft.keyup(function (e) {
-	    if (e.keyCode == 13) {
-	    	if (rqft.val().length < 3) return false;
-	        $('#rqftb').before('<li><i class="fa fa-circle-o req"></i>' + rqft.val() + '</li>');
-	        rqft.val('');
+  	var txt_title = $('#txt-title');
+  	var txt_title_start = txt_title.text();
+  	var inp_title = $('#inp-title');
+  	var btn_create = $('#btn-create');
+  	inp_title.keyup(function (e) {
+  		var l = inp_title.val().length;
+  		if (l == 0) txt_title.text(txt_title_start);
+  		else txt_title.text(l > 21 ? inp_title.val().substr(0, 21) + '...' : inp_title.val());
+  		if (e.keyCode == 13) {
+	    	// do nothing on enter
 	        return false; 
 	    }
-	});
+  	});
+  	btn_create.click(function () {
+  		generated('http://see.rest/IANFM23849203');
+  		return false;
+  	});
+
+  	function generated (url) {
+  		$('#gen-url').text(url);
+  		$('#con-main').addClass('faded');
+  		$('#con-gen').removeClass('none');
+  		btn_create.addClass('none');
+  		setTimeout(function () {highlight(document.getElementById('gen-url'));}, 10);
+  	};
+
+  	function highlight (e) {
+	    var range;
+	    var selection;    
+	    if (document.body.createTextRange) {
+	        range = document.body.createTextRange();
+	        range.moveToElementText(e);
+	        range.select();
+	    } else if (window.getSelection) {
+	        selection = window.getSelection();        
+	        range = document.createRange();
+	        range.selectNodeContents(e);
+	        selection.removeAllRanges();
+	        selection.addRange(range);
+	    }
+	    return false;
+	}
+
 	var username = $('#username');
 	var password = $('#password');
 	username.keyup(function (e) {
@@ -115,36 +155,6 @@
 	        return false; 
 	    }
 	});
-
-	$('#sub-name').keyup(function (e) {
-	    if (e.keyCode == 13) {
-	    	$('#sub-email').focus();
-	        return false; 
-	    }
-	});
-	$('#sub-email').keyup(function (e) {
-	    if (e.keyCode == 13) {
-	    	return submod();
-	    }
-	});
-
-	// grab msg template
-	var msg_tmp = $('#msg-tmp').html();
-	var old_mrk = $('#msg-tmp');
-	var new_mrk = $('#new-mrk');
-
-	// grab msg
-	var msg_entry = $('#hve-message');
-	msg_entry.focus();
-
-	// grab earlier
-	var earlier = $('#hve-earlier');
-	var earlier_load = $('#hve-earlier-load');
-
-	// grab new
-	var newlink = $('#hve-new');
-	var newtext = $('#hve-new-text');
-
 	function show_regin () {
 		if (bndl != null) return post_as_user();
 		$('#hve-regin').removeClass('none');
@@ -171,152 +181,13 @@
 		});
 		return false;
 	};
-	function toggle_rep (id) {
-		var e = $('#' + id);
-		e.toggleClass('none');
-		return false;
-	};
-	var hop = 1;
-	function add_msg (msg, newmsg) {
-		console.log(msg);
-		var html = msg_tmp.split('HID')          .join(hop++)
-		                  .split('MID')          .join(msg.mid)
-		                  .split('HMSG')         .join(msg.message)
-		                  .split('img/guest.png').join(msg.author.avatar + tkn())
-		                  .split('HDISPLAYNAME') .join(msg.author.display_name)
-		                  .split('HCREATEDAGO')  .join(msg.created_ago);
-		if (newmsg) new_mrk.before(html);
-		else old_mrk.after(html);
-	};
-	function disable_post () {
-		msg_entry.prop('disabled', true);
-		$('#hve-regin').prop('disabled', true);
-		$('#btn-post-user').prop('disabled', true);
-		$('#btn-post-guest').prop('disabled', true);
-	};
-	function enable_post (clear) {
-		msg_entry.prop('disabled', false);
-		$('#hve-regin').prop('disabled', false);
-		$('#btn-post-user').prop('disabled', false);
-		$('#btn-post-guest').prop('disabled', false);
-		if (clear) {
-			msg_entry.val('');
-		}
-		msg_entry.focus();
-	};
-	function post_as_user () {
-		disable_post();
-		post_message(url, msg_entry.val(), null, null, posted, false);
-		return false;
-	};
-	function post_as_guest () {
-		disable_post();
-		post_message(url, msg_entry.val(), null, null, posted, true);
-		return false;
-	};
-	function posted (err, msg) {
-		if (err) {
-			enable_post(false);
-			throw err;
-		}
-		for (var m = 0; m < msg.length; m++) {
-			conv.splice(0, 0, msg[m]);
-			add_msg(msg[m], true);
-		}
-		enable_post(true);
-	};
-
-	var url = 'gethiveapp.com';
-	var heart = 5000;
-	// catch hive loaded
-	function hve_loaded () {
-		get_conversation_base(url,  function (err, base) {
-			if (err) throw err;
-			$('#hve-load').addClass('none');
-			if (base.length == page_size)
-				earlier.removeClass('none');
-			for (var b = 0; b < base.length; b++)
-				add_msg(base[b], false);
-			setTimeout(hve_newer, heart);
-		}, true);
-	};
-	function hve_earlier () {
-		earlier.addClass('none');
-		earlier_load.removeClass('none');
-		get_older_messages(url, function (err, older) {
-			earlier_load.addClass('none');
-			if (err || older.length == page_size)
-				earlier.removeClass('none');
-			if (err) throw err;
-			for (var o = 0; o < older.length; o++)
-				add_msg(older[o], false);
-		});
-		return false;
-	};
-	var new_cache = [];
-	function hve_newer () {
-		get_newer_messages(url, function (err, newer) {
-			if (err) { 
-				throw err;
-				return setTimeout(hve_newer, heart);
-			}
-			if (newer.length == 0)
-				return setTimeout(hve_newer, heart);
-			new_cache = new_cache.concat(newer);
-			newlink.removeClass('none');
-			newtext.text('Show ' + new_cache.length + ' new message' + (new_cache.length == 1 ? '' : 's'));
-			if (newer.length == page_size) return setTimeout(hve_newer, 500);
-			else return setTimeout(hve_newer, heart);
-		});
-	};
-	function show_new () {
-		for (var n = 0; n < new_cache.length; n++)
-			add_msg(new_cache[n], true);
-		new_cache = [];
-		newlink.addClass('none');
-		return false;
-	};
-
-	document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
-	var ava_can = document.getElementById('edit-avatar-can');
-
-	function new_avatar (e) {
-		read_img(e.target.files[0], function (img) {
-			draw_avatar(img, ava_can, ava_can.getContext('2d'));
-			edit_user(null, null, null, null, ava_can.toDataURL('image/png'), function (err, prof) {
-				if (err) throw err;
-				else bndl.profile = prof;
-				console.log(prof);
-			});
-		});
-	};
-
-	function report_msg (mid, report, hid) {
-		$('#' + hid).attr('class', 'none')
-            .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
-		report_message(url, mid, report, function (err, res) {
-			if (err) throw err;
-		});
-		return false;
-	};
-
-	function submod () {
-		pst('rye?', {name: $('#sub-name').val(), email: $('#sub-email').val()}, function (err, bdy) {
-			if (err) throw err;
-			$('#mod-body').addClass('none');
-			$('#mod-good').removeClass('none');
-		});
-		return false;
-	};
 </script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-53846051-3', 'auto');
-  ga('send', 'pageview');
+	$('.fa-clipboard').tooltip();
+	$('body').anystretch();
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  	ga('create', 'UA-53846051-3', 'auto');
+  	ga('send', 'pageview');
 </script>
 
 </body>

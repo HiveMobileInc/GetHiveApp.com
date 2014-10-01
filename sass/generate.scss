@@ -4,8 +4,9 @@
 
 
 .landing {
-	padding: 4em 0;
+	margin: 4em 0 3em 0;
 	color: #fff;
+	float:left;
 	text-align: center;
 	display: block; // NO NEED IF YOU fix section:display:inline-block
 
@@ -93,7 +94,7 @@
 		background: #fff;
 		color: gray;
 		margin: 1em 0 0 0;
-		padding: .5em;
+		padding: .6em .8em;
 		position: relative;
 		box-shadow: 0 0 20px #fff;
 		@include border-radius(.4em);
@@ -114,7 +115,14 @@ form.generate .faded {
 }
 
 
-
+footer.generate {
+	color:#cccccc;
+	margin:3em 0 0 0;
+	
+	a {
+		color:#fff;
+	}
+}
 
 
 

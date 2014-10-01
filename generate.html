@@ -25,13 +25,16 @@
 	<div class="container">
 		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
 		<h1>Create your hive</h1>
-		<!-- <p class="desc"></p> -->
 	</div>
 </section>
 
 <section class="generate-link">
 	<div class="container">
 		<form class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+		
+			<!-- Good morning :) --> 
+		
+			<!-- Once Link generates: add class " .faded " to " div.top " below -->
 			<div class="top">
 			<input type="text" placeholder="hive title" class="form-control hve-name"/>
 			
@@ -43,14 +46,16 @@
 			<p class="desc public"><i class="fa fa-info-circle"></i>Everyone will be able to see this conversation.</p>
 			<p class="desc private none"><i class="fa fa-info-circle"></i>One on one private conversations will be created from the link.</p>
 			
-			<!-- toggle .none class -->
+			<!-- add .none to this button when generates -->
 			<button class="send col-xs-12">Create <span>#DopeMonkeys</span></button>
 			</div>
-			<div class="bottom">
-				<div class="send col-xs-12">Done! See below</div>
+			
+			<!-- remove " .none " class on " div.bottom " on generate success -->
+			<div class="bottom none">
+				<div class="send col-xs-12">All done!</div>
 				<div class="hve-link col-xs-12">
 					http://see.rest/DopeMonkeys
-					<button class="copy" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"><i class="fa fa-clipboard"></i></button>
+					<button class="copy"><i class="fa fa-clipboard" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"></i></button>
 				</div>
 				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start a conversation!</p>
 			</div>
@@ -61,7 +66,7 @@
 
 
 
-<footer>
+<footer class="generate">
 <div class="container">
 <div class="col-xxs-12 col-lg-10 col-lg-offset-1">
 		<ul class="legal">Get in touch!  
@@ -75,16 +80,16 @@
 <script src="js/min/index-min.js"></script>
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script type="text/javascript">
-  $('.copy').tooltip();
+  $('.fa-clipboard').tooltip();
+</script>
+<script>
+	$('body').anystretch();
 </script>
 <script>
 	$(window).resize(function() {
 	    $('body').height($(window).height());
 	});
 	$(window).trigger('resize');
-</script>
-<script>
-	$('body').anystretch();
 </script>
 <script>
 	// handle submitting features

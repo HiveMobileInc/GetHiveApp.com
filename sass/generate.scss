@@ -114,10 +114,24 @@ form.generate .faded {
 	@include opacity(.4);
 }
 
+@media (max-width: 600px) {
+	
+	.landing.generate {
+	
+		h1 {
+			font-size: 1.8em;
+		}
+	}
+	
+	form.generate {
+		padding:0;
+	}
+}
+
 
 footer.generate {
 	color:#cccccc;
-	margin:3em 0 0 0;
+	margin:5em 0 0 0;
 	
 	a {
 		color:#fff;

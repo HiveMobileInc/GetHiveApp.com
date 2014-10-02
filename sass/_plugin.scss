@@ -8,6 +8,7 @@
 	min-width:20em;
 	margin:0 auto 4em auto;
 	padding:0 2em;
+	font-size: 11.5pt;
 }
 
 @media (max-width: 600px) {
@@ -24,7 +25,8 @@
 
 .hve-header {
 	height:3em;
-	border:1px solid #cce4ff
+	border:1px solid #cce4ff;
+	position: relative;
 }
 
 // ______________________________________________________ hive
@@ -118,14 +120,16 @@
 			float:left;
 		}
 		.author-img {
-			width:2.2em;
-			height:2.2em;
-			margin: -.15em .6em 0 0;
+			/*
+width:2em;
+			height:2em;
+*/
+			margin: -.27em .4em 0 0;
 			overflow: hidden;
 			@include border-radius(2em);
 		}
 		.author-img img {
-			width:2.2em;
+			width:2em;
 			height:auto;
 		}
 		.author-name {
@@ -484,6 +488,14 @@ canvas#edit-avatar-can {
 	}
 }
 
+
+
+.hve-footer {
+	text-align: right;
+	font-size: .8em;
+	color: rgb(201, 201, 201);
+	margin: 1em 0 0 0;
+}
 
 
 // UNECESSARY Overrides

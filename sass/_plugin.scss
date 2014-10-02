@@ -1,3 +1,5 @@
+@import '_base';
+
 
 // ______________________________________________________ CONTAINER
 // ______________________________________________________ 
@@ -114,56 +116,49 @@ h1.hve-title {
 // ______________________________________________________ feed
 
 
-.msg {
+.hve-msg {
 	width:100%;
 	display: inline-block;
 	margin:0 0 2em 0;
 	position: relative;
-	
-	p {
-		line-height: 1.5em;
+	line-height: 1.5em;
+}
+
+.hve-msg-meta {
+	line-height: 1.1em;
+	margin:1em 0 0 0;
+	display: inline-block;
+	width:100%;
+
+	div {
+		float:left;
 	}
-	
-	.details {
-		line-height: 1.1em;
-		margin:1em 0 0 0;
-		display: inline-block;
-		width:100%;
-	
-		div {
-			float:left;
-		}
-		.author-img {
-			/*
-width:2em;
-			height:2em;
-*/
-			margin: -.27em .4em 0 0;
-			overflow: hidden;
-			@include border-radius(2em);
-		}
-		.author-img img {
-			width:2em;
-			height:auto;
-		}
-		.author-name {
-			font-size: .95em;
-			line-height: .9em;
-		}
-		.author-name.guest {
-			color:rgb(134, 134, 134);
-		}
-		.timestamp {
-			font-size:.8em;
-			margin: 0 0.6em 0 0;
-			line-height: .8em;
-			color:#DFDFDF
-		}
+	.author-img {
+		margin: -.27em .4em 0 0;
+		overflow: hidden;
+		@include border-radius(2em);
 	}
-	.truncate {
-		font-size:.9em;
-		padding: 0 0 0 .3em;
+	.author-img img {
+		width:2em;
+		height:auto;
 	}
+	.author-name {
+		font-size: .95em;
+		line-height: .9em;
+	}
+	.author-name.guest {
+		color:rgb(134, 134, 134);
+	}
+}
+.hve-time {
+	font-size:.8em;
+	margin: 0 0.6em 0 0;
+	line-height: .8em;
+	color:#DFDFDF
+}
+.truncate {
+	font-size:.9em;
+	padding: 0 0 0 .3em;
 }
 
 .attachment {
@@ -183,7 +178,7 @@ width:2em;
 	.title {
 		line-height: 1em;
 	}
-	.download, span /* span: JPG (3.2MB) */ {
+	.download, span { // span: JPG (3.2MB)
 		font-size:.9em;
 		line-height: 1.9em;
 	}
@@ -254,12 +249,12 @@ ul.report {
 // ______________________________________________________ (write message)
 
 
-.hve-textbox {
+.hve-post {
 	width:100%;
 	display: inline-block;
 	padding: 0 0 .25em 0; // for the bottom of the native button:focus fuz
 	
-	.textarea {
+	hve-textarea {
 		border: 1px solid #D3D3D3;
 		margin: 0 0 .7em 0;
 		border-radius: .5em;
@@ -498,7 +493,7 @@ canvas#edit-avatar-can {
 		width: 52px;
 		top: 37px;
 	}
-	.hve-textbox .btn.user {
+	.hve-post .btn.user {
 		margin: 0 0 0.5em .5em;
 	}
 }

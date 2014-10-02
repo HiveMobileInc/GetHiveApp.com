@@ -149,7 +149,7 @@
 	var earlier_load = $('#hve-earlier-load');
 
 	// grab new
-	var newlink = $('#hve-new');
+	var newlink = $('#hve-new-text');
 	var newtext = $('#hve-new-text');
 
 	function show_regin () {
@@ -263,6 +263,7 @@
 	var new_cache = [];
 	function hve_newer () {
 		get_newer_messages(url, function (err, newer) {
+			console.log(newer);
 			if (err) { 
 				throw err;
 				return setTimeout(hve_newer, heart);

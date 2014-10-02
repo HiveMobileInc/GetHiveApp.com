@@ -329,15 +329,11 @@ ul.report {
 // ______________________________________________________ container
 
 
-.post-area {
-
-	.extra {
-		width:100%;
-		display: inline-block;
-		position: relative;
-	}
+.hve-controls {
+	width:100%;
+	display: inline-block;
+	position: relative;	
 }
-
 
 // ______________________________________________________ REGISTER
 // ______________________________________________________ &
@@ -419,50 +415,30 @@ ul.report {
 // ______________________________________________________ PROFILE
 // ______________________________________________________ img
 
-// Everything container
-span#ava-editor {
+#ava-editor {
 	float:left;
 }
 
-// Container
 .edit-avatar-container {
 	width:160px;
 	height:60px;
 	overflow: hidden;
 	display: inline-block;
-/* 	border:1px solid pink; */
 	position:relative;
-	
-	label {
-		position: absolute;
-		top: 13px;
-		width: 94px;
-		right: 0;
-		font-weight: 400;
-		font-size: .95em;
-		line-height: 1.2em;
-	}
-}
-// For Dev purposes
-.edit-avatar-container:hover {
-	/* background:#ececec; */
 }
 
-// Choose File Button
-input#edit-avatar {
+#edit-avatar {
 	width:100%;
 	position:relative;
 	z-index: 1;
 	margin: -30px 0 0 0;
 	height: 100px;
-	/* background:rgba(255,255,0,0.55); */
 }
-input#edit-avatar:focus {
+#edit-avatar:focus {
 	outline:none;
 }
 
-// Avatar Image
-canvas#edit-avatar-can {
+#edit-avatar-can {
 	position: absolute;
 	left: 0;
 	top:0;

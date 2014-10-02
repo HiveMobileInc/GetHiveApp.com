@@ -39,7 +39,17 @@
 */
 }
 
-
+.btn-regin {
+	width: 100%;
+	font-size: 1.1em;
+	background: #34c5fd;
+	padding: .5em 0 .40em 0;
+	line-height: 1.5em;
+	text-shadow: 0px 1px 1px #0077B9;
+}
+.btn-regin:hover {
+	color:#fff;
+}
 
 .generate-link {
 	font-size: 1.2em;

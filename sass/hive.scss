@@ -4,25 +4,18 @@
 @import '_web-general';
 @import '_plugin';
 
-
+// Temporary
 i.fa.report {
 	display: none !important;
 }
 
 .plugin {
-	font-size:1.1em;
-	padding:3.5em 0 1.5em 0;
 	
 	textarea {
 		min-height: 80px;
 	}
 }
-.hve-earlier {
-	position: absolute;
-	height:3em;
-	line-height: 3em;
-	top:-1.7em;
-}
+
 footer {
 	font-size:.8em;
 	
@@ -37,9 +30,6 @@ footer {
 
 @media (max-width: 600px) {
 	
-	.plugin {
-		padding: 3.5em 0;
-	}
 	footer {
 	
 		.col-xxs-12 {

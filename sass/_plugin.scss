@@ -13,6 +13,7 @@ body, html {
 	margin:0 auto;
 	padding:1 2em 0 2em;
 	font-size: 11.5pt;
+	background:#fff;
 }
 
 @media (max-width: 600px) {
@@ -260,7 +261,6 @@ ul.report {
 	.textarea {
 		border: 1px solid #D3D3D3;
 		margin: 0 0 .7em 0;
-		@include border-radius(.3em);
 	}
 	
 	textarea {

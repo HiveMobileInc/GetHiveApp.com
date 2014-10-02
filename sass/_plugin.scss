@@ -52,9 +52,16 @@
 
 .hve-earlier {
 	height: 2em;
-	border: 1px solid #eeeeee;
 	line-height: 2em;
+	border: 1px solid #f5f5f5;
 	text-align: center;
+	
+	a {
+		padding: .1em .7em;
+		font-size: .87em;
+		border: 1px solid #529fe7;
+		border-radius: .6em;
+	}
 }
 
 // ______________________________________________________ hive
@@ -90,8 +97,11 @@
 // ______________________________________________________ TITLE
 
 
-.hve-title {
-	
+h1.hve-title {
+	font-size: 1.8em;
+	line-height: 1.7em;
+	font-weight: 200;
+	margin: 0;
 }
 
 

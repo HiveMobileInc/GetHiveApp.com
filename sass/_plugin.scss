@@ -11,7 +11,7 @@ body, html {
 	min-width:20em;
 	height:100%;
 	margin:0 auto;
-	padding:1em 2em 0 2em;
+	padding:2em 2em 0 2em;
 	font-size: 11.5pt;
 }
 
@@ -31,6 +31,49 @@ body, html {
 	height:3em;
 	position: relative;
 }
+
+
+// ______________________________________________________ hive
+// ______________________________________________________ TITLE
+
+
+h1.hve-title {
+	font-size: 1.8em;
+	line-height: 1.7em;
+	font-weight: 200;
+	margin: 0;
+	color:rgb(102, 102, 102);
+}
+
+
+// ______________________________________________________ hive
+// ______________________________________________________ TYPEE
+
+
+.hve-type {
+	position: absolute;
+	right: 0;
+	top: .5em;
+	color: #B9B9B9;
+	font-size: 1.2em;
+}
+
+.hve-type .type {
+	background:#9e9e9e;
+	padding:.3em;
+	font-size:.75em;
+	line-height: 1em;
+	color:#fff;
+	z-index: 9;
+	left:50%;
+	text-align: center;
+	position: absolute;
+}
+
+.hve-type:hover .type {
+	display: block !important;
+}
+
 
 // ______________________________________________________ hive
 // ______________________________________________________ LOADINGG
@@ -65,48 +108,6 @@ body, html {
 		border-radius: .6em;
 	}
 }
-
-// ______________________________________________________ hive
-// ______________________________________________________ TYPEE
-
-
-.hve-type {
-	position: absolute;
-	right: 0;
-	top: .5em;
-	color: #B9B9B9;
-	font-size: 1.2em;
-}
-
-.hve-type .type {
-	background:#9e9e9e;
-	padding:.3em;
-	font-size:.75em;
-	line-height: 1em;
-	color:#fff;
-	z-index: 9;
-	left:50%;
-	text-align: center;
-	position: absolute;
-}
-
-.hve-type:hover .type {
-	display: block !important;
-}
-
-
-// ______________________________________________________ hive
-// ______________________________________________________ TITLE
-
-
-h1.hve-title {
-	font-size: 1.8em;
-	line-height: 1.7em;
-	font-weight: 200;
-	margin: 0;
-	color:rgb(102, 102, 102);
-}
-
 
 // ______________________________________________________ MESSAGES
 // ______________________________________________________ in 
@@ -253,7 +254,7 @@ ul.report {
 // ______________________________________________________ (write message)
 
 
-.hve-post {
+.hve-textbox {
 	width:100%;
 	display: inline-block;
 	padding: 0 0 .25em 0; // for the bottom of the native button:focus fuz
@@ -497,7 +498,7 @@ canvas#edit-avatar-can {
 		width: 52px;
 		top: 37px;
 	}
-	.hve-post .btn.user {
+	.hve-textbox .btn.user {
 		margin: 0 0 0.5em .5em;
 	}
 }

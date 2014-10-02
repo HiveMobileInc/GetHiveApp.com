@@ -1,10 +1,20 @@
 // essentials
 @import '_base';
+@import 'assets/_font-awesome';
+@import '_web-general';
 @import '_plugin';
+
+
+
+
+
+i.fa.report {
+	display: none !important;
+}
 
 .plugin {
 	font-size:1.1em;
-	padding:3.5em 0;
+	padding:3.5em 0 1.5em 0;
 	
 	textarea {
 		min-height: 80px;
@@ -18,6 +28,14 @@
 }
 footer {
 	font-size:.8em;
+	
+	.col-xxs-12 {
+		padding:0;
+	}
+	.copyright {
+		float:right;
+		color:gray;
+	}
 }
 
 @media (max-width: 600px) {

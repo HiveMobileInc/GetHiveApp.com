@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<title>Hive | Create your Conversation</title>
+		<title>Hive | <!-- Hive title --></title>
 		<meta charset="UTF-8" />
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
-		<meta name="description" content="Enable Conversations everywhere with Hive: Generate your conversation link now."/>
-		<meta property="og:title" content="Enable Conversations Anywhere - Generate yours now."/>
-		<meta property="og:site_name" content="Hive"/>
-		<meta property="og:description" content="Enable Conversations everywhere with Hive: An intuitive communication platform that works in every situation, and on device and operating system. Generate your conversation link now."/>
-		<meta property="og:url" content="http://hivemobileinc.github.io/GetHiveApp.com/">
-		<meta property="og:image" content="http://hivemobileinc.github.io/GetHiveApp.com/img/hive_logo_blue.png"/>
+		<meta name="description" content=" "/> <!-- Hive description 150 Characters -->
+		<meta property="og:title" content=" "/> <!-- Hive title -->
+		<meta property="og:site_name" content="Hive"/> <!-- Hive title -->
+		<meta property="og:description" content=" "/> <!-- Hive description 150 Characters -->
+		<meta property="og:url" content=" "> <!-- Hive URL -->
+ 		<meta property="og:image" content="http://hivemobileinc.github.io/GetHiveApp.com/img/hive_logo_blue.png"/>
 		<meta property="og:type" content="website" />
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'/>
 		<link rel="shortcut icon" href="img/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="css/hive.css"/>
+		<link rel="stylesheet" type="text/css" href="css/hive-new.css"/>
 </head>
 <body>
 
 
-<div class="container">
 
-<div class="plugin col-xxs-12 col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-	<div class="hve-title none">UX Design Conventions</div>
+<div class="hve-header">
+	<div class="hve-title">UX Design Conventions</div>
 	<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
-	
-<div id="feed" class="feed-area">
-			
-			<div class="hve-load" id="hve-load"> Joining the conversation<br>
-				<i class="fa fa-circle-o-notch fa-spin"></i>
-			</div>
-			
-			<div class="hve-earlier none" id="hve-earlier"><a href="#" onclick="return hve_earlier();">Show earlier messages</a></div>
-			<div class="hve-earlier none" id="hve-earlier-load"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+</div>
 
-			<span id="msg-tmp" class="none">
-				<div id="msg-con-HID" class="msg">
-					<p>HMSG</p>
-					<div class="details">
-						<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
-						<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
-						<br>
-						<div class="timestamp">HCREATEDAGO</div>
-						
-						<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
-						<span id="hve-rep-HID" class="none">
-							<span class="report-label" style="color:#989898;">Report for:</span>	
-							<ul class="report">
-									<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
-									<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
-							</ul>
-						</span>
-					</div>
-				</div>
-			</span>
-			<span id="new-mrk"></span>
-			<div class="hve-new none" id="hve-new"><a href="#" id="hve-new-text" onclick="return show_new();">5 new messages</a></div>
+
+<div id="feed" class="feed-area">
+
+	<div class="hve-load" id="hve-load">Joining the conversation<br><i class="fa fa-circle-o-notch fa-spin"></i></div>
+	<div class="hve-earlier none" id="hve-earlier"><a href="#" onclick="return hve_earlier();">Show earlier messages</a></div>
+	<div class="hve-earlier none" id="hve-earlier-load"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
+	<span id="msg-tmp" class="none">
+		<div id="msg-con-HID" class="msg">
+			<p>HMSG</p>
+			<div class="details">
+				<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
+				<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
+				<br>
+				<div class="timestamp">HCREATEDAGO</div>
+				
+				<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
+				<span id="hve-rep-HID" class="none">
+					<span class="report-label" style="color:#989898;">Report for:</span>	
+					<ul class="report">
+							<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
+							<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
+							<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
+							<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
+							<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
+					</ul>
+				</span>
+			</div>
 		</div>
+	</span>
+	<span id="new-mrk"></span>
+	<div class="hve-new none" id="hve-new"><a href="#" id="hve-new-text" onclick="return show_new();">5 new messages</a></div>
+</div>
 		
 	<div class="post-area">
 		<div class="hve-post">
@@ -94,9 +92,6 @@
 		</form>
 	</div>				
 			
-</div>
-
-
 </div>
 
 

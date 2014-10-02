@@ -13,7 +13,6 @@ body, html {
 	margin:0 auto;
 	padding:1em 2em 0 2em;
 	font-size: 11.5pt;
-	background:#fff;
 }
 
 @media (max-width: 600px) {
@@ -75,7 +74,7 @@ body, html {
 	position: absolute;
 	right: 0;
 	top: .5em;
-	color: #dbdbdb;
+	color: #B9B9B9;
 	font-size: 1.2em;
 }
 
@@ -105,6 +104,7 @@ h1.hve-title {
 	line-height: 1.7em;
 	font-weight: 200;
 	margin: 0;
+	color:rgb(102, 102, 102);
 }
 
 
@@ -261,6 +261,8 @@ ul.report {
 	.textarea {
 		border: 1px solid #D3D3D3;
 		margin: 0 0 .7em 0;
+		border-radius: .5em;
+		background: #fff;
 	}
 	
 	textarea {
@@ -268,7 +270,7 @@ ul.report {
 		max-width: 100%;
 		font-size: 1em;
 		border:none;
-		padding:0 0 .5em 0 !important;
+		border-radius: .5em;
 	}
 	textarea:focus {
 		outline: 0;
@@ -501,45 +503,14 @@ canvas#edit-avatar-can {
 }
 
 
+// ______________________________________________________ FOOTERR
+
 
 .hve-footer {
 	text-align: right;
 	font-size: .8em;
 	color: rgb(201, 201, 201);
 	margin: 1em 0 0 0;
-}
-
-
-// UNECESSARY Overrides
-
-
-.hve-post .textarea textarea {
-	padding:2% 2% 0 2% !important;
-	width:100% !important;
-	@include border-radius(3em);
-}
-.msg {
-	margin:0 0 1.7em 0 !important;
-}
-.msg .details {
-	margin:0 !important;
-}
-.hve-regin form {
-	display: inline-block;
-	margin:1em 0 2.5em 0 !important;
-}
-.hve-regin input {
-	width:100% !important;
-}
-.close-report {
-	font-size: 1.1em;
-	float:none;
-	text-shadow: none;
-	opacity:1;
-	font-weight: 400;
-}
-.hve-post .btn {
-	padding: .55em 1.1em .45em .65em !important;
 }
 
 

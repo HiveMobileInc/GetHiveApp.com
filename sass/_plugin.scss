@@ -267,6 +267,7 @@ ul.report {
 		font-size: 1em;
 		border:none;
 		border-radius: .5em;
+		padding: .7em .7em 0 .7em;
 	}
 	.hve-textarea:focus {
 		outline: 0;
@@ -343,6 +344,7 @@ ul.report {
 .hve-regin {
 	width:100%;
 	text-align: center;
+	float:left;
 	
 	// "Register below"
 	span.header {
@@ -399,32 +401,16 @@ ul.report {
 	.already-member {
 		line-height: 3em;
 	}
-	
 }
-
-
-@media (max-width: 600px) {
-	
-
-}
-
-
 
 
 // ______________________________________________________ EDIT
 // ______________________________________________________ PROFILE
 // ______________________________________________________ img
 
+
 #ava-editor {
 	float:left;
-}
-
-.edit-avatar-container {
-	width:160px;
-	height:60px;
-	overflow: hidden;
-	display: inline-block;
-	position:relative;
 }
 
 #edit-avatar {
@@ -458,7 +444,7 @@ ul.report {
 
 @media (max-width: 600px) {
 	
-	span#ava-editor {
+	#ava-editor {
 		height:70px;
 	}
 	.edit-ava-text {

@@ -44,9 +44,8 @@ body, html {
 h1.hve-title {
 	font-size: 1.8em;
 	line-height: 1.7em;
-	font-weight: 200;
 	margin: 0;
-	color:rgb(102, 102, 102);
+	color: #666;
 	border-bottom: 1px solid rgb(228, 228, 228);
 }
 
@@ -101,9 +100,10 @@ h1.hve-title {
 // ______________________________________________________ EARLIERR
 // ______________________________________________________ msgs
 
-.hve-earlier {
-	height: 2em;
-	line-height: 2em;
+.hve-earlier,
+.hve-new {
+	height: 3em;
+	line-height: 3em;
 	text-align: center;
 	
 	a {
@@ -128,8 +128,9 @@ h1.hve-title {
 }
 
 p.msg {
-	margin:0;
-	font-size: 1.1em;
+	margin: 0;
+	font-size: 1.05em;
+	color: #797979;
 }
 
 .hve-msg-meta {

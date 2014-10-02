@@ -6,6 +6,47 @@
 @import '_plugin';
 
 
+//
+// TEMPORARY  Plugin styles 
+
+.hve-type {
+	right: .6em;
+}
+
+.plugin .hve-earlier {
+	width:100%;
+	top:0 !important;
+	line-height: 4em;
+}
+
+section.app .plugin .feed-area {
+	padding:0 !important;
+}
+
+section.app .plugin .hve-earlier, section.app .plugin .hve-new {
+	position:relative !important;
+	height:3.7em !important;
+}
+
+p.msg {
+margin: 0;
+font-size: 1em;
+color: #919191;
+}
+section.app .plugin .hve-new {
+	margin: -2em 0 0 0 !important;
+	height:2em !important;
+	line-height: .5em !important;
+	
+}
+
+// 
+//
+
+
+
+
+
 i.fa.report {
 	display: none !important;
 }

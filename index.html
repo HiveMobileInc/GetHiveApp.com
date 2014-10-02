@@ -80,25 +80,27 @@
 
 
 <div class="plugin col-xxs-12 col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-lg-6 col-lg-offset-1">
-	<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
+		<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
+	
+	<div class="hve-earlier">
+		<a id="hve-earlier" class="none" href="#" onclick="return hve_earlier();">Show earlier messages</a>
+		<span id="hve-earlier-load" class="none"><i class="fa fa-circle-o-notch fa-spin"></i></span>
+	</div>	
 	
 <div id="feed" class="feed-area">
 			
 			<div class="hve-load" id="hve-load"> Joining the conversation<br>
 				<i class="fa fa-circle-o-notch fa-spin"></i>
 			</div>
-			
-			<div class="hve-earlier none" id="hve-earlier"><a href="#" onclick="return hve_earlier();">Show earlier messages</a></div>
-			<div class="hve-earlier none" id="hve-earlier-load"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 
 			<span id="msg-tmp" class="none">
-				<div id="msg-con-HID" class="msg">
-					<p>HMSG</p>
-					<div class="details">
+				<div id="msg-con-HID" class="hve-msg">
+					<p class="msg">HMSG</p>
+					<div class="hve-msg-meta">
 						<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
 						<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
 						<br>
-						<div class="timestamp">HCREATEDAGO</div>
+						<div class="hve-time">HCREATEDAGO</div>
 						
 						<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
 						<span id="hve-rep-HID" class="none">
@@ -115,16 +117,17 @@
 				</div>
 			</span>
 			<span id="new-mrk"></span>
-			<div class="hve-new none" id="hve-new"><a href="#" id="hve-new-text" onclick="return show_new();">5 new messages</a></div>
 		</div>
 		
-	<div class="post-area">
+		<div class="hve-new" id="hve-new">
+			<a href="#" id="hve-new-text" class="none" onclick="return show_new();">5 new messages</a>
+		</div>
+		
 		<div class="hve-post">
-			<div class="textarea">
-				<textarea id="hve-message" placeholder="Type your message!"></textarea>
+			<div class="hve-textbox">
+				<textarea class="hve-textarea" id="hve-message" placeholder="Type your message!"></textarea>
 			</div>
-			<div class="extra">
-					
+			<div class="hve-controls">
 					<span id="ava-editor" class="ava-editor" class="none">
 						<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
 						<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
@@ -132,12 +135,10 @@
 							<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
 						</div>
 					</span>
-
 					<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i id="regin-icon" class="fa fa-sign-in"></i><span id="btn-user-text">Login or Register</span></a>
 					<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
 			</div>
 		</div>
-	</div>
 	
 	<div id="hve-regin" class="hve-regin none">
 		<form method="post">

@@ -21,7 +21,7 @@
 <div class="hve-container">
 
 	<div class="hve-header">
-		<h1  class="hve-title">Example Hive Title</h1>
+		<h1  class="hve-title">Loading title...</h1>
 		<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
 	</div>
 	
@@ -135,6 +135,12 @@
 	    }
 	});
 
+	var url = decodeURIComponent(window.location.href.split('url=')[1]);
+	var heart = 5000;
+
+	// grab title
+	var hive_title = $('#hve-title');
+
 	// grab msg template
 	var msg_tmp = $('#msg-tmp').html();
 	var old_mrk = $('#msg-tmp');
@@ -152,6 +158,23 @@
 	var newlink = $('#hve-new-text');
 	var newtext = $('#hve-new-text');
 
+	// catch hive loaded
+	var perm_store;
+	function hve_loaded () {
+		get_conversation_perm(url, function (err, perm) {
+			hive_title = perm.title;
+			perm_store = perm;
+			get_conversation_base(url,  function (err, base) {
+				if (err) throw err;
+				$('#hve-load').addClass('none');
+				if (base.length == page_size)
+					earlier.removeClass('none');
+				for (var b = 0; b < base.length; b++)
+					add_msg(base[b], false);
+				setTimeout(hve_newer, heart);
+			}, true);
+		}, true);
+	};
 	function show_regin () {
 		if (bndl != null) return post_as_user();
 		$('#hve-regin').removeClass('none');
@@ -232,21 +255,6 @@
 		}
 		enable_post(true);
 	};
-
-	var url = decodeURIComponent(window.location.href.split('url=')[1]);
-	var heart = 5000;
-	// catch hive loaded
-	function hve_loaded () {
-		get_conversation_base(url,  function (err, base) {
-			if (err) throw err;
-			$('#hve-load').addClass('none');
-			if (base.length == page_size)
-				earlier.removeClass('none');
-			for (var b = 0; b < base.length; b++)
-				add_msg(base[b], false);
-			setTimeout(hve_newer, heart);
-		}, true);
-	};
 	function hve_earlier () {
 		earlier.addClass('none');
 		earlier_load.removeClass('none');
@@ -287,7 +295,6 @@
 
 	document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
 	var ava_can = document.getElementById('edit-avatar-can');
-
 	function new_avatar (e) {
 		read_img(e.target.files[0], function (img) {
 			draw_avatar(img, ava_can, ava_can.getContext('2d'));

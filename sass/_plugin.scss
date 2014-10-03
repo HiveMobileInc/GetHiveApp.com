@@ -21,7 +21,7 @@ body, html {
 @media (max-width: 600px) {
 	
 	.hve-container {
-		padding: 0 1em;
+		padding: 2em 1.2em;
 		min-width: 17em;
 	}
 }
@@ -46,7 +46,7 @@ h1.hve-title {
 	line-height: 1.2em;
 	margin: 0;
 	color: #666;
-	padding: 0 1.6em 0 0;
+	padding: 0 1.6em .5em 0;
 	border-bottom: 1px solid rgb(228, 228, 228);
 }
 
@@ -64,7 +64,7 @@ h1.hve-title {
 .hve-type {
 	position: absolute;
 	right: 0;
-	top: .5em;
+	top: .4em;
 	color: #B9B9B9;
 	font-size: 1.2em;
 }
@@ -85,6 +85,13 @@ h1.hve-title {
 	display: block !important;
 }
 
+
+@media (max-width: 600px) {
+	
+	.hve-type {
+		top:.2em;
+	}
+}
 
 // ______________________________________________________ hive
 // ______________________________________________________ LOADINGG

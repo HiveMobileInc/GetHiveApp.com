@@ -260,9 +260,7 @@
 			$('#btn-user-text').text(creds.profile.display_name);
 			$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
 			msg_entry.focus();
-			console.log('img ask');
 			dl_img(creds.profile.avatar + tkn(), function (img) {
-				console.log('img get');
 				draw_avatar(img, ava_can, ava_can.getContext('2d'));
 				$('#ava-editor').removeClass('none');
 				$('#edit-ava-text').removeClass('none');
@@ -277,7 +275,6 @@
 	};
 	var hop = 1;
 	function add_msg (msg, newmsg) {
-		console.log(msg);
 		var html = msg_tmp.split('HID')          .join(hop++)
 		                  .split('MID')          .join(msg.mid)
 		                  .split('HMSG')         .join(msg.message)
@@ -385,7 +382,6 @@
 			edit_user(null, null, null, null, ava_can.toDataURL('image/png'), function (err, prof) {
 				if (err) throw err;
 				else bndl.profile = prof;
-				console.log(prof);
 			});
 		});
 	};

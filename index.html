@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+	<head>
 		<title>Hive | Enabling Cross-Platform Communication</title>
-		<meta charset="UTF-8" />
+		<meta charset="UTF-8"/>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
 		<meta name="description" content="Enable Conversations everywhere with Hive: An intuitive communication platform that works in every situation, and on device and operating system."/>
@@ -15,420 +15,424 @@
 		<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'/>
 		<link rel="shortcut icon" href="img/favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
-</head>
-<body>
-
-
-<section class="landing" data-stretch="img/bg2.jpg">
-	<div class="container">
-		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
-		<h1>Enable Conversations Everywhere.</h1>
-		<p class="desc">Hive is a communication platform applicable to any situation, on every device and operating system.</p>
-		<p class="desc">Comment on a blog or article, or simply chat with your friends.</p>
-		<div class="beta-banner"><a href="#" data-toggle="modal" data-target="#beta-modal"><div>Get Early Access</div></a></div>
-	</div>
-</section>
-
-
-<section class="app light">
-<div class="container">	
-	
-	
-
-
-<div class="sidebar col-xxs-12 col-xs-12 col-sm-4 col-sm-offset-0 col-lg-3 col-lg-offset-1">
-	<div class="desktop">	
-			<h2>Early Access Features</h2> 
-		  	<ul class="beta">
-		  		<li>Mobile-first reactive moderation platform.</li>
-		  		<li>Embed a single conversation across multiple social networks.</li>
-		  		<li>Enterprise grade analytics and audience explorer.</li>
-		  	</ul>
-		  	<a href="#" class="beta-btn" data-toggle="modal" data-target="#beta-modal">Get early access to hive!</a>	
-			<h2>Recent Posts</h2> 
-		  	<ul class="blog">
-		  		<li><a href="#"><img src="img/img.jpg" alt=""/>Attaching Conversations to Everything</a></li>
-		  		<li><a href="#"><img src="img/profile3.jpg" alt=""/>The Report Button: Protecting Content Copyrights & User's Human Rights</a></li>
-		  		<li><a href="#"><img src="img/profile2.jpg" alt=""/>Analytics Everywhere: Developing a Business Insights Engine</a></li>
-		  	</ul>
-	</div>
-	<div id="accordion" class="panel-group mobile">	
-			<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><h2>Early Access Features<i class="fa fa-sort-desc"></i></h2></a>  
-			<div id="collapseOne" class="panel-collapse collapse out">
-				<div class="panel-body">
-			  	<ul class="beta">
-			  		<li>Mobile-first reactive moderation platform.</li>
-			  		<li>Embed a single conversation across multiple social networks.</li>
-			  		<li>Enterprise grade analytics and audience explorer.</li>
-			  	</ul>
-			  	<a href="#" class="beta-btn" data-toggle="modal" data-target="#beta-modal">Get early access to hive!</a>
+	</head>
+	<body>
+		<section class="landing" data-stretch="img/bg2.jpg">
+			<div class="container">
+				<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
+				<h1>Enable Conversations Everywhere.</h1>
+				<p class="desc">Hive is a communication platform applicable to any situation, on every device and operating system.</p>
+				<p class="desc">Comment on a blog or article, or simply chat with your friends.</p>
+				<div class="beta-banner"><a href="#" data-toggle="modal" data-target="#beta-modal">
+					<div>Get Early Access</div>
 				</div>
 			</div>
-			<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><h2>Recent Posts<i class="fa fa-sort-desc"></i></h2></a>  
-			<div id="collapseTwo" class="panel-collapse collapse out">
-				<div class="panel-body">
-			  	<ul class="blog">
-			  		<li><a href="#"><img src="img/img.jpg" alt=""/>Attaching Conversations to Everything</a></li>
-			  		<li><a href="#"><img src="img/profile3.jpg" alt=""/>The Report Button: Protecting Content Copyrights &amp; User's Human Rights</a></li>
-			  		<li><a href="#"><img src="img/profile2.jpg" alt=""/>Analytics Everywhere: Developing a Business Insights Engine</a></li>
-			  	</ul>
-				</div>
-			</div>
-	</div>
-</div> <!-- sidebar -->
+		</section>
 
-
-
-<div class="plugin col-xxs-12 col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-lg-6 col-lg-offset-1">
-		<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
+		<section class="app light">
+			<div class="container">	
 	
-	<div class="hve-earlier">
-		<a id="hve-earlier" class="none" href="#" onclick="return hve_earlier();">Show earlier messages</a>
-		<span id="hve-earlier-load" class="none"><i class="fa fa-circle-o-notch fa-spin"></i></span>
-	</div>	
-	
-<div id="feed" class="feed-area">
-			
-			<div class="hve-load" id="hve-load"> Joining the conversation<br>
-				<i class="fa fa-circle-o-notch fa-spin"></i>
-			</div>
-
-			<span id="msg-tmp" class="none">
-				<div id="msg-con-HID" class="hve-msg">
-					<p class="msg">HMSG</p>
-					<div class="hve-msg-meta">
-						<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
-						<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
-						<div class="hve-time">HCREATEDAGO</div>
-						
-						<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
-						<span id="hve-rep-HID" class="none">
-							<span class="report-label" style="color:#989898;">Report for:</span>	
-							<ul class="report">
-									<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
-									<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
-									<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
-							</ul>
-						</span>
+				<div class="sidebar col-xxs-12 col-xs-12 col-sm-4 col-sm-offset-0 col-lg-3 col-lg-offset-1">
+					<div class="desktop">
+						<h2>Early Access Features</h2> 
+					  	<ul class="beta">
+					  		<li>Mobile-first reactive moderation platform.</li>
+					  		<li>Embed a single conversation across multiple social networks.</li>
+					  		<li>Enterprise grade analytics and audience explorer.</li>
+					  	</ul>
+					  	<a href="#" class="beta-btn" data-toggle="modal" data-target="#beta-modal">Get early access to hive!</a>	
+						<h2>Recent Posts</h2> 
+					  	<ul class="blog">
+					  		<li><a href="#"><img src="img/img.jpg" alt=""/>Attaching Conversations to Everything</a></li>
+					  		<li><a href="#"><img src="img/profile3.jpg" alt=""/>The Report Button: Protecting Content Copyrights &amp; User's Human Rights</a></li>
+					  		<li><a href="#"><img src="img/profile2.jpg" alt=""/>Analytics Everywhere: Developing a Business Insights Engine</a></li>
+					  	</ul>
+					</div>
+					<div id="accordion" class="panel-group mobile">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+							<h2>Early Access Features<i class="fa fa-sort-desc"></i></h2>
+						</a>  
+						<div id="collapseOne" class="panel-collapse collapse out">
+							<div class="panel-body">
+							  	<ul class="beta">
+							  		<li>Mobile-first reactive moderation platform.</li>
+							  		<li>Embed a single conversation across multiple social networks.</li>
+							  		<li>Enterprise grade analytics and audience explorer.</li>
+							  	</ul>
+							  	<a href="#" class="beta-btn" data-toggle="modal" data-target="#beta-modal">Get early access to hive!</a>
+							</div>
+						</div>
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+							<h2>Recent Posts<i class="fa fa-sort-desc"></i></h2>
+						</a>  
+						<div id="collapseTwo" class="panel-collapse collapse out">
+							<div class="panel-body">
+							  	<ul class="blog">
+							  		<li><a href="#"><img src="img/img.jpg" alt=""/>Attaching Conversations to Everything</a></li>
+							  		<li><a href="#"><img src="img/profile3.jpg" alt=""/>The Report Button: Protecting Content Copyrights &amp; User's Human Rights</a></li>
+							  		<li><a href="#"><img src="img/profile2.jpg" alt=""/>Analytics Everywhere: Developing a Business Insights Engine</a></li>
+							  	</ul>
+							</div>
+						</div>
 					</div>
 				</div>
-			</span>
-			<span id="new-mrk"></span>
-		</div>
-		
-		<div class="hve-new" id="hve-new">
-			<a href="#" id="hve-new-text" class="none" onclick="return show_new();">5 new messages</a>
-		</div>
-		
-		<div class="hve-post">
-			<div class="hve-textbox">
-				<textarea class="hve-textarea" id="hve-message" placeholder="Type your message!"></textarea>
-			</div>
-			<div class="hve-controls">
-					<span id="ava-editor" class="ava-editor" class="none">
-						<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
-						<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
-						<div id="edit-ava-text" class="edit-ava-text none">
-							<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
+
+				<div class="plugin col-xxs-12 col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-lg-6 col-lg-offset-1">
+					
+					<div class="hve-type" cursor="type=help;">
+						<i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i>
+					</div>
+
+					<div class="hve-earlier">
+						<a id="hve-earlier" class="none" href="#" onclick="return hve_earlier();">Show earlier messages</a>
+						<span id="hve-earlier-load" class="none"><i class="fa fa-circle-o-notch fa-spin"></i></span>
+					</div>	
+					
+					<div id="feed" class="feed-area">
+						<div class="hve-load" id="hve-load">Joining the conversation<br>
+							<i class="fa fa-circle-o-notch fa-spin"></i>
 						</div>
-					</span>
-					<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i id="regin-icon" class="fa fa-sign-in"></i><span id="btn-user-text">Login or Register</span></a>
-					<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
-			</div>
-		</div>
+						<span id="msg-tmp" class="none">
+							<div id="msg-con-HID" class="hve-msg">
+								<p class="msg">HMSG</p>
+								<div class="hve-msg-meta">
+									<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
+									<div class="author-name"><a href="#">HDISPLAYNAME</a></div>
+									<div class="hve-time">HCREATEDAGO</div>
+									<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
+									<span id="hve-rep-HID" class="none">
+										<span class="report-label" style="color:#989898;">Report for:</span>	
+										<ul class="report">
+												<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
+												<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
+												<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
+												<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
+												<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
+										</ul>
+									</span>
+								</div>
+							</div>
+						</span>
+						<span id="new-mrk"></span>
+					</div>
+					
+					<div class="hve-new" id="hve-new">
+						<a href="#" id="hve-new-text" class="none" onclick="return show_new();">5 new messages</a>
+					</div>
+					
+					<div class="hve-post">
+						<div class="hve-textbox">
+							<textarea class="hve-textarea" id="hve-message" placeholder="Type your message!"></textarea>
+						</div>
+						<div class="hve-controls">
+							<span id="ava-editor" class="ava-editor" class="none">
+								<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
+								<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
+								<div id="edit-ava-text" class="edit-ava-text none">
+									<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
+								</div>
+							</span>
+							<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user">
+								<i id="regin-icon" class="fa fa-sign-in"></i>
+								<span id="btn-user-text">Login or Register</span>
+							</a>
+							<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest">
+								<i class="fa fa-comment-o"></i>Guest
+							</a>
+						</div>
+					</div>
 	
-	<div id="hve-regin" class="hve-regin none">
-		<div method="post">
-			<span id="regin-header" class="header">Register or Login</span><br>
-			<span class="desc">We promise you won't lose your comment!</span><br>
-			<label for="username">Username</label>
-			<input id="username" type="text" name="username" placeholder="username"><br>
-			<label for="password">Password</label>
-			<input id="password" type="password" name="password" placeholder="password"><br>
-			<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
+					<div id="hve-regin" class="hve-regin none">
+						<div>
+							<span id="regin-header" class="header">Register or Login</span><br>
+							<span class="desc">We promise you won't lose your comment!</span><br>
+							<label for="username">Username</label>
+							<input id="username" type="text" name="username" placeholder="username"><br>
+							<label for="password">Password</label>
+							<input id="password" type="password" name="password" placeholder="password"><br>
+							<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</section>
+
+		<div id="beta-modal" class="modal beta fade" tabindex="-1" role="dialog" aria-labelledby="HiveBeta" aria-hidden="true">
+			<div class="modal-dialog beta">
+				<div class="modal-content">
+		    		<div class="modal-header">
+		    			<button type="button" class="close" data-dismiss="modal">
+			    			<span aria-hidden="true">&times;</span>
+			    			<span class="sr-only">Close</span>
+		    			</button>
+		        		<h4 class="modal-title" id="HiveBeta">Hive Beta</h4>
+		      		</div>
+		      		<div class="modal-body" id="mod-body">
+						Shoot us your contact and our lovely engineer will be in touch with you shortly! (Oh, and we'll throw in some free swag for your much appreciated help!)
+						<div>
+							<input id="sub-name" type="text" placeholder="name" class="form-control"/>
+							<input id="sub-email" type="email" placeholder="email" class="form-control" required=""/>
+							<a class="send" href="#" onclick="return submod();">Let's do this!</a>
+						</div>
+		      		</div>
+		      		<div class="modal-body none" id="mod-good" class="mod-good">
+		      			<i class="fa fa-paper-plane success"></i>
+		      			<p class="success">Success!</p>
+						<p class="success-desc">We got your deets friend. Talk soon.</p>
+			  		</div>
+		    	</div>
+		  	</div>
 		</div>
-	</div>				
-			
-	</div>
 
+		<footer class="light">
+			<div class="container">
+				<div class="col-xxs-12 col-lg-10 col-lg-offset-1">
+					<ul class="legal">Get in touch!  
+						<SCRIPT type="text/javascript">
+							eval(unescape('%76%61%72%20%73%3D%27%61%6D%6C%69%6F%74%68%3A%40%69%65%67%68%74%76%69%61%65%70%70%63%2E%6D%6F%27%3B%76%61%72%20%72%3D%27%27%3B%66%6F%72%28%76%61%72%20%69%3D%30%3B%69%3C%73%2E%6C%65%6E%67%74%68%3B%69%2B%2B%2C%69%2B%2B%29%7B%72%3D%72%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2B%31%2C%69%2B%32%29%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2C%69%2B%31%29%7D%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%3C%61%20%68%72%65%66%3D%22%27%2B%72%2B%27%22%3E%68%69%40%67%65%74%68%69%76%65%61%70%70%2E%63%6F%6D%3C%2F%61%3E%27%29%3B'));
+						</SCRIPT>
+					</ul>
+					<span class="copyright none" id="logout"><a href="#" onclick="return logout();">Logout</a></span>
+					<span class="copyright">&#169; 2014 Hive Mobile Inc.</span>
+				</div>
+			</div>
+		</footer>
 
+		<script src="js/min/index-min.js"></script>
+		<script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
+		<script type="text/javascript">
+		    $('#type').tooltip();
+			$('section.landing').anystretch();
 
-</div>
-</section>
+			var logout_link = $('#logout');
 
-<div id="beta-modal" class="modal beta fade" tabindex="-1" role="dialog" aria-labelledby="HiveBeta" aria-hidden="true">
-  <div class="modal-dialog beta">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="HiveBeta">Hive Beta</h4>
-      </div>
-      <div class="modal-body" id="mod-body">
-			Shoot us your contact and our lovely engineer will be in touch with you shortly! (Oh, and we'll throw in some free swag for your much appreciated help!)
-				<form>
-					<input id="sub-name" type="text" placeholder="name" class="form-control"/>
-					<input id="sub-email" type="email" placeholder="email" class="form-control" required=""/>
-					<a class="send" href="#" onclick="return submod();">Let's do this!</a>
-				</form>
-      </div>
-      <div class="modal-body none" id="mod-good" class="mod-good">
-      <i class="fa fa-paper-plane success"></i>
-      <p class="success">Success!</p>
-			<p class="success-desc">We got your deets friend. Talk soon.</p>
-	  </div>
-    </div>
-  </div>
-</div>
-
-<footer class="light">
-<div class="container">
-<div class="col-xxs-12 col-lg-10 col-lg-offset-1">
-		<ul class="legal">Get in touch!  
-<SCRIPT type="text/javascript">eval(unescape('%76%61%72%20%73%3D%27%61%6D%6C%69%6F%74%68%3A%40%69%65%67%68%74%76%69%61%65%70%70%63%2E%6D%6F%27%3B%76%61%72%20%72%3D%27%27%3B%66%6F%72%28%76%61%72%20%69%3D%30%3B%69%3C%73%2E%6C%65%6E%67%74%68%3B%69%2B%2B%2C%69%2B%2B%29%7B%72%3D%72%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2B%31%2C%69%2B%32%29%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2C%69%2B%31%29%7D%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%3C%61%20%68%72%65%66%3D%22%27%2B%72%2B%27%22%3E%68%69%40%67%65%74%68%69%76%65%61%70%70%2E%63%6F%6D%3C%2F%61%3E%27%29%3B'))</SCRIPT>
-		</ul>
-		<span class="copyright none" id="logout"><a href="#" onclick="return logout();">Logout</a></span>
-		<span class="copyright">&#169; 2014 Hive Mobile Inc.</span>
-</div>
-</div>
-</footer>
-
-<script src="js/min/index-min.js"></script>
-<script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
-<script type="text/javascript">
-    $('#type').tooltip();
-	$('section.landing').anystretch();
-
-	var logout_link = $('#logout');
-
-	var username = $('#username');
-	var password = $('#password');
-	username.keyup(function (e) {
-	    if (e.keyCode == 13) {
-	    	password.focus();
-	        return false; 
-	    }
-	});
-	password.keyup(function (e) {
-	    if (e.keyCode == 13) {
-	    	regin_click();
-	        return false; 
-	    }
-	});
-
-	$('#sub-name').keyup(function (e) {
-	    if (e.keyCode == 13) {
-	    	$('#sub-email').focus();
-	        return false; 
-	    }
-	});
-	$('#sub-email').keyup(function (e) {
-	    if (e.keyCode == 13) {
-	    	return submod();
-	    }
-	});
-
-	// grab msg template
-	var msg_tmp = $('#msg-tmp').html();
-	var old_mrk = $('#msg-tmp');
-	var new_mrk = $('#new-mrk');
-
-	// grab msg
-	var msg_entry = $('#hve-message');
-	msg_entry.focus();
-
-	// grab earlier
-	var earlier = $('#hve-earlier');
-	var earlier_load = $('#hve-earlier-load');
-
-	// grab new
-	var newlink = $('#hve-new-text');
-	var newtext = $('#hve-new-text');
-
-	function show_regin () {
-		if (bndl != null) return post_as_user();
-		$('#hve-regin').removeClass('none');
-		$('html, body').animate({scrollTop: $('#hve-regin').offset().top - 30}, 200);
-		username.focus();
-	    return false;
-	};
-	function regin_click () {
-		function logged_in () {
-			logout_link.removeClass('none');
-			$('#regin-icon').attr('class', 'fa fa-comment-o');
-			$('#hve-regin').addClass('none');
-			$('#btn-user-text').text(bndl.profile.display_name);
-			dl_img(bndl.profile.avatar + tkn(), function (img) {
-				draw_avatar(img, ava_can, ava_can.getContext('2d'));
-				$('#ava-editor').removeClass('none');
-				$('#edit-ava-text').removeClass('none');
+			var username = $('#username');
+			var password = $('#password');
+			username.keyup(function (e) {
+			    if (e.keyCode == 13) {
+			    	password.focus();
+			        return false; 
+			    }
 			});
-			return false;
-		};
-		if (bndl == null) {
-			regin(username.val(), password.val(), function (err, creds) {
-				if (err) throw err;
-				$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
+			password.keyup(function (e) {
+			    if (e.keyCode == 13) {
+			    	regin_click();
+			        return false; 
+			    }
+			});
+
+			$('#sub-name').keyup(function (e) {
+			    if (e.keyCode == 13) {
+			    	$('#sub-email').focus();
+			        return false; 
+			    }
+			});
+			$('#sub-email').keyup(function (e) {
+			    if (e.keyCode == 13) {
+			    	return submod();
+			    }
+			});
+
+			// grab msg template
+			var msg_tmp = $('#msg-tmp').html();
+			var old_mrk = $('#msg-tmp');
+			var new_mrk = $('#new-mrk');
+
+			// grab msg
+			var msg_entry = $('#hve-message');
+			msg_entry.focus();
+
+			// grab earlier
+			var earlier = $('#hve-earlier');
+			var earlier_load = $('#hve-earlier-load');
+
+			// grab new
+			var newlink = $('#hve-new-text');
+			var newtext = $('#hve-new-text');
+
+			function show_regin () {
+				if (bndl != null) return post_as_user();
+				$('#hve-regin').removeClass('none');
+				$('html, body').animate({scrollTop: $('#hve-regin').offset().top - 30}, 200);
+				username.focus();
+			    return false;
+			};
+			function regin_click () {
+				function logged_in () {
+					logout_link.removeClass('none');
+					$('#regin-icon').attr('class', 'fa fa-comment-o');
+					$('#hve-regin').addClass('none');
+					$('#btn-user-text').text(bndl.profile.display_name);
+					dl_img(bndl.profile.avatar + tkn(), function (img) {
+						draw_avatar(img, ava_can, ava_can.getContext('2d'));
+						$('#ava-editor').removeClass('none');
+						$('#edit-ava-text').removeClass('none');
+					});
+					return false;
+				};
+				if (bndl == null) {
+					regin(username.val(), password.val(), function (err, creds) {
+						if (err) throw err;
+						$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
+						msg_entry.focus();
+						return logged_in();
+					});
+				} else return logged_in();
+			};
+			function logout () {
+				bndl = null;
+				localStorage.removeItem('hvebndl');
+				logout_link.addClass('none');
+				$('#regin-icon').attr('class', 'fa fa-sign-in');
+				$('#btn-user-text').text('Register or Login');
+				return false;
+			};
+			function toggle_rep (id) {
+				var e = $('#' + id);
+				e.toggleClass('none');
+				return false;
+			};
+			var hop = 1;
+			function add_msg (msg, newmsg) {
+				var html = msg_tmp.split('HID')          .join(hop++)
+				                  .split('MID')          .join(msg.mid)
+				                  .split('HMSG')         .join(msg.message)
+				                  .split('img/guest.png').join(msg.author.avatar + tkn())
+				                  .split('HDISPLAYNAME') .join(msg.author.display_name)
+				                  .split('HCREATEDAGO')  .join(msg.created_ago);
+				if (newmsg) new_mrk.before(html);
+				else old_mrk.after(html);
+			};
+			function disable_post () {
+				msg_entry.prop('disabled', true);
+				$('#hve-regin').prop('disabled', true);
+				$('#btn-post-user').prop('disabled', true);
+				$('#btn-post-guest').prop('disabled', true);
+			};
+			function enable_post (clear) {
+				msg_entry.prop('disabled', false);
+				$('#hve-regin').prop('disabled', false);
+				$('#btn-post-user').prop('disabled', false);
+				$('#btn-post-guest').prop('disabled', false);
+				if (clear) {
+					msg_entry.val('');
+				}
 				msg_entry.focus();
-				return logged_in();
-			});
-		} else return logged_in();
-	};
-	function logout () {
-		bndl = null;
-		localStorage.removeItem('hvebndl');
-		logout_link.addClass('none');
-		$('#regin-icon').attr('class', 'fa fa-sign-in');
-		$('#btn-user-text').text('Register or Login');
-		return false;
-	};
-	function toggle_rep (id) {
-		var e = $('#' + id);
-		e.toggleClass('none');
-		return false;
-	};
-	var hop = 1;
-	function add_msg (msg, newmsg) {
-		var html = msg_tmp.split('HID')          .join(hop++)
-		                  .split('MID')          .join(msg.mid)
-		                  .split('HMSG')         .join(msg.message)
-		                  .split('img/guest.png').join(msg.author.avatar + tkn())
-		                  .split('HDISPLAYNAME') .join(msg.author.display_name)
-		                  .split('HCREATEDAGO')  .join(msg.created_ago);
-		if (newmsg) new_mrk.before(html);
-		else old_mrk.after(html);
-	};
-	function disable_post () {
-		msg_entry.prop('disabled', true);
-		$('#hve-regin').prop('disabled', true);
-		$('#btn-post-user').prop('disabled', true);
-		$('#btn-post-guest').prop('disabled', true);
-	};
-	function enable_post (clear) {
-		msg_entry.prop('disabled', false);
-		$('#hve-regin').prop('disabled', false);
-		$('#btn-post-user').prop('disabled', false);
-		$('#btn-post-guest').prop('disabled', false);
-		if (clear) {
-			msg_entry.val('');
-		}
-		msg_entry.focus();
-	};
-	function post_as_user () {
-		disable_post();
-		post_message(url, msg_entry.val(), null, null, posted, false);
-		return false;
-	};
-	function post_as_guest () {
-		disable_post();
-		post_message(url, msg_entry.val(), null, null, posted, true);
-		return false;
-	};
-	function posted (err, msg) {
-		if (err) {
-			enable_post(false);
-			throw err;
-		}
-		for (var m = 0; m < msg.length; m++) {
-			conv.splice(0, 0, msg[m]);
-			add_msg(msg[m], true);
-		}
-		enable_post(true);
-	};
+			};
+			function post_as_user () {
+				disable_post();
+				post_message(url, msg_entry.val(), null, null, posted, false);
+				return false;
+			};
+			function post_as_guest () {
+				disable_post();
+				post_message(url, msg_entry.val(), null, null, posted, true);
+				return false;
+			};
+			function posted (err, msg) {
+				if (err) {
+					enable_post(false);
+					throw err;
+				}
+				for (var m = 0; m < msg.length; m++) {
+					conv.splice(0, 0, msg[m]);
+					add_msg(msg[m], true);
+				}
+				enable_post(true);
+			};
 
-	var url = 'gethiveapp.com';
-	var heart = 5000;
-	// catch hive loaded
-	function hve_loaded () {
-		if (bndl != null)
-			regin_click();
-		get_conversation_base(url,  function (err, base) {
-			if (err) throw err;
-			$('#hve-load').addClass('none');
-			if (base.length == page_size)
-				earlier.removeClass('none');
-			for (var b = 0; b < base.length; b++)
-				add_msg(base[b], false);
-			setTimeout(hve_newer, heart);
-		}, true);
-	};
-	function hve_earlier () {
-		earlier.addClass('none');
-		earlier_load.removeClass('none');
-		get_older_messages(url, function (err, older) {
-			earlier_load.addClass('none');
-			if (err || older.length == page_size)
-				earlier.removeClass('none');
-			if (err) throw err;
-			for (var o = 0; o < older.length; o++)
-				add_msg(older[o], false);
-		});
-		return false;
-	};
-	var new_cache = [];
-	function hve_newer () {
-		get_newer_messages(url, function (err, newer) {
-			if (err) { 
-				throw err;
-				return setTimeout(hve_newer, heart);
-			}
-			if (newer.length == 0)
-				return setTimeout(hve_newer, heart);
-			new_cache = new_cache.concat(newer);
-			newlink.removeClass('none');
-			newtext.text('Show ' + new_cache.length + ' new message' + (new_cache.length == 1 ? '' : 's'));
-			if (newer.length == page_size) return setTimeout(hve_newer, 500);
-			else return setTimeout(hve_newer, heart);
-		});
-	};
-	function show_new () {
-		for (var n = 0; n < new_cache.length; n++)
-			add_msg(new_cache[n], true);
-		new_cache = [];
-		newlink.addClass('none');
-		return false;
-	};
+			var url = 'gethiveapp.com';
+			var heart = 5000;
+			// catch hive loaded
+			function hve_loaded () {
+				if (bndl != null)
+					regin_click();
+				get_conversation_base(url,  function (err, base) {
+					if (err) throw err;
+					$('#hve-load').addClass('none');
+					if (base.length == page_size)
+						earlier.removeClass('none');
+					for (var b = 0; b < base.length; b++)
+						add_msg(base[b], false);
+					setTimeout(hve_newer, heart);
+				}, true);
+			};
+			function hve_earlier () {
+				earlier.addClass('none');
+				earlier_load.removeClass('none');
+				get_older_messages(url, function (err, older) {
+					earlier_load.addClass('none');
+					if (err || older.length == page_size)
+						earlier.removeClass('none');
+					if (err) throw err;
+					for (var o = 0; o < older.length; o++)
+						add_msg(older[o], false);
+				});
+				return false;
+			};
+			var new_cache = [];
+			function hve_newer () {
+				get_newer_messages(url, function (err, newer) {
+					if (err) { 
+						throw err;
+						return setTimeout(hve_newer, heart);
+					}
+					if (newer.length == 0)
+						return setTimeout(hve_newer, heart);
+					new_cache = new_cache.concat(newer);
+					newlink.removeClass('none');
+					newtext.text('Show ' + new_cache.length + ' new message' + (new_cache.length == 1 ? '' : 's'));
+					if (newer.length == page_size) return setTimeout(hve_newer, 500);
+					else return setTimeout(hve_newer, heart);
+				});
+			};
+			function show_new () {
+				for (var n = 0; n < new_cache.length; n++)
+					add_msg(new_cache[n], true);
+				new_cache = [];
+				newlink.addClass('none');
+				return false;
+			};
 
-	document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
-	var ava_can = document.getElementById('edit-avatar-can');
+			document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
+			var ava_can = document.getElementById('edit-avatar-can');
 
-	function new_avatar (e) {
-		read_img(e.target.files[0], function (img) {
-			draw_avatar(img, ava_can, ava_can.getContext('2d'));
-			edit_user(null, null, null, null, ava_can.toDataURL('image/png'), function (err, prof) {
-				if (err) throw err;
-				else bndl.profile = prof;
-			});
-		});
-	};
+			function new_avatar (e) {
+				read_img(e.target.files[0], function (img) {
+					draw_avatar(img, ava_can, ava_can.getContext('2d'));
+					edit_user(null, null, null, null, ava_can.toDataURL('image/png'), function (err, prof) {
+						if (err) throw err;
+						else bndl.profile = prof;
+					});
+				});
+			};
 
-	function report_msg (mid, report, hid) {
-		$('#' + hid).attr('class', 'none')
-            .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
-		report_message(url, mid, report, function (err, res) {
-			if (err) throw err;
-		});
-		return false;
-	};
+			function report_msg (mid, report, hid) {
+				$('#' + hid).attr('class', 'none')
+		            .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
+				report_message(url, mid, report, function (err, res) {
+					if (err) throw err;
+				});
+				return false;
+			};
 
-	function submod () {
-		pst('rye?', {name: $('#sub-name').val(), email: $('#sub-email').val()}, function (err, bdy) {
-			if (err) throw err;
-			$('#mod-body').addClass('none');
-			$('#mod-good').removeClass('none');
-		});
-		return false;
-	};
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			function submod () {
+				pst('rye?', {name: $('#sub-name').val(), email: $('#sub-email').val()}, function (err, bdy) {
+					if (err) throw err;
+					$('#mod-body').addClass('none');
+					$('#mod-good').removeClass('none');
+				});
+				return false;
+			};
+		</script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-53846051-3', 'auto');
-  ga('send', 'pageview');
-</script>
-</body>
+		  ga('create', 'UA-53846051-3', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	</body>
 </html>

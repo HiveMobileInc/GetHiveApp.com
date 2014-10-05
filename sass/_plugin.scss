@@ -177,7 +177,7 @@ p.msg {
 		height:auto;
 	}
 	.author-name {
-		font-size: .9em;
+		font-size: .85em;
 		line-height: .9em;
 		font-weight: 600;
 		color:$blue1;
@@ -187,7 +187,7 @@ p.msg {
 	}
 }
 .hve-time {
-	font-size: .85em;
+	font-size: .8em;
 	line-height: 1em;
 	color: #B8B8B8;
 	font-weight: 300;
@@ -304,7 +304,8 @@ ul.report {
 		border-radius: .4em;
 		padding: .7em .7em 0 .7em;
 		min-height: 5em;
-		background: rgb(243, 246, 248);
+		background: #F5F8FA;
+		border: 1px solid rgb(231, 231, 231);
 	}
 	.hve-textarea:focus {
 		outline: 0;

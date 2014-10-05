@@ -251,20 +251,25 @@
 	    return false;
 	};
 	function regin_click () {
-		regin(username.val(), password.val(), function (err, creds) {
-			if (err) throw err;
+		function logged_in () {
 			$('#regin-icon').attr('class', 'fa fa-comment-o');
 			$('#hve-regin').addClass('none');
-			$('#btn-user-text').text(creds.profile.display_name);
-			$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
-			msg_entry.focus();
-			dl_img(creds.profile.avatar + tkn(), function (img) {
+			$('#btn-user-text').text(bndl.profile.display_name);
+			dl_img(bndl.profile.avatar + tkn(), function (img) {
 				draw_avatar(img, ava_can, ava_can.getContext('2d'));
 				$('#ava-editor').removeClass('none');
 				$('#edit-ava-text').removeClass('none');
 			});
-		});
-		return false;
+			return false;
+		};
+		if (bndl == null) {
+			regin(username.val(), password.val(), function (err, creds) {
+				if (err) throw err;
+				$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
+				msg_entry.focus();
+				return logged_in();
+			});
+		} else return logged_in();
 	};
 	function toggle_rep (id) {
 		var e = $('#' + id);
@@ -324,6 +329,8 @@
 	var heart = 5000;
 	// catch hive loaded
 	function hve_loaded () {
+		if (bndl != null)
+			regin_click();
 		get_conversation_base(url,  function (err, base) {
 			if (err) throw err;
 			$('#hve-load').addClass('none');

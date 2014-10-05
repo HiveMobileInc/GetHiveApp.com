@@ -235,7 +235,6 @@
 	function regin_click () {
 		regin(username.val(), password.val(), function (err, creds) {
 			if (err) throw err;
-			bndl = creds;
 			$('#regin-icon').attr('class', 'fa fa-comment-o');
 			$('#hve-regin').addClass('none');
 			$('#btn-user-text').text(creds.profile.display_name);

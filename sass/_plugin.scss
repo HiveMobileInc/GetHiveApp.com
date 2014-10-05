@@ -120,8 +120,6 @@ h1.hve-title {
 
 .hve-earlier,
 .hve-new {
-	height: 3.5em;
-	line-height: 3.9em;
 	text-align: center;
 	
 	a {
@@ -132,8 +130,14 @@ h1.hve-title {
 		border-radius: .6em;
 	}
 }
+.hve-earlier {
+	height: 4.5em;
+	line-height: 4.7em;
+}
 .hve-new {
+	height:3.5em;
 	margin:-2em 0 0 0;
+	line-height: 2.8em;
 }
 
 // ______________________________________________________ MESSAGES
@@ -147,7 +151,7 @@ h1.hve-title {
 	margin: 0 0 2em 0;
 	position: relative;
 	line-height: 1.5em;
-	border-bottom: 1px solid rgb(241, 241, 241);
+	border-bottom: 1px solid #f1f1f1;
 	padding: 0 0 1em 0;
 }
 
@@ -302,7 +306,7 @@ ul.report {
 		border-radius: .4em;
 		padding: .7em .7em 0 .7em;
 		min-height: 5em;
-		background: #F5F8FA;
+		background: #FAFCFD;
 		border: 1px solid rgb(231, 231, 231);
 	}
 	.hve-textarea:focus {

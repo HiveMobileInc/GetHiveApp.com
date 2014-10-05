@@ -85,13 +85,13 @@
 					<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
 				</div>
 			</span>
-			<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i id="regin-icon" class="fa fa-sign-in"></i><span id="btn-user-text">Login or Register</span></a>
+			<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user"><i id="regin-icon" class="fa fa-sign-in"></i><span id="btn-user-text">Register or Login</span></a>
 			<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest"><i class="fa fa-comment-o"></i>Guest</a>
 		</div>
 	</div>
 		
 	<div id="hve-regin" class="hve-regin none">
-		<div method="post">
+		<div>
 			<span id="regin-header" class="header">Register or Login</span><br>
 			<span class="desc">We promise you won't lose your comment!</span><br>
 			<label for="username">Username</label>
@@ -101,7 +101,9 @@
 			<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
 		</div>
 	</div>		
-	<div class="hve-footer"><span class="copyright">&#169; 2014 <a href="http://gethiveapp.com">Hive Mobile</a> Inc.</span></div>		
+	<div class="hve-footer">
+		<span class="copyright none" id="logout"><a href="#" onclick="return logout();">Logout</a></span>
+		<span class="copyright">&#169; 2014 <a href="http://gethiveapp.com">Hive Mobile</a> Inc.</span></div>
 </div>
 
 <div class="none" id="err">
@@ -128,6 +130,7 @@
 	var welcomer = $('#welcomer');
 	var short_url_link = $('#short-url');
 	var modal_short_url = $('#modal-short-url');
+	var logout_link = $('#logout');
 
 	function close_welcome () {
 		welcomer.addClass('none');
@@ -236,8 +239,8 @@
 	};
 	function regin_click () {
 		function logged_in () {
+			logout_link.removeClass('none');
 			$('#regin-icon').attr('class', 'fa fa-comment-o');
-			$('#hve-regin').addClass('none');
 			$('#btn-user-text').text(bndl.profile.display_name);
 			dl_img(bndl.profile.avatar + tkn(), function (img) {
 				draw_avatar(img, ava_can, ava_can.getContext('2d'));
@@ -249,11 +252,20 @@
 		if (bndl == null) {
 			regin(username.val(), password.val(), function (err, creds) {
 				if (err) throw err;
+				$('#hve-regin').addClass('none');
 				$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
 				msg_entry.focus();
 				return logged_in();
 			});
 		} else return logged_in();
+	};
+	function logout () {
+		bndl = null;
+		localStorage.removeItem('hvebndl');
+		logout_link.addClass('none');
+		$('#regin-icon').attr('class', 'fa fa-sign-in');
+		$('#btn-user-text').text('Register or Login');
+		return false;
 	};
 	function toggle_rep (id) {
 		var e = $('#' + id);

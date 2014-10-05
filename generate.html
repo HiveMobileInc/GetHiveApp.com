@@ -89,6 +89,7 @@
 				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start the conversation!</p>
 			</div>
 		</div>
+		<div id="logout" class="none"><a href="#" style="color:white;" onclick="return logout();">Logout</a></div>
 	</div>
 </section>
 
@@ -100,6 +101,7 @@
 	var button_login = $('#button-login');
 	var text_register = $('#register-text');
 	var text_login = $('#login-text');
+	var logout_link = $('#logout');
 
 	button_register.click(function () {
 		button_register.addClass('selected');
@@ -197,6 +199,7 @@
 	var gen = $('#gen');
 	function regin_click () {
 		function logged_in () {
+			logout_link.removeClass('none');
 			loader.addClass('none');
 			con_regin.addClass('none');
 			gen.removeClass('none');
@@ -215,6 +218,12 @@
 				logged_in();
 			});
 		} else logged_in();
+		return false;
+	};
+	function logout () {
+		bndl = null;
+		localStorage.removeItem('hvebndl');
+		location.reload();
 		return false;
 	};
 	function hve_loaded () {

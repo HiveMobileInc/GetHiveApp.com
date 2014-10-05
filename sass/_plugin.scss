@@ -23,7 +23,7 @@ body, html {
 @media (max-width: 600px) {
 	
 	.hve-container {
-		padding: 2em 1.2em;
+		padding: 2em 1em;
 		min-width: 17em;
 	}
 }
@@ -138,6 +138,13 @@ h1.hve-title {
 	height:3.5em;
 	margin:-2em 0 0 0;
 	line-height: 2.8em;
+}
+
+@media (max-width: 600px) {
+	
+	.hve-new {
+		line-height: 3.3em;
+	}
 }
 
 // ______________________________________________________ MESSAGES
@@ -318,7 +325,7 @@ ul.report {
 	}
 	
 	.btn {
-		padding: .55em 1.1em .65em .65em;
+		padding: .7em 1.5em .6em 1em;
 		margin:0 0 0 .5em;
 		float:right;
 		color:#fff;

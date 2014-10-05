@@ -76,9 +76,10 @@
 	}
 	.feedback {
 		margin: .3em 0 0 0;
-		text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 		padding: 0 0 0 .15em;
 		height:2em;
+		font-weight: 300;
 		
 		span {
 			display: none;
@@ -219,6 +220,32 @@ footer.generate {
 		padding:0;
 	}
 }
+
+
+//_______________________________________________________
+//_______________________________________________________ LOGOUT
+
+.hve-logout {
+	width:100%;
+	float:left;
+	text-align: center;
+	margin:3em 0 0 0;
+	font-weight: 300;
+	color: #E6E6E6;
+	
+	span {
+		border-right: 1px solid #fff;
+		padding: 0 .6em 0 0;
+	}
+	a {
+		margin: 0 0 0 .6em;
+		font-weight: 400;
+	}
+}
+
+
+
+
 
 
 //_______________________________________________________

@@ -56,6 +56,14 @@
 							
 							<div class="field">
 								<input id="password" class="form-control" type="password" name="password" placeholder="password"/>
+								<div class="feedback">
+									<span class="details active">
+										Password must be at least 6 characters
+									</span>
+									<span class="error">
+										<i class="fa fa-times"></i>Your Password is too short!
+									</span>
+								</div>
 							</div>
 							
 							<button id="btn-regin" class="btn send">
@@ -72,7 +80,7 @@
 							<img id="avatar" src="img/guest.png" class="none" style="margin: 10px;"/>
 							<input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
 							<p id="dsc-pub" class="desc public">
-								<i class="fa fa-globe"></i>Everyone will be able to see this conversation.
+								<i class="fa fa-globe"></i>This conversation can be viewed by anyone.
 							</p>
 							<button id="btn-create" class="send col-xs-12">Create 
 								<span id="txt-title">Your Conversation</span>
@@ -90,7 +98,8 @@
 						</p>
 					</div>
 				</div>
-				<div id="logout" class="none">
+				<div id="logout" class="hve-logout none">
+					<span>Logged in as MichaelRurka</span>
 					<a href="#" style="color:white;" onclick="return logout();">Logout</a>
 				</div>
 			</div>

@@ -23,6 +23,7 @@
 
 	<div class="hve-header">
 		<h1  class="hve-title" id="hve-title"><i class="fa fa-circle-o-notch fa-1x fa-spin" style="font-size: 75%;"></i></h1>
+		<div class="hve-share"><a href="#" data-toggle="modal" data-target="#share-modal"><i class="fa fa-share-square-o"></i></a></div>
 		<div class="hve-type" cursor="type=help;"><i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i></div>
 	</div>
 	
@@ -33,8 +34,10 @@
 
 	<div class="hve-feed" id="feed" >
 
-			<div class="hve-load" id="hve-load"> Joining the conversation<br><i class="fa fa-circle-o-notch fa-spin"></i></div>
-
+			<!-- <div class="hve-load" id="hve-load"> Joining the conversation<br><i class="fa fa-circle-o-notch fa-spin"></i></div> -->
+			
+			<div class="hve-new-default">Welcome! You're the first and only one here. Why not invite some friends? Share this link and give it a whirl. <a href="#">http://see.rest/i0w194kvdndn29</a></div>
+			
 			<span id="msg-tmp" class="none">
 				<div id="msg-con-HID" class="hve-msg">
 					<p class="msg">HMSG</p>
@@ -93,6 +96,20 @@
 		</form>
 	</div>		
 	<div class="hve-footer"><span class="copyright">&#169; 2014 <a href="http://gethiveapp.com">Hive Mobile</a> Inc.</span></div>		
+</div>
+
+<div id="share-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="HiveBeta" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="HiveBeta">share</h4>
+      </div>
+      <div class="modal-body" id="mod-body">
+	      share me 
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="js/min/index-min.js"></script>

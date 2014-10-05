@@ -125,9 +125,10 @@ h1.hve-title {
 	border: 1px solid rgb(237, 240, 237);
 	
 	.fa {
-		font-size: 1em;
-		font-weight: 400;
-		margin: 0 1em 2em 1em;
+		position: absolute;
+		right: -.3em;
+		font-size: 1.3em;
+		top: -.3em;
 	}
 }
 
@@ -135,10 +136,9 @@ h1.hve-title {
 @media (max-width: 600px) {
 	
 	.hve-new-default {
-		padding: 0;
 		font-size: 1em;
 		font-weight: 400;
-		margin: 0 0 2em 0;
+		margin: 0 1em 2em 1em;
 	}
 }
 

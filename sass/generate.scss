@@ -17,11 +17,11 @@
 	padding:.4em 0;
 	color:#f4f4f4;
 	background:none;
-	@include border-radius(.4em);
+	@include border-radius(.3em);
 }
 .hve-btn.selected {
 	background:#fff;
-	color: rgb(0, 163, 255);
+	color: #0092E4;
 }
 
 
@@ -62,12 +62,18 @@
 
 	.hve-btn {
 		width:46%;
-		font-size:1.2em;
+		font-size:1.1em;
 		margin:0 0 1em 0;
 	}
 	.hve-btn.right {
 		float:right;
 	}	
+	input {
+		font-size: 1.05em;
+		padding: 0.6em .5em .4em .6em;
+		height: auto;
+		line-height: 1.4em;
+	}
 	.feedback {
 		margin: .3em 0 0 0;
 		text-shadow: 1px 1px 1px rgba(0,0,0,0.3);

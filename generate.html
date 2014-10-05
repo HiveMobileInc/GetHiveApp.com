@@ -44,17 +44,17 @@
 					<button class="hve-btn right login">Login</button>
 					
 					<div class="field">
-						<input id="username" class="form-control hve-name" type="text" name="username" placeholder="username"/>
+						<input id="username" class="form-control" type="text" name="username" placeholder="username"/>
 						<div class="feedback">
 							<span class="checking"><i class="fa fa-refresh fa-spin"></i>Checking ...</span>
 							<span class="available"><i class="fa fa-check"></i>Available!</span>
-							<span class="taken"><i class="fa fa-exclamation-triangle"></i>Taken.</span>
+							<span class="taken"><i class="fa fa-exclamation-triangle"></i>Username taken.</span>
 							<span class="error"><i class="fa fa-times"></i><span class="empty">Don't forget a Username!</span></span>
 						</div>
 					</div>
 					
 					<div class="field">
-						<input id="password" class="form-control hve-name" type="password" name="password" placeholder="password"/>
+						<input id="password" class="form-control" type="password" name="password" placeholder="password"/>
 						<div class="feedback">
 							<span class="checking none"><i class="fa fa-refresh fa-spin"></i>Checking ...</span>
 							<span class="valid none"><i class="fa fa-check"></i>Available!</span>
@@ -82,15 +82,13 @@
 			</div>
 			
 			<!-- remove " .none " class on " div.bottom " on generate success -->
-			<!--
-<div id="con-gen" class="bottom none">
+			<div id="con-gen" class="bottom none">
 				<div class="hve-link col-xs-12">
 					<span id="gen-url" onclick="return highlight(this);">https://see.rest/URL</span>
 					<button class="copy" ><i class="fa fa-clipboard" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"></i></button>
 				</div>
 				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start the conversation!</p>
 			</div>
--->
 		</form>
 	</div>
 </section>

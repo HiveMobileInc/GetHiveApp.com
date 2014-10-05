@@ -294,18 +294,18 @@ ul.report {
 	.hve-textbox {
 		border: 1px solid #D3D3D3;
 		margin: 0 0 .7em 0;
-		border-radius: .5em;
-		background: #fff;
 	}
 	
 	.hve-textarea {
 		width:100%;
 		max-width: 100%;
-		font-size: 1em;
+		font-size: 1.05em;
+		color: rgb(117, 117, 117);
 		border:none;
-		border-radius: .5em;
+		border-radius: .4em;
 		padding: .7em .7em 0 .7em;
 		min-height: 5em;
+		background: rgb(243, 246, 248);
 	}
 	.hve-textarea:focus {
 		outline: 0;
@@ -416,7 +416,7 @@ ul.report {
 		display: none; // for now TEMPORARY? 
 	}
 	input {
-		width: 19.2em;
+		width: 100%;
 		float:right;
 		padding: .7em .7em .55em;
 		font-size: .85em;

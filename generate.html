@@ -23,25 +23,21 @@
 <section class="landing generate">
 	<div class="container">
 		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
-		<h1>Create a Conversation</h1>
+		<h1>Create a Conversation!</h1>
 	</div>
 </section>
 
 <section class="generate-link">
 	<div class="container">
-	
-	
 
-		<!-- Good morning :) --> 
-	
-		<!-- So on iOS, it the keyboard has a "Go" button, and when tapped, it submits. I put this thing below. It's not a solution, but it basically stops the "Go" from sending. My searches aren't pulling up anything good. Maybe you know how to make "Go" just close the keyboard. That would be optimal.. --> 
-		<form method="post" onsubmit="return false;" class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4" style="padding:0">
+		<div class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4" style="padding:0">
 		
 			<div id="con-main" class="top">
 
 				<span id="regin" class="regin">
-					<button class="hve-btn register selected">Register</button> 
-					<button class="hve-btn right login">Login</button>
+					<div id="regin-err" class="none"></div>
+					<button id="button-register" class="hve-btn register selected">Register</button> 
+					<button id="button-login" class="hve-btn right login">Login</button>
 					
 					<div class="field">
 						<input id="username" class="form-control" type="text" name="username" placeholder="username"/>
@@ -63,9 +59,13 @@
 					</div>
 					
 					<button id="btn-regin" class="btn send">
-						<span class="log">Login</span>
-						<span class="reg">Register</span>
+						<span class="log none" id="login-text">Login</span>
+						<span class="reg" id="register-text">Register</span>
 					</button>
+				</span>
+
+				<span id="load" class="none" style="text-align:center;">
+				<i class="fa fa-refresh fa-spin"></i>
 				</span>
 
 				<span id="gen" class="none">
@@ -83,19 +83,38 @@
 			
 			<!-- remove " .none " class on " div.bottom " on generate success -->
 			<div id="con-gen" class="bottom none">
-				<div class="hve-link col-xs-12">
+				<div class="hve-link col-xs-12" style="text-align:center;">
 					<span id="gen-url" onclick="return highlight(this);">https://see.rest/URL</span>
-					<button class="copy" ><i class="fa fa-clipboard" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"></i></button>
 				</div>
 				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start the conversation!</p>
 			</div>
-		</form>
+		</div>
 	</div>
 </section>
 
 <script src="js/min/index-min.js"></script>
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script type="text/javascript">
+
+	var button_register = $('#button-register');
+	var button_login = $('#button-login');
+	var text_register = $('#register-text');
+	var text_login = $('#login-text');
+
+	button_register.click(function () {
+		button_register.addClass('selected');
+		button_login.removeClass('selected');
+		text_register.removeClass('none');
+		text_login.addClass('none');
+	});
+
+	button_login.click(function () {
+		button_register.removeClass('selected');
+		button_login.addClass('selected');
+		text_register.addClass('none');
+		text_login.removeClass('none');
+	});
+
   	var btn_pub = $('#btn-pub');
   	var btn_pri = $('#btn-pri');
   	var dsc_pub = $('#dsc-pub');
@@ -127,7 +146,7 @@
 	    }
   	});
   	btn_create.click(function () {
-  		create_conversation(null, inp_title.val(), btn_pub.hasClass('selected') ? 'public' : 'private', function (err, bdy) {
+  		create_conversation(null, inp_title.val(), 'public', function (err, bdy) {
   			if (err) throw err;
   			generated(bdy);
   		});
@@ -169,16 +188,23 @@
 	});
 	password.keyup(function (e) {
 	    if (e.keyCode == 13) {
-	    	regin_click();
-	        return false; 
+	    	return regin_click();
 	    }
 	});
+	var loader = $('#load');
 	$('#btn-regin').click(regin_click);
 	var con_regin = $('#regin');
 	var gen = $('#gen');
 	function regin_click () {
+		con_regin.addClass('none');
+		loader.removeClass('none');
 		regin(username.val(), password.val(), function (err, creds) {
-			if (err) throw err;
+			loader.addClass('none');
+			if (err) {
+				con_regin.removeClass('none');
+				$('#regin-err').text(err).removeClass('none');
+				throw err;
+			}
 			bndl = creds;
 			con_regin.addClass('none');
 			gen.removeClass('none');

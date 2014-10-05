@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<div class="hve-container">
+<div class="hve-container" id="main-con">
 
 	<div class="hve-header">
 		<h1  class="hve-title" id="hve-title"><i class="fa fa-circle-o-notch fa-1x fa-spin" style="font-size: 75%;"></i></h1>
@@ -34,13 +34,15 @@
 
 	<div class="hve-feed" id="feed">
 
+			<div class="hve-new-default none" id="welcomer">
+				Welcome! You're the first and only one here. Why not invite some friends? Share this link to invite anyone!
+				<br><a href="#" id="short-url">http://see.rest/i0w194kvdndn29</a>
+				<a href="#" onclick="return close_welcome();"><i class="fa fa-times-circle"></i></a>
+			</div>
+
 			<div class="hve-load" id="hve-load">Joining the conversation<br><i class="fa fa-circle-o-notch fa-spin"></i></div>
 			
-			<div class="hve-new-default">
-				Welcome! You're the first and only one here. Why not invite some friends? Share this link to invite anyone!
-				<br><a href="#">http://see.rest/i0w194kvdndn29</a>
-				<a href="#"><i class="fa fa-times-circle"></i></a>
-			</div>
+			
 			
 			<span id="msg-tmp" class="none">
 				<div id="msg-con-HID" class="hve-msg">
@@ -102,15 +104,18 @@
 	<div class="hve-footer"><span class="copyright">&#169; 2014 <a href="http://gethiveapp.com">Hive Mobile</a> Inc.</span></div>		
 </div>
 
+<div class="none" id="err">
+</div>
+
 <div id="share-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="HiveBeta" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="HiveBeta">share</h4>
+        <h4 class="modal-title" id="HiveBeta">Share this conversation!</h4>
       </div>
       <div class="modal-body" id="mod-body">
-	      share me 
+	      You can share this conversation with anybody by sending them this short url: <a id="modal-short-url" href="#"></a>
       </div>
     </div>
   </div>
@@ -119,6 +124,16 @@
 <script src="js/min/index-min.js"></script>
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 <script>
+
+	var welcomer = $('#welcomer');
+	var short_url_link = $('#short-url');
+	var modal_short_url = $('#modal-short-url');
+
+	function close_welcome () {
+		welcomer.addClass('none');
+		return false;
+	};
+
 	// handle submitting features
 	var rqft = $('#rqft');
 	rqft.keyup(function (e) {
@@ -183,10 +198,24 @@
 	var perm_store;
 	function hve_loaded () {
 		get_conversation_perm(url, function (err, perm) {
-			hive_title.text(perm.title);
+			if (err) {
+				$('#err').text('An error occured: ' + err).removeClass('none');
+				$('#main-con').addClass('none');
+				throw err;
+			}
 			perm_store = perm;
+			
+			hive_title.text(perm.title)
+			document.title = 'Hive | ' + perm.title;
+			short_url_link.attr('href', perm.url_short);
+			short_url_link.text(perm.url_short);
+			modal_short_url.text(perm.url_short);
+			modal_short_url.attr('href', perm.url_short);
+			
 			get_conversation_base(url,  function (err, base) {
 				if (err) throw err;
+				if (base.length == 0)
+					welcomer.removeClass('none');
 				$('#hve-load').addClass('none');
 				if (base.length == page_size)
 					earlier.removeClass('none');

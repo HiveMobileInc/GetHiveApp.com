@@ -226,6 +226,10 @@ p.msg {
 
 @media (max-width: 600px) {
 
+	.hve-msg {
+		font-size:1.03em;
+		margin: 0 0 2em 0;
+	}
 	.msg .details .author-name {
 		line-height: .7em;
 	}

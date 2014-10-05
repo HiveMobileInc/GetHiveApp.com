@@ -136,6 +136,7 @@ section.desc {
 
 section.app {
 	display: block; // NOT NECCESSARY FIX section in other css
+	background: rgb(243, 243, 243);
 	
 	.mobile {
 		display: none;
@@ -214,6 +215,14 @@ section.app .plugin {
 		}
 	}
 }//
+ 
+@media (max-width: 600px) {
+	
+	section.app .plugin {
+		border:none;
+		padding:0;
+	}
+}
 
 
 // __________________________________________________ SIDEBARR

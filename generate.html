@@ -23,7 +23,7 @@
 <section class="landing generate">
 	<div class="container">
 		<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
-		<h1>Create Your Hive</h1>
+		<h1>Create a Conversation</h1>
 	</div>
 </section>
 
@@ -35,14 +35,37 @@
 		<!-- Good morning :) --> 
 	
 		<!-- So on iOS, it the keyboard has a "Go" button, and when tapped, it submits. I put this thing below. It's not a solution, but it basically stops the "Go" from sending. My searches aren't pulling up anything good. Maybe you know how to make "Go" just close the keyboard. That would be optimal.. --> 
-		<form method="post" onsubmit="return false;" class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4">
+		<form method="post" onsubmit="return false;" class="generate col-xxs-12 col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4" style="padding:0">
 		
 			<div id="con-main" class="top">
 
-				<span id="regin">
-					<input id="username" class="form-control hve-name" type="text" name="username" placeholder="username"/><br>
-					<input id="password" class="form-control hve-name" type="password" name="password" placeholder="password"/><br>
-					<button id="btn-regin" class="btn btn-regin">Login or Register</button>
+				<span id="regin" class="regin">
+					<button class="hve-btn register selected">Register</button> 
+					<button class="hve-btn right login">Login</button>
+					
+					<div class="field">
+						<input id="username" class="form-control hve-name" type="text" name="username" placeholder="username"/>
+						<div class="feedback">
+							<span class="checking"><i class="fa fa-refresh fa-spin"></i>Checking ...</span>
+							<span class="available"><i class="fa fa-check"></i>Available!</span>
+							<span class="taken"><i class="fa fa-exclamation-triangle"></i>Taken.</span>
+							<span class="error"><i class="fa fa-times"></i><span class="empty">Don't forget a Username!</span></span>
+						</div>
+					</div>
+					
+					<div class="field">
+						<input id="password" class="form-control hve-name" type="password" name="password" placeholder="password"/>
+						<div class="feedback">
+							<span class="checking none"><i class="fa fa-refresh fa-spin"></i>Checking ...</span>
+							<span class="valid none"><i class="fa fa-check"></i>Available!</span>
+							<span class="invalid none"><i class="fa fa-exclamation-triangle"></i>Taken.</span>
+						</div>
+					</div>
+					
+					<button id="btn-regin" class="btn send">
+						<span class="log">Login</span>
+						<span class="reg">Register</span>
+					</button>
 				</span>
 
 				<span id="gen" class="none">
@@ -51,42 +74,26 @@
 					<img id="avatar" src="img/guest.png" class="none" style="margin: 10px;"/>
 
 					<input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
-					
-					<button id="btn-pub" class="hve-type-btn selected col-xs-5"><i class="fa fa-globe"></i>Public</button>
-					<button id="btn-pri" class="hve-type-btn col-xs-5 col-xs-offset-2"><i class="fa fa-lock"></i>Private</button>
 				
-					<p id="dsc-pub" class="desc public"><i class="fa fa-info-circle"></i>Everyone will be able to see this conversation.</p>
-					<p id="dsc-pri" class="desc private none"><i class="fa fa-info-circle"></i>Only the people you invite will be able to see this conversation.</p>
+					<p id="dsc-pub" class="desc public"><i class="fa fa-globe"></i>Everyone will be able to see this conversation.</p>
 					
 					<button id="btn-create" class="send col-xs-12">Create <span id="txt-title">Your Conversation</span></button>
 				</span>
 			</div>
 			
 			<!-- remove " .none " class on " div.bottom " on generate success -->
-			<div id="con-gen" class="bottom none">
+			<!--
+<div id="con-gen" class="bottom none">
 				<div class="hve-link col-xs-12">
 					<span id="gen-url" onclick="return highlight(this);">https://see.rest/URL</span>
 					<button class="copy" ><i class="fa fa-clipboard" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard"></i></button>
 				</div>
 				<p class="desc private"><i class="fa fa-info-circle"></i>Copy-paste this link anywhere to start the conversation!</p>
 			</div>
+-->
 		</form>
 	</div>
 </section>
-
-
-
-
-<footer class="generate">
-<div class="container">
-<div class="col-xxs-12 col-lg-10 col-lg-offset-1">
-		<ul class="legal">Get in touch!  
-<SCRIPT type="text/javascript">eval(unescape('%76%61%72%20%73%3D%27%61%6D%6C%69%6F%74%68%3A%40%69%65%67%68%74%76%69%61%65%70%70%63%2E%6D%6F%27%3B%76%61%72%20%72%3D%27%27%3B%66%6F%72%28%76%61%72%20%69%3D%30%3B%69%3C%73%2E%6C%65%6E%67%74%68%3B%69%2B%2B%2C%69%2B%2B%29%7B%72%3D%72%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2B%31%2C%69%2B%32%29%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2C%69%2B%31%29%7D%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%3C%61%20%68%72%65%66%3D%22%27%2B%72%2B%27%22%3E%68%69%40%67%65%74%68%69%76%65%61%70%70%2E%63%6F%6D%3C%2F%61%3E%27%29%3B'))</SCRIPT>
-		</ul>
-		<span class="copyright">&#169; 2014 <a href="http://gethiveapp.com">Hive Mobile</a> Inc.</span>
-</div>
-</div>
-</footer>
 
 <script src="js/min/index-min.js"></script>
 <script src="https://s3.amazonaws.com/hvejs/hve.js"></script>

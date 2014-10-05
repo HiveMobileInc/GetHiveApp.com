@@ -34,7 +34,7 @@
 		
 			<div id="con-main" class="top">
 
-				<span id="regin" class="regin">
+				<span id="regin" class="regin none">
 					<div id="regin-err" class="none"></div>
 					<button id="button-register" class="hve-btn register selected">Register</button> 
 					<button id="button-login" class="hve-btn right login">Login</button>
@@ -64,7 +64,7 @@
 					</button>
 				</span>
 
-				<span id="load" class="none" style="text-align:center;">
+				<span id="load" class="" style="text-align:center;">
 				<i class="fa fa-refresh fa-spin"></i>
 				</span>
 
@@ -196,20 +196,33 @@
 	var con_regin = $('#regin');
 	var gen = $('#gen');
 	function regin_click () {
-		con_regin.addClass('none');
-		loader.removeClass('none');
-		regin(username.val(), password.val(), function (err, creds) {
+		function logged_in () {
 			loader.addClass('none');
-			if (err) {
-				con_regin.removeClass('none');
-				$('#regin-err').text(err).removeClass('none');
-				throw err;
-			}
 			con_regin.addClass('none');
 			gen.removeClass('none');
 			$('#avatar').attr('src', bndl.profile.avatar + tkn());
-		});
+		};
+		con_regin.addClass('none');
+		loader.removeClass('none');
+		if (bndl == null) {
+			regin(username.val(), password.val(), function (err, creds) {
+				if (err) {
+					loader.addClass('none');
+					con_regin.removeClass('none');
+					$('#regin-err').text(err).removeClass('none');
+					throw err;
+				}
+				logged_in();
+			});
+		} else logged_in();
 		return false;
+	};
+	function hve_loaded () {
+		if (bndl != null) regin_click();
+		else {
+			con_regin.removeClass('none');
+			loader.addClass('none');
+		}
 	};
 </script>
 <script>

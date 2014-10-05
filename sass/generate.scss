@@ -5,6 +5,30 @@
 @import '_web-footer';
 
 
+
+//_______________________________________________________
+//_______________________________________________________ GENERAL STYLES
+
+
+.hve-btn {
+	text-align: center;
+	margin-top:1em;
+	border:1px solid #f4f4f4;
+	padding:.4em 0;
+	color:#f4f4f4;
+	background:none;
+	@include border-radius(.4em);
+}
+.hve-btn.selected {
+	background:#fff;
+	color: rgb(0, 163, 255);
+}
+
+
+//_______________________________________________________
+//_______________________________________________________ LANDING / HEADER
+
+
 .landing.generate {
 	margin: 4em 0 3em 0;
 	color: #fff;
@@ -27,29 +51,72 @@
 		text-align: center;
 		margin: .7em auto 0 auto;
 	}
-/*
-	p.desc {
-		font-weight: 300;
-		font-size:1.5em;
-		width:600px;
-		max-width: 100%;
-		margin:1em auto 0 auto;
-		text-shadow: 1.5px 1.5px 0 #4197D1;
-	}
-*/
 }
 
-.btn-regin {
-	width: 100%;
-	font-size: 1.1em;
-	background: #34c5fd;
-	padding: .5em 0 .40em 0;
-	line-height: 1.5em;
-	text-shadow: 0px 1px 1px #0077B9;
+
+//_______________________________________________________
+//_______________________________________________________ REGIN
+
+
+.regin {
+
+	.hve-btn {
+		width:46%;
+		font-size:1.2em;
+		margin:0 0 1em 0;
+	}
+	.hve-btn.right {
+		float:right;
+	}	
+	.feedback {
+		margin: .3em 0 0 0;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+		padding: 0 0 0 .15em;
+		height:2em;
+		
+		span {
+			display: none;
+		}
+		span.active,
+		span.active span {
+			display: inline-block;
+		}
+		
+		.fa {
+			margin:0 .4em 0 0;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+		}
+		.available .fa {
+			color: rgb(133, 255, 133);
+		}
+		.taken .fa {
+			color: rgb(255, 245, 0);
+		}
+		.error .fa {
+			color: rgb(255, 141, 141);
+		}
+	}
 }
-.btn-regin:hover {
-	color:#fff;
+
+.regin {
+
+		.btn.send {
+			width: 100%;
+			font-size: 1.1em;
+			background: #34c5fd;
+			padding: .5em 0 .40em 0;
+			line-height: 1.5em;
+			text-shadow: 0px 1px 1px #0077B9;
+		}
+		.send:hover {
+			color:#fff;
+		}
 }
+
+
+//_______________________________________________________
+//_______________________________________________________ GENERATE
+
 
 .generate-link {
 	font-size: 1.2em;
@@ -57,26 +124,13 @@
 	
 	.hve-name {
 		font-size: 1.2em;
-		padding: 0.5em;
 		height: 2em;
+		padding: 1.1em .6em;
 	}
 	.hve-type-btn {
-		text-align: center;
-		margin-top:1em;
-		border:1px solid #f4f4f4;
-		padding:.4em 0;
-		color:#f4f4f4;
-		background:none;
-		@include border-radius(.4em);
-			
-		i {
-			margin:0 .3em 0 0;
-		}
+		
 	}
-	.hve-type-btn.selected {
-		background:#fff;
-		color: rgb(0, 163, 255);
-	}
+	
 	p.desc {
 		float: left;
 		margin: 1em 0;
@@ -161,29 +215,25 @@ footer.generate {
 }
 
 
-
+//_______________________________________________________
+//_______________________________________________________ Full-BG
 
 
 img.bg {
-  /* Set rules to fill background */
   min-height: 100%;
   min-width: 1024px;
-	
-  /* Set up proportionate scaling */
   width: 100%;
   height: auto;
-	
-  /* Set up positioning */
   position: fixed;
   top: 0;
   left: 0;
   z-index: -9;
 }
 
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
+@media screen and (max-width: 1024px) { // Specific to this particular image // Do this later
   img.bg {
     left: 50%;
-    margin-left: -512px;   /* 50% */
+    margin-left: -512px;   // 50%
   }
 }
 

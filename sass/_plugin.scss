@@ -125,8 +125,9 @@ h1.hve-title {
 	text-align: center;
 	
 	a {
-		padding: .1em .7em;
-		font-size: .87em;
+		padding: .2em .7em;
+		font-size: .75em;
+		font-weight: 400;
 		border: 1px solid #529fe7;
 		border-radius: .6em;
 	}
@@ -141,17 +142,20 @@ h1.hve-title {
 
 
 .hve-msg {
-	width:100%;
+	width: 100%;
 	display: inline-block;
-	margin:0 0 2em 0;
+	margin: 0 0 2em 0;
 	position: relative;
 	line-height: 1.5em;
+	border-bottom: 1px solid rgb(241, 241, 241);
+	padding: 0 0 1em 0;
 }
 
 p.msg {
 	margin: 0;
 	font-size: 1.05em;
-	color: #797979;
+	color: #868686;
+	line-height: 1.7em;
 }
 
 .hve-msg-meta {
@@ -173,7 +177,7 @@ p.msg {
 		height:auto;
 	}
 	.author-name {
-		font-size: .95em;
+		font-size: .9em;
 		line-height: .9em;
 		font-weight: 600;
 		color:$blue1;
@@ -301,6 +305,7 @@ ul.report {
 		border:none;
 		border-radius: .5em;
 		padding: .7em .7em 0 .7em;
+		min-height: 5em;
 	}
 	.hve-textarea:focus {
 		outline: 0;

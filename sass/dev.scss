@@ -94,14 +94,15 @@ i.fa.report {
 
 @media (max-width: 600px) {
 
-	.beta-banner {
+	.beta-banner.dev {
 		
 		div {
-			font-size: 1.1em;
-			line-height: 2.9em;
 			font-weight: 600;
-			height: 2.7em;
-			right: -5.8em;
+			height: 2.4em;
+			top:2.4em;
+			right: -4.5em;
+			font-size:1.1em;
+			line-height: 2.7em;
 		}
 	}
 }
@@ -393,6 +394,7 @@ ul.dev {
 	}
 	ul.dev li {
 		font-size:1.2em;
+		background:#fff;
 	}
 	// mobile accordion sidebar
 	.container.accordion.mobile {

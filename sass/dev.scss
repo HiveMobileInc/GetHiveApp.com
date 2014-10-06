@@ -395,6 +395,10 @@ ul.dev {
 	ul.dev li {
 		font-size:1.2em;
 		background:#fff;
+		
+		span {
+			color:gray;
+		}
 	}
 	// mobile accordion sidebar
 	.container.accordion.mobile {

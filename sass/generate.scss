@@ -60,6 +60,10 @@
 
 .regin {
 
+	.field {
+		margin:0 0 1em 0;
+	}
+
 	.hve-btn {
 		width:46%;
 		font-size:1.1em;
@@ -120,6 +124,15 @@
 		}
 }
 
+
+.regin-err {
+	text-align: center;
+	padding: .8em;
+	margin: 0 0 1em 0;
+	color: rgb(80, 80, 80);
+	background: rgb(255, 233, 118);
+	border-radius: .3em;
+}
 
 //_______________________________________________________
 //_______________________________________________________ GENERATE

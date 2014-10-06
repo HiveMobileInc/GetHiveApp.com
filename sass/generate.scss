@@ -127,7 +127,7 @@
 
 .regin-err {
 	text-align: center;
-	padding: .8em;
+	padding: .7em;
 	margin: 0 0 1em 0;
 	color: rgb(80, 80, 80);
 	background: rgb(255, 233, 118);
@@ -196,7 +196,7 @@
 	}
 }
 
-form.generate .faded {
+.faded {
 	@include opacity(.4);
 }
 

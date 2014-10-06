@@ -58,13 +58,13 @@ i.fa.report {
 // __________________________________________________ LANDINGG
 
 .landing {
-	padding: 4em 0 9em 0;
+	padding: 4.8em 0 6.5em 0;
 	color: #fff;
 	text-align: center;
 	display: block; // NO NEED IF YOU fix section:display:inline-block
 
 	.logo {
-		width: 135px;
+		width: 120px;
 		height: auto;
 		display: block;
 		margin:0 auto;
@@ -78,14 +78,43 @@ i.fa.report {
 		text-align: center;
 		margin: .7em auto 0 auto;
 	}
-	p.desc {
-		font-weight: 300;
-		font-size:1.5em;
-		width:600px;
-		max-width: 100%;
-		margin:1em auto 0 auto;
-		text-shadow: 1.5px 1.5px 0 #4197D1;
+}
+
+.countdown {
+	margin:2em 0 0 0;
+	@include opacity(.6);
+}
+.countdown div {
+	display: inline;
+	font-size: 5.1em;
+	margin: 0 .15em;
+	padding:0 0 .2em 0;
+	font-weight: 300;
+	font-family: helvetica;
+	position:relative;
+	
+	span {
+		font-size: .2em;
+		font-weight: 500;
+		position: absolute;
+		bottom: 0;
+		text-align: center;
+		width: 5.5em;
+		left: 0;
 	}
+	span.divider {
+		font-size: 2em;
+		font-family: helvetica;
+		font-weight: 100;
+	}
+}
+
+.launch {
+	font-size: 2em;
+	margin: 1em 0 0 0;
+	line-height: 1em;
+	font-weight: 300;
+	text-shadow: 0px 0px 9px rgba(0,0,0,0.21);
 }
 
 

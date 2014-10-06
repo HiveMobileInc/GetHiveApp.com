@@ -153,7 +153,7 @@
 	
 	p.desc {
 		float: left;
-		margin: 1em 0;
+		margin: 1.5em 0 0 0;
 		font-weight: 300;
 		padding:0 0 0 1.5em;
 		line-height: 1.4em;
@@ -168,6 +168,15 @@
 			margin:0 .5em 0 -1.4em;
 		}
 	}
+	p.desc.hve-warning {
+		color: rgb(71, 71, 71);
+		font-weight: 500;
+		
+		a {
+			font-weight: 600;
+			color: rgb(71, 71, 71);
+		}
+	}
 	.send {
 		background: #0bd0a8;
 		box-shadow: 1px 1px 2px #3472b3;
@@ -176,6 +185,7 @@
 		text-align: center;
 		text-shadow: 0px 1px 1px #1D7744;
 		font-size: 1.1em;
+		margin: 1em 0 0 0;
 		@include border-radius(.4em);
 		
 		span {

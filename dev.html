@@ -92,47 +92,63 @@
 				
 				<div class="plugin col-xxs-12 col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-lg-7 col-lg-offset-1">
 					<div class="hve-header">
-						<div class="hve-title" id="hve-title">
-							Any Thoughts for Hive?
-						</div>
-						<!--
-<div class="hve-share">
+						<h1 class="hve-title" id="hve-title">
+							<i class="fa fa-circle-o-notch fa-1x fa-spin" style="font-size: 75%;"></i>
+						</h1>
+						<div class="hve-share">
 							<a href="#" data-toggle="modal" data-target="#share-modal">
 								<i class="fa fa-share-square-o"></i>
 								<span>Share</span>
 							</a>
 						</div>
--->
 						<div class="hve-type" cursor="type=help;">
 							<i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i>
 						</div>
 					</div>
-
+			
 					<div class="hve-earlier">
 						<a id="hve-earlier" class="none" href="#" onclick="return hve_earlier();">Show earlier messages</a>
-						<span id="hve-earlier-load" class="none"><i class="fa fa-circle-o-notch fa-spin"></i></span>
-					</div>	
-					
-					<div id="feed" class="feed-area">
-						<div class="hve-load" id="hve-load">Joining the conversation<br>
+						<span id="hve-earlier-load" class="none">
+							<i class="fa fa-circle-o-notch fa-spin"></i>
+						</span>
+					</div>
+
+					<div class="hve-feed" id="feed">
+						<div class="hve-new-default none" id="welcomer">
+							You're the first one here!<br>Share this conversation:
+							<a href="#" id="short-url">http://see.rest/i0w194kvdndn29</a>
+							<a href="#" onclick="return close_welcome();">
+								<i class="fa fa-times-circle"></i>
+							</a>
+						</div>
+
+						<div class="hve-load" id="hve-load">
+							Joining the conversation<br>
 							<i class="fa fa-circle-o-notch fa-spin"></i>
 						</div>
+					
 						<span id="msg-tmp" class="none">
 							<div id="msg-con-HID" class="hve-msg">
 								<p class="msg">HMSG</p>
 								<div class="hve-msg-meta">
-									<div class="author-img"><a href="#"><img src="img/guest.png" alt=""/></a></div>
+									<div class="author-img">
+										<a href="#">
+											<img src="img/guest.png" alt=""/>
+										</a>
+									</div>
 									<div class="author-name">HDISPLAYNAME</div>
 									<div class="hve-time">HCREATEDAGO</div>
-									<a href="#" onclick="return toggle_rep('hve-rep-HID');"><i class="fa report fa-exclamation-triangle none"></i></a>
+									<a href="#" onclick="return toggle_rep('hve-rep-HID');">
+										<i class="fa report fa-exclamation-triangle none"></i>
+									</a>
 									<span id="hve-rep-HID" class="none">
 										<span class="report-label" style="color:#989898;">Report for:</span>	
 										<ul class="report">
-												<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
-												<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
-												<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
-												<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
-												<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
+											<li><a href="#" onclick="return report_msg('MID', 'spam',        'msg-con-HID');">Spam</a></li>
+											<li><a href="#" onclick="return report_msg('MID', 'harrassment', 'msg-con-HID');">Harassment</a></li>
+											<li><a href="#" onclick="return report_msg('MID', 'copyright',   'msg-con-HID');">Copyright Infringement</a></li>
+											<li><a href="#" onclick="return report_msg('MID', 'racism',      'msg-con-HID');">Racism</a></li>
+											<li><a href="#" onclick="return toggle_rep('hve-rep-HID');" class="close-report"><i class="fa fa-times"></i> Close</a></li>
 										</ul>
 									</span>
 								</div>
@@ -140,11 +156,11 @@
 						</span>
 						<span id="new-mrk"></span>
 					</div>
-					
+			
 					<div class="hve-new" id="hve-new">
 						<a href="#" id="hve-new-text" class="none" onclick="return show_new();">5 new messages</a>
 					</div>
-					
+				
 					<div class="hve-post">
 						<div class="hve-textbox">
 							<textarea class="hve-textarea" id="hve-message" placeholder="Type your message!"></textarea>
@@ -159,14 +175,14 @@
 							</span>
 							<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user">
 								<i id="regin-icon" class="fa fa-sign-in"></i>
-								<span id="btn-user-text">Login or Register</span>
+								<span id="btn-user-text">Register or Login</span>
 							</a>
 							<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest">
 								<i class="fa fa-comment-o"></i>Guest
 							</a>
 						</div>
 					</div>
-	
+				
 					<div id="hve-regin" class="hve-regin none">
 						<div>
 							<span id="regin-header" class="header">Register or Login</span><br>
@@ -177,7 +193,33 @@
 							<input id="password" type="password" name="password" placeholder="password"><br>
 							<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
 						</div>
-					</div>				
+					</div>		
+					<div class="hve-footer">
+						<span class="copyright none" id="logout">
+							<a href="#" onclick="return logout();">Logout</a>
+						</span>
+						<span class="copyright">
+							&#169; 2014 
+							<a href="http://gethiveapp.com">Hive Mobile</a> Inc.
+						</span>
+					</div>			
+				</div>
+				<div id="share-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="HiveBeta" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">
+									<span aria-hidden="true">&times;</span>
+									<span class="sr-only">Close</span>
+								</button>
+								<h4 class="modal-title" id="HiveBeta">Share this conversation!</h4>
+							</div>
+							<div class="modal-body" id="mod-body">
+								You can share this conversation with anybody by sending them this short url: 
+								<a id="modal-short-url" href="#"></a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -203,11 +245,17 @@
 		    $('#type').tooltip();
 			$('section.landing').anystretch();
 
+			var url = 'http://see.rest/i0xsha86os9k9';
 			var days = $('#days');
 			var hours = $('#hours');
 			var mins = $('#mins');
 			var secs = $('#secs');
 			setInterval(function () {
+				function pad (num) {
+					if (num.toString().length == 1)
+						return '0' + num.toString();
+					return num.toString();
+				};
 				var due = new Date('Decemeber 1, 2014').getTime();
 				var now = new Date().getTime();
 				var spn = Math.max(due - now, 0);
@@ -219,15 +267,32 @@
 				spn -= vmins * (1000 * 60);
 				var vsecs = Math.floor(spn / (1000));
 				spn -= vsecs * (1000);
-				console.log(vdays, vhours, vmins, vsecs);
-				days.text(vdays);
-				hours.text(vhours);
-				mins.text(vmins);
-				secs.text(vsecs);
+				days.text(pad(vdays));
+				hours.text(pad(vhours));
+				mins.text(pad(vmins));
+				secs.text(pad(vsecs));
 			}, 1000);
 
+			var welcomer = $('#welcomer');
+			var short_url_link = $('#short-url');
+			var modal_short_url = $('#modal-short-url');
 			var logout_link = $('#logout');
 
+			function close_welcome () {
+				welcomer.addClass('none');
+				return false;
+			};
+
+			// handle submitting features
+			var rqft = $('#rqft');
+			rqft.keyup(function (e) {
+			    if (e.keyCode == 13) {
+			    	if (rqft.val().length < 3) return false;
+			        $('#rqftb').before('<li><i class="fa fa-circle-o req"></i>' + rqft.val() + '</li>');
+			        rqft.val('');
+			        return false; 
+			    }
+			});
 			var username = $('#username');
 			var password = $('#password');
 			username.keyup(function (e) {
@@ -238,8 +303,7 @@
 			});
 			password.keyup(function (e) {
 			    if (e.keyCode == 13) {
-			    	regin_click();
-			        return false; 
+			    	return regin_click();
 			    }
 			});
 
@@ -254,6 +318,11 @@
 			    	return submod();
 			    }
 			});
+
+			var heart = 5000;
+
+			// grab title
+			var hive_title = $('#hve-title');
 
 			// grab msg template
 			var msg_tmp = $('#msg-tmp').html();
@@ -272,6 +341,40 @@
 			var newlink = $('#hve-new-text');
 			var newtext = $('#hve-new-text');
 
+			// catch hive loaded
+			var perm_store;
+			function hve_loaded () {
+				if (bndl != null)
+					regin_click();
+
+				get_conversation_perm(url, function (err, perm) {
+					if (err) {
+						$('#err').text('An error occured: ' + err).removeClass('none');
+						$('#main-con').addClass('none');
+						throw err;
+					}
+					perm_store = perm;
+					
+					hive_title.text(perm.title)
+					document.title = 'Hive | ' + perm.title;
+					short_url_link.attr('href', perm.url_short);
+					short_url_link.text(perm.url_short);
+					modal_short_url.text(perm.url_short);
+					modal_short_url.attr('href', perm.url_short);
+					
+					get_conversation_base(url,  function (err, base) {
+						if (err) throw err;
+						if (base.length == 0)
+							welcomer.removeClass('none');
+						$('#hve-load').addClass('none');
+						if (base.length == page_size)
+							earlier.removeClass('none');
+						for (var b = 0; b < base.length; b++)
+							add_msg(base[b], false);
+						setTimeout(hve_newer, heart);
+					}, true);
+				}, true);
+			};
 			function show_regin () {
 				if (bndl != null) return post_as_user();
 				$('#hve-regin').removeClass('none');
@@ -283,7 +386,6 @@
 				function logged_in () {
 					logout_link.removeClass('none');
 					$('#regin-icon').attr('class', 'fa fa-comment-o');
-					$('#hve-regin').addClass('none');
 					$('#btn-user-text').text(bndl.profile.display_name);
 					dl_img(bndl.profile.avatar + tkn(), function (img) {
 						draw_avatar(img, ava_can, ava_can.getContext('2d'));
@@ -295,6 +397,7 @@
 				if (bndl == null) {
 					regin(username.val(), password.val(), function (err, creds) {
 						if (err) throw err;
+						$('#hve-regin').addClass('none');
 						$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
 						msg_entry.focus();
 						return logged_in();
@@ -362,23 +465,6 @@
 				}
 				enable_post(true);
 			};
-
-			var url = 'http://see.rest/i0xsha86os9k9';
-			var heart = 5000;
-			// catch hive loaded
-			function hve_loaded () {
-				if (bndl != null)
-					regin_click();
-				get_conversation_base(url,  function (err, base) {
-					if (err) throw err;
-					$('#hve-load').addClass('none');
-					if (base.length == page_size)
-						earlier.removeClass('none');
-					for (var b = 0; b < base.length; b++)
-						add_msg(base[b], false);
-					setTimeout(hve_newer, heart);
-				}, true);
-			};
 			function hve_earlier () {
 				earlier.addClass('none');
 				earlier_load.removeClass('none');
@@ -418,7 +504,6 @@
 
 			document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
 			var ava_can = document.getElementById('edit-avatar-can');
-
 			function new_avatar (e) {
 				read_img(e.target.files[0], function (img) {
 					draw_avatar(img, ava_can, ava_can.getContext('2d'));
@@ -428,7 +513,6 @@
 					});
 				});
 			};
-
 			function report_msg (mid, report, hid) {
 				$('#' + hid).attr('class', 'none')
 		            .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
@@ -437,7 +521,6 @@
 				});
 				return false;
 			};
-
 			function submod () {
 				pst('rye?', {name: $('#sub-name').val(), email: $('#sub-email').val()}, function (err, bdy) {
 					if (err) throw err;

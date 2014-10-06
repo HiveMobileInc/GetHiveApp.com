@@ -158,6 +158,12 @@
 		padding:0 0 0 1.5em;
 		line-height: 1.4em;
 		
+		a {
+			color:#fff;	
+			font-weight: 500;
+			text-decoration: underline;
+		}
+		
 		i {
 			margin:0 .5em 0 -1.4em;
 		}
@@ -253,6 +259,7 @@ footer.generate {
 	a {
 		margin: 0 0 0 .6em;
 		font-weight: 400;
+		color:#fff;
 	}
 }
 

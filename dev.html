@@ -27,15 +27,15 @@
 				</div>
 			</div>
 			<div class="countdown">
-				<div>55<span>DAYS</span></div>
+				<div><span id="days">55</span><span>DAYS</span></div>
 				<span class="divider">:</span>
-				<div>04<span>HOURS</span></div>
+				<div><span id="hours">55</span><span>HOURS</span></div>
 				<span class="divider">:</span>
-				<div>28<span>MINUTES</span></div>
+				<div><span id="mins">55</span><span>MINUTES</span></div>
 				<span class="divider">:</span>
-				<div>20<span>SECONDS</span></div>
+				<div><span id="secs">55</span><span>SECONDS</span></div>
 			</div>
-			<div class="launch">Until Launch of Hive Version 1 and Database Reset!</span></div>
+			<div class="launch">Until the Launch of Hive v1.0 and the Database is Reset!</span></div>
 			<div class="container">
 				<div class="countdown-graphic">
 				</div>
@@ -199,8 +199,32 @@
 		<script src="js/min/index-min.js"></script>
 		<script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
 		<script type="text/javascript">
-		  $('#type').tooltip();
+		    
+		    $('#type').tooltip();
 			$('section.landing').anystretch();
+
+			var days = $('#days');
+			var hours = $('#hours');
+			var mins = $('#mins');
+			var secs = $('#secs');
+			setInterval(function () {
+				var due = new Date('Decemeber 1, 2014').getTime();
+				var now = new Date().getTime();
+				var spn = Math.max(due - now, 0);
+				var vdays = Math.floor(spn / (1000 * 60 * 60 * 24));
+				spn -= vdays * (1000 * 60 * 60 * 24);
+				var vhours = Math.floor(spn / (1000 * 60 * 60));
+				spn -= vhours * (1000 * 60 * 60);
+				var vmins = Math.floor(spn / (1000 * 60));
+				spn -= vmins * (1000 * 60);
+				var vsecs = Math.floor(spn / (1000));
+				spn -= vsecs * (1000);
+				console.log(vdays, vhours, vmins, vsecs);
+				days.text(vdays);
+				hours.text(vhours);
+				mins.text(vmins);
+				secs.text(vsecs);
+			}, 1000);
 
 			var logout_link = $('#logout');
 
@@ -339,7 +363,7 @@
 				enable_post(true);
 			};
 
-			var url = 'gethiveapp.com';
+			var url = 'http://see.rest/i0xsha86os9k9';
 			var heart = 5000;
 			// catch hive loaded
 			function hve_loaded () {

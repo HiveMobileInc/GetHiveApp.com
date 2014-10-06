@@ -48,6 +48,14 @@ section.app .plugin .hve-new {
 // 
 //
 
+@media (max-width: 600px) {
+	
+	.hve-earlier a, .hve-new a {
+		padding: .2em .7em;
+		font-size: .9em;
+	}
+}
+
 
 
 
@@ -181,7 +189,7 @@ section.desc {
 
 section.app {
 	display: block; // NOT NECCESSARY FIX section in other css
-	padding:2em 0;
+	padding:5em 0 3em 0;
 	
 	.mobile {
 		display: none;
@@ -191,6 +199,8 @@ section.app {
 @media (max-width: 768px) {
 	
 	section.app {
+		padding:2em 0;
+		
 		.mobile {
 			display: block;
 		}
@@ -270,9 +280,10 @@ section.app .plugin {
 // __________________________________________________ SIDEBARR (latest)
 
 .app {
+
 	h2 {
 		font-size:1.7em;
-		margin:2em 0 1em 0;
+		margin:0 0 1em 0;
 	}
 }
 
@@ -303,25 +314,46 @@ ul.dev {
 	}
 }
 
+
+
 @media (max-width: 768px) {
 	
-	.sidebar h2 {
-		margin: .5em 0 0 0;
+	.app h2 {
+		margin: 0;
 	}
-	.sidebar .fa {
+	.app .accordion .fa {
 		margin:0 0 0 .4em;
+	}
+	ul.dev {
+		margin: 0 0 2em 0;
 	}
 }
 
 
 @media (max-width: 600px) {
 	
+	section.app {
+		padding:0 0 2em 0;
+	}
 	.sidebar {
 		padding:0;
-		
-		.panel-body {
-			padding:0;
-		}
+	}
+	.panel-body {
+		padding:0;
+	}
+	#accordion {
+		padding:0;
+	}
+	ul.dev li {
+		font-size:1.2em;
+	}
+	// mobile accordion sidebar
+	.container.accordion.mobile {
+		border-bottom: 1px solid rgb(226, 226, 226);
+		padding-top: 1.9em;
+		padding-bottom: 1.5em;
+		margin: 0 0 2em 0;
+		background: rgb(248, 248, 248);
 	}
 }
 

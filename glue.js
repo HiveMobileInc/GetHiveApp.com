@@ -2,30 +2,32 @@ $('#type').tooltip();
 
 var heart = 5000;
 var perm_store;
-var welcomer         = $('#hv-welcome');
-var short_url_link   = $('#hv-shurl1');
-var modal_short_url  = $('#hv-shurl2');
-var logout_link      = $('#hv-logout');
-var username         = $('#hv-username');
-var password         = $('#hv-password');
-var hive_title       = $('#hv-title');
-var msg_tmp          = $('#hv-mtemp').html();
-var old_mrk          = $('#hv-mtemp');
-var new_mrk          = $('#hv-new');
-var msg_entry        = $('#hv-message');
-var earlier          = $('#hv-earlier');
-var earlier_load     = $('#hv-earlier-load');
-var newlink          = $('#hv-newer');
-var newtext          = newlink;
-var err_show         = $('#hv-err');
-var main_con         = $('#hv-main');
-var hve_load         = $('#hv-load');
-var hve_regin        = $('#hv-regin');
-var html_body        = $('html, body');
-var regin_icon       = $('#hv-regin-icon');
-var btn_user_text    = $('#hv-user-text');
-var btn_post_user    = $('#hv-post-user');
-var btn_post_guest   = $('#hv-post-guest');
+var welcomer          = $('#hv-welcome');
+var short_url_link    = $('#hv-shurl1');
+var modal_short_url   = $('#hv-shurl2');
+var logout_link       = $('#hv-logout');
+var username          = $('#hv-username');
+var password          = $('#hv-password');
+var hive_title        = $('#hv-title');
+var msg_tmp           = $('#hv-mtemp').html();
+var old_mrk           = $('#hv-mtemp');
+var new_mrk           = $('#hv-new');
+var msg_entry         = $('#hv-message');
+var earlier           = $('#hv-earlier');
+var earlier_load      = $('#hv-earlier-load');
+var newlink           = $('#hv-newer');
+var newtext           = newlink;
+var err_show          = $('#hv-err');
+var main_con          = $('#hv-main');
+var hve_load          = $('#hv-load');
+var hve_regin         = $('#hv-regin');
+var hve_regin_err_con = $('#hv-regin-err-con');
+var hve_regin_err     = $('#hv-regin-err');
+var html_body         = $('html, body');
+var regin_icon        = $('#hv-regin-icon');
+var btn_user_text     = $('#hv-user-text');
+var btn_post_user     = $('#hv-post-user');
+var btn_post_guest    = $('#hv-post-guest');
 msg_entry.focus();
 function close_welcome () {
 	welcomer.addClass('none');
@@ -86,7 +88,11 @@ function regin_click () {
 	};
 	if (bndl == null) {
 		regin(username.val(), password.val(), function (err, creds) {
-			if (err) throw err;
+			if (err) {
+				hve_regin_err.text('An error occured: ' + err);
+				hve_regin_err_con.removeClass('none');
+				throw err;
+			}
 			hve_regin.addClass('none');
 			html_body.animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
 			msg_entry.focus();

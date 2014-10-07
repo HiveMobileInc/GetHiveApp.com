@@ -86,6 +86,26 @@
             var text_register = $('#register-text');
             var text_login = $('#login-text');
             var logout_link = $('#logout');
+            var btn_pub = $('#btn-pub');
+            var btn_pri = $('#btn-pri');
+            var dsc_pub = $('#dsc-pub');
+            var dsc_pri = $('#dsc-pri');
+            var txt_title = $('#txt-title');
+            var txt_title_start = txt_title.text();
+            var inp_title = $('#inp-title');
+            var btn_create = $('#btn-create');
+            var username = $('#username');
+            var password = $('#password');
+            var loader = $('#load');
+            $('#btn-regin').click(regin_click);
+            var con_regin = $('#regin');
+            var gen = $('#gen');
+            var con_main = $('#con-main');
+            var con_gen = $('#con-gen');
+            var gen_url = $('#gen-url');
+            var gen_url2 = $('#gen-url2');
+            var in_user = $('#in-user');
+            var regin_err = $('#regin-err');
 
             button_register.click(function () {
                 button_register.addClass('selected');
@@ -93,18 +113,12 @@
                 text_register.removeClass('none');
                 text_login.addClass('none');
             });
-
             button_login.click(function () {
                 button_register.removeClass('selected');
                 button_login.addClass('selected');
                 text_register.addClass('none');
                 text_login.removeClass('none');
             });
-
-            var btn_pub = $('#btn-pub');
-            var btn_pri = $('#btn-pri');
-            var dsc_pub = $('#dsc-pub');
-            var dsc_pri = $('#dsc-pri');
             btn_pub.click(function () {
                 btn_pub.addClass('selected');
                 dsc_pub.removeClass('none');
@@ -117,18 +131,14 @@
                 btn_pri.addClass('selected');
                 dsc_pri.removeClass('none');
             });
-
-            var txt_title = $('#txt-title');
-            var txt_title_start = txt_title.text();
-            var inp_title = $('#inp-title');
-            var btn_create = $('#btn-create');
             inp_title.keyup(function (e) {
                 var l = inp_title.val().length;
-                if (l == 0) txt_title.text(txt_title_start);
-                else txt_title.text(l > 21 ? inp_title.val().substr(0, 21) + '...' : inp_title.val());
-                if (e.keyCode == 13) {
+                if (l == 0) 
+                    txt_title.text(txt_title_start);
+                else 
+                    txt_title.text(l > 21 ? inp_title.val().substr(0, 21) + '...' : inp_title.val());
+                if (e.keyCode == 13)
                     return btn_create.click();
-                }
             });
             btn_create.click(function () {
                 create_conversation(null, inp_title.val(), 'public', function (err, bdy) {
@@ -139,11 +149,11 @@
             });
 
             function generated (bdy) {
-                $('#con-main').addClass('none');
-                $('#con-gen').removeClass('none');
+                con_main.addClass('none');
+                con_gen.removeClass('none');
                 btn_create.addClass('none');
-                $('#gen-url').text(bdy.created.url_short);
-                $('#gen-url2').attr('href', bdy.created.url_short);
+                gen_url.text(bdy.created.url_short);
+                gen_url2.attr('href', bdy.created.url_short);
                 setTimeout(function () {highlight(document.getElementById('gen-url'));}, 10);
             };
 
@@ -163,9 +173,6 @@
                 }
                 return false;
             }
-
-            var username = $('#username');
-            var password = $('#password');
             username.keyup(function (e) {
                 if (e.keyCode == 13) {
                     password.focus();
@@ -173,14 +180,10 @@
                 }
             });
             password.keyup(function (e) {
-                if (e.keyCode == 13) {
+                if (e.keyCode == 13)
                     return regin_click();
-                }
             });
-            var loader = $('#load');
-            $('#btn-regin').click(regin_click);
-            var con_regin = $('#regin');
-            var gen = $('#gen');
+
             function regin_click () {
                 function logged_in () {
                     logout_link.removeClass('none');
@@ -188,8 +191,8 @@
                     con_regin.addClass('none');
                     gen.removeClass('none');
                     inp_title.focus();
-                    $('#in-user').text(bndl.profile.display_name)
-                                 .attr('href', root + 'user/' + bndl.profile.username);
+                    in_user.text(bndl.profile.display_name)
+                           .attr('href', root + 'user/' + bndl.profile.username);
                 };
                 con_regin.addClass('none');
                 loader.removeClass('none');
@@ -198,7 +201,7 @@
                         if (err) {
                             loader.addClass('none');
                             con_regin.removeClass('none');
-                            $('#regin-err').text(err).removeClass('none');
+                            regin_err.text(err).removeClass('none');
                             throw err;
                         }
                         logged_in();

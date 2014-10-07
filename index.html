@@ -169,7 +169,7 @@
 		</footer>
 
 		<script src="js/min/index-min.js"></script>
-		<script src="https://s3.amazonaws.com/hvejs/hve.js"></script>
+		<script src="https://s3.amazonaws.com/hvejs/hve.min.js"></script>
 		<script type="text/javascript">
 		    $('#type').tooltip();
 			$('section.landing').anystretch();
@@ -181,11 +181,23 @@
 			var password = $('#password');
 			var sub_name = $('#sub-name');
 			var sub_email = $('#sub-email');
+			var msg_tmp = $('#msg-tmp').html();
+			var old_mrk = $('#msg-tmp');
+			var new_mrk = $('#new-mrk');
+			var msg_entry = $('#hve-message');
+			msg_entry.focus();
+			var earlier = $('#hve-earlier');
+			var earlier_load = $('#hve-earlier-load');
+			var newlink = $('#hve-new-text');
+			var newtext = $('#hve-new-text');
+			var hve_regin = $('#hve-regin');
+			var html_body = $('html, body');
+			var regin_icon = $('#regin-icon');
+			var btn_user_text = $('#btn-user-text');
+			var btn_post_user = $('#btn-post-user');
+			var btn_post_guest = $('#btn-post-guest');
 			var mod_body = $('#mod-body');
 			var mod_good = $('#mod-good');
-			var hve_load = $('#hve-load');
-			var regin_icon = $('#regin-icon');
-			var hve_regin = $('#hve-regin');
 
 			username.keyup(function (e) {
 			    if (e.keyCode == 13) {
@@ -292,12 +304,15 @@
 				}
 				enable_post(true);
 			};
+
+
+			// catch hive loaded
 			function hve_loaded () {
 				if (bndl != null)
 					regin_click();
 				get_conversation_base(url,  function (err, base) {
 					if (err) throw err;
-					hve_load.addClass('none');
+					$('#hve-load').addClass('none');
 					if (base.length == page_size)
 						earlier.removeClass('none');
 					for (var b = 0; b < base.length; b++)
@@ -359,7 +374,7 @@
 			};
 
 			function submod () {
-				pst('rye?', {name: sub_name.val(), email: sub_email.val()}, function (err, bdy) {
+				pst('rye?', {name: $('#sub-name').val(), email: $('#sub-email').val()}, function (err, bdy) {
 					if (err) throw err;
 					mod_body.addClass('none');
 					mod_good.removeClass('none');

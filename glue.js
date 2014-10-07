@@ -1,28 +1,39 @@
 $('#type').tooltip();
 
-
+var heart = 5000;
 var welcomer = $('#welcomer');
 var short_url_link = $('#short-url');
 var modal_short_url = $('#modal-short-url');
 var logout_link = $('#logout');
-
+var username = $('#username');
+var password = $('#password');
+var hive_title = $('#hve-title');
+var msg_tmp = $('#msg-tmp').html();
+var old_mrk = $('#msg-tmp');
+var new_mrk = $('#new-mrk');
+var msg_entry = $('#hve-message');
+msg_entry.focus();
+var earlier = $('#hve-earlier');
+var earlier_load = $('#hve-earlier-load');
+var newlink = $('#hve-new-text');
+var newtext = $('#hve-new-text');
+var mod_body = $('#mod-body');
+var mod_good = $('#mod-good');
+var sub_name = $('#sub-name');
+var sub_email = $('#sub-email');
+var err_show = $('#err');
+var main_con = $('#main-con');
+var hve_load = $('#hve-load');
+var hve_regin = $('#hve-regin');
+var html_body = $('html, body');
+var regin_icon = $('#regin-icon');
+var btn_user_text = $('#btn-user-text');
+var btn_post_user = $('#btn-post-user');
+var btn_post_guest = $('#btn-post-guest');
 function close_welcome () {
 	welcomer.addClass('none');
 	return false;
 };
-
-// handle submitting features
-var rqft = $('#rqft');
-rqft.keyup(function (e) {
-    if (e.keyCode == 13) {
-    	if (rqft.val().length < 3) return false;
-        $('#rqftb').before('<li><i class="fa fa-circle-o req"></i>' + rqft.val() + '</li>');
-        rqft.val('');
-        return false; 
-    }
-});
-var username = $('#username');
-var password = $('#password');
 username.keyup(function (e) {
     if (e.keyCode == 13) {
     	password.focus();
@@ -30,46 +41,19 @@ username.keyup(function (e) {
     }
 });
 password.keyup(function (e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode == 13)
     	return regin_click();
-    }
 });
-
-$('#sub-name').keyup(function (e) {
+sub_name.keyup(function (e) {
     if (e.keyCode == 13) {
-    	$('#sub-email').focus();
+    	sub_email.focus();
         return false; 
     }
 });
-$('#sub-email').keyup(function (e) {
-    if (e.keyCode == 13) {
+sub_email.keyup(function (e) {
+    if (e.keyCode == 13)
     	return submod();
-    }
 });
-
-var heart = 5000;
-
-// grab title
-var hive_title = $('#hve-title');
-
-// grab msg template
-var msg_tmp = $('#msg-tmp').html();
-var old_mrk = $('#msg-tmp');
-var new_mrk = $('#new-mrk');
-
-// grab msg
-var msg_entry = $('#hve-message');
-msg_entry.focus();
-
-// grab earlier
-var earlier = $('#hve-earlier');
-var earlier_load = $('#hve-earlier-load');
-
-// grab new
-var newlink = $('#hve-new-text');
-var newtext = $('#hve-new-text');
-
-// catch hive loaded
 var perm_store;
 function hve_loaded () {
 	if (bndl != null)
@@ -77,24 +61,22 @@ function hve_loaded () {
 
 	get_conversation_perm(url, function (err, perm) {
 		if (err) {
-			$('#err').text('An error occured: ' + err).removeClass('none');
-			$('#main-con').addClass('none');
+			err_show.text('An error occured: ' + err).removeClass('none');
+			main_con.addClass('none');
 			throw err;
 		}
 		perm_store = perm;
-		
 		hive_title.text(perm.title)
 		document.title = 'Hive | ' + perm.title;
 		short_url_link.attr('href', perm.url_short);
 		short_url_link.text(perm.url_short);
 		modal_short_url.text(perm.url_short);
 		modal_short_url.attr('href', perm.url_short);
-		
 		get_conversation_base(url,  function (err, base) {
 			if (err) throw err;
 			if (base.length == 0)
 				welcomer.removeClass('none');
-			$('#hve-load').addClass('none');
+			hve_load.addClass('none');
 			if (base.length == page_size)
 				earlier.removeClass('none');
 			for (var b = 0; b < base.length; b++)
@@ -105,23 +87,23 @@ function hve_loaded () {
 };
 function show_regin () {
 	if (bndl != null) return post_as_user();
-	$('#hve-regin').removeClass('none');
-	$('html, body').animate({scrollTop: $('#hve-regin').offset().top - 30}, 200);
+	hve_regin.removeClass('none');
+	html_body.animate({scrollTop: hve_regin.offset().top - 30}, 200);
 	username.focus();
     return false;
 };
 function regin_click () {
 	function logged_in () {
 		logout_link.removeClass('none');
-		$('#regin-icon').attr('class', 'fa fa-comment-o');
-		$('#btn-user-text').text(bndl.profile.display_name);
+		regin_icon.attr('class', 'fa fa-comment-o');
+		btn_user_text.text(bndl.profile.display_name);
 		return false;
 	};
 	if (bndl == null) {
 		regin(username.val(), password.val(), function (err, creds) {
 			if (err) throw err;
-			$('#hve-regin').addClass('none');
-			$('html, body').animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
+			hve_regin.addClass('none');
+			html_body.animate({scrollTop: msg_entry.offset().top - (window.innerHeight / 3)}, 200);			
 			msg_entry.focus();
 			return logged_in();
 		});
@@ -131,8 +113,8 @@ function logout () {
 	bndl = null;
 	localStorage.removeItem('hvebndl');
 	logout_link.addClass('none');
-	$('#regin-icon').attr('class', 'fa fa-sign-in');
-	$('#btn-user-text').text('Register or Login');
+	regin_icon.attr('class', 'fa fa-sign-in');
+	btn_user_text.text('Register or Login');
 	return false;
 };
 function toggle_rep (id) {
@@ -152,18 +134,17 @@ function add_msg (msg, newmsg) {
 };
 function disable_post () {
 	msg_entry.prop('disabled', true);
-	$('#hve-regin').prop('disabled', true);
-	$('#btn-post-user').prop('disabled', true);
-	$('#btn-post-guest').prop('disabled', true);
+	hve_regin.prop('disabled', true);
+	btn_post_user.prop('disabled', true);
+	btn_post_guest.prop('disabled', true);
 };
 function enable_post (clear) {
 	msg_entry.prop('disabled', false);
-	$('#hve-regin').prop('disabled', false);
-	$('#btn-post-user').prop('disabled', false);
-	$('#btn-post-guest').prop('disabled', false);
-	if (clear) {
+	hve_regin.prop('disabled', false);
+	btn_post_user.prop('disabled', false);
+	btn_post_guest.prop('disabled', false);
+	if (clear)
 		msg_entry.val('');
-	}
 	msg_entry.focus();
 };
 function post_as_user () {
@@ -240,10 +221,10 @@ function report_msg (mid, report, hid) {
 };
 
 function submod () {
-	pst('rye?', {name: $('#sub-name').val(), email: $('#sub-email').val()}, function (err, bdy) {
+	pst('rye?', {name: sub_name.val(), email: sub_email.val()}, function (err, bdy) {
 		if (err) throw err;
-		$('#mod-body').addClass('none');
-		$('#mod-good').removeClass('none');
+		mod_body.addClass('none');
+		mod_good.removeClass('none');
 	});
 	return false;
 };

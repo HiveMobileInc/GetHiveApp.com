@@ -48,7 +48,6 @@
                         </span>
 
                         <span id="gen" class="none">
-                            <img id="avatar" src="img/guest.png" class="none" style="margin: 10px;"/>
                             <input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
                             <p id="dsc-pub" class="desc public">
                                 <i class="fa fa-globe"></i>This conversation can be viewed by anyone.
@@ -188,7 +187,6 @@
                     loader.addClass('none');
                     con_regin.addClass('none');
                     gen.removeClass('none');
-                    $('#avatar').attr('src', bndl.profile.avatar + tkn());
                     inp_title.focus();
                     $('#in-user').text(bndl.profile.display_name)
                                  .attr('href', root + 'user/' + bndl.profile.username);

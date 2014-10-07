@@ -166,13 +166,6 @@
 							<textarea class="hve-textarea" id="hve-message" placeholder="Type your message!"></textarea>
 						</div>
 						<div class="hve-controls">
-							<span id="ava-editor" class="ava-editor" class="none">
-								<input id="edit-avatar" class="edit-avatar" style="display:none;" type="file" accept="image/*"/>
-								<canvas id="edit-avatar-can" class="edit-avatar-can" onclick="return document.getElementById('edit-avatar').click() || false;" class="profile-preview" style="cursor:pointer;" width="60" height="60"></canvas>
-								<div id="edit-ava-text" class="edit-ava-text none">
-									<a href="#" onclick="return document.getElementById('edit-avatar').click() || false;">Change image</a>
-								</div>
-							</span>
 							<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user">
 								<i id="regin-icon" class="fa fa-sign-in"></i>
 								<span id="btn-user-text">Register or Login</span>
@@ -387,11 +380,6 @@
 					logout_link.removeClass('none');
 					$('#regin-icon').attr('class', 'fa fa-comment-o');
 					$('#btn-user-text').text(bndl.profile.display_name);
-					dl_img(bndl.profile.avatar + tkn(), function (img) {
-						draw_avatar(img, ava_can, ava_can.getContext('2d'));
-						$('#ava-editor').removeClass('none');
-						$('#edit-ava-text').removeClass('none');
-					});
 					return false;
 				};
 				if (bndl == null) {
@@ -422,7 +410,6 @@
 				var html = msg_tmp.split('HID')          .join(hop++)
 				                  .split('MID')          .join(msg.mid)
 				                  .split('HMSG')         .join(msg.message)
-				                  .split('img/guest.png').join(msg.author.avatar + tkn())
 				                  .split('HDISPLAYNAME') .join(msg.author.display_name)
 				                  .split('HCREATEDAGO')  .join(msg.created_ago);
 				if (newmsg) new_mrk.before(html);
@@ -500,18 +487,6 @@
 				new_cache = [];
 				newlink.addClass('none');
 				return false;
-			};
-
-			document.getElementById('edit-avatar').addEventListener('change', new_avatar, false);
-			var ava_can = document.getElementById('edit-avatar-can');
-			function new_avatar (e) {
-				read_img(e.target.files[0], function (img) {
-					draw_avatar(img, ava_can, ava_can.getContext('2d'));
-					edit_user(null, null, null, null, ava_can.toDataURL('image/png'), function (err, prof) {
-						if (err) throw err;
-						else bndl.profile = prof;
-					});
-				});
 			};
 			function report_msg (mid, report, hid) {
 				$('#' + hid).attr('class', 'none')

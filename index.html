@@ -320,12 +320,13 @@
 					setTimeout(hve_newer, heart);
 				}, true);
 			};
+			var earlier_size = 30;
 			function hve_earlier () {
 				earlier.addClass('none');
 				earlier_load.removeClass('none');
 				get_older_messages(url, function (err, older) {
 					earlier_load.addClass('none');
-					if (err || older.length == page_size)
+					if (err || older.length == page_size || older.length == earlier_size)
 						earlier.removeClass('none');
 					if (err) throw err;
 					for (var o = 0; o < older.length; o++)

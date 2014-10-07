@@ -91,9 +91,9 @@
 					</div>
 				</div>
 				
-				<div class="plugin col-xxs-12 col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-lg-7 col-lg-offset-1">
+				<div id="hv-main" class="plugin col-xxs-12 col-xs-12 col-sm-7 col-sm-offset-1 col-md-7 col-lg-7 col-lg-offset-1">
 					<div class="hve-header">
-						<h1 class="hve-title" id="hve-title">
+						<h1 class="hve-title" id="hv-title">
 							<i class="fa fa-circle-o-notch fa-1x fa-spin" style="font-size: 75%;"></i>
 						</h1>
 						<div class="hve-share">
@@ -108,27 +108,27 @@
 					</div>
 			
 					<div class="hve-earlier">
-						<a id="hve-earlier" class="none" href="#" onclick="return hve_earlier();">Show earlier messages</a>
-						<span id="hve-earlier-load" class="none">
+						<a id="hv-earlier" class="none" href="#" onclick="return hve_earlier();">Show earlier messages</a>
+						<span id="hv-earlier-load" class="none">
 							<i class="fa fa-circle-o-notch fa-spin"></i>
 						</span>
 					</div>
 
 					<div class="hve-feed" id="feed">
-						<div class="hve-new-default none" id="welcomer">
+						<div class="hve-new-default none" id="hv-welcome">
 							You're the first one here!<br>Share this conversation:
-							<a href="#" id="short-url">http://see.rest/i0w194kvdndn29</a>
+							<a href="#" id="hv-shurl1">http://see.rest/i0w194kvdndn29</a>
 							<a href="#" onclick="return close_welcome();">
 								<i class="fa fa-times-circle"></i>
 							</a>
 						</div>
 
-						<div class="hve-load" id="hve-load">
+						<div class="hve-load" id="hv-load">
 							Joining the conversation<br>
 							<i class="fa fa-circle-o-notch fa-spin"></i>
 						</div>
 					
-						<span id="msg-tmp" class="none">
+						<span id="hv-mtemp" class="none">
 							<div id="msg-con-HID" class="hve-msg">
 								<p class="msg">HMSG</p>
 								<div class="hve-msg-meta">
@@ -155,7 +155,7 @@
 								</div>
 							</div>
 						</span>
-						<span id="new-mrk"></span>
+						<span id="hv-new"></span>
 					</div>
 			
 					<div class="hve-new" id="hve-new">
@@ -164,32 +164,32 @@
 				
 					<div class="hve-post">
 						<div class="hve-textbox">
-							<textarea class="hve-textarea" id="hve-message" placeholder="Type your message!"></textarea>
+							<textarea class="hve-textarea" id="hv-message" placeholder="Type your message!"></textarea>
 						</div>
 						<div class="hve-controls">
-							<a href="#" id="btn-post-user" onclick="return show_regin();" class="btn user">
-								<i id="regin-icon" class="fa fa-sign-in"></i>
-								<span id="btn-user-text">Register or Login</span>
+							<a href="#" id="hv-post-user" onclick="return show_regin();" class="btn user">
+								<i id="hv-regin-icon" class="fa fa-sign-in"></i>
+								<span id="hv-user-text">Register or Login</span>
 							</a>
-							<a href="#" id="btn-post-guest" onclick="return post_as_guest();" class="btn guest">
+							<a href="#" id="hv-post-guest" onclick="return post_as_guest();" class="btn guest">
 								<i class="fa fa-comment-o"></i>Guest
 							</a>
 						</div>
 					</div>
 				
-					<div id="hve-regin" class="hve-regin none">
+					<div id="hv-regin" class="hve-regin none">
 						<div>
 							<span id="regin-header" class="header">Register or Login</span><br>
 							<span class="desc">We promise you won't lose your comment!</span><br>
-							<label for="username">Username</label>
-							<input id="username" type="text" name="username" placeholder="username"><br>
-							<label for="password">Password</label>
-							<input id="password" type="password" name="password" placeholder="password"><br>
+							<label for="hv-username">Username</label>
+							<input id="hv-username" type="text" name="username" placeholder="username"><br>
+							<label for="hv-password">Password</label>
+							<input id="hv-password" type="password" name="password" placeholder="password"><br>
 							<a href="#" onclick="return regin_click();" class="btn">Join the Conversation!</a><br>
 						</div>
 					</div>		
 					<div class="hve-footer">
-						<span class="copyright none" id="logout">
+						<span class="copyright none" id="hv-logout">
 							<a href="#" onclick="return logout();">Logout</a>
 						</span>
 						<span class="copyright">
@@ -198,6 +198,10 @@
 						</span>
 					</div>			
 				</div>
+
+				<div class="none" id="hv-err">
+				</div>
+
 				<div id="share-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="HiveBeta" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -208,9 +212,9 @@
 								</button>
 								<h4 class="modal-title" id="HiveBeta">Share this conversation!</h4>
 							</div>
-							<div class="modal-body" id="mod-body">
+							<div class="modal-body">
 								You can share this conversation with anybody by sending them this short url: 
-								<a id="modal-short-url" href="#"></a>
+								<a id="hv-shurl2" href="#"></a>
 							</div>
 						</div>
 					</div>
@@ -226,7 +230,6 @@
 							eval(unescape('%76%61%72%20%73%3D%27%61%6D%6C%69%6F%74%68%3A%40%69%65%67%68%74%76%69%61%65%70%70%63%2E%6D%6F%27%3B%76%61%72%20%72%3D%27%27%3B%66%6F%72%28%76%61%72%20%69%3D%30%3B%69%3C%73%2E%6C%65%6E%67%74%68%3B%69%2B%2B%2C%69%2B%2B%29%7B%72%3D%72%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2B%31%2C%69%2B%32%29%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2C%69%2B%31%29%7D%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%3C%61%20%68%72%65%66%3D%22%27%2B%72%2B%27%22%3E%68%69%40%67%65%74%68%69%76%65%61%70%70%2E%63%6F%6D%3C%2F%61%3E%27%29%3B'));
 						</SCRIPT>
 					</ul>
-					<!-- <span class="copyright none" id="logout"><a href="#" onclick="return logout();">Logout</a></span> -->
 					<span class="copyright">&#169; 2014 Hive Mobile Inc.</span>
 				</div>
 			</div>

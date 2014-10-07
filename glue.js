@@ -1,35 +1,32 @@
 $('#type').tooltip();
 
 var heart = 5000;
-var welcomer = $('#welcomer');
-var short_url_link = $('#short-url');
-var modal_short_url = $('#modal-short-url');
-var logout_link = $('#logout');
-var username = $('#username');
-var password = $('#password');
-var hive_title = $('#hve-title');
-var msg_tmp = $('#msg-tmp').html();
-var old_mrk = $('#msg-tmp');
-var new_mrk = $('#new-mrk');
-var msg_entry = $('#hve-message');
+var perm_store;
+var welcomer         = $('#hv-welcome');
+var short_url_link   = $('#hv-shurl1');
+var modal_short_url  = $('#hv-shurl2');
+var logout_link      = $('#hv-logout');
+var username         = $('#hv-username');
+var password         = $('#hv-password');
+var hive_title       = $('#hv-title');
+var msg_tmp          = $('#hv-mtemp').html();
+var old_mrk          = $('#hv-mtemp');
+var new_mrk          = $('#hv-new');
+var msg_entry        = $('#hv-message');
+var earlier          = $('#hv-earlier');
+var earlier_load     = $('#hv-earlier-load');
+var newlink          = $('#hv-newer');
+var newtext          = newlink;
+var err_show         = $('#hv-err');
+var main_con         = $('#hv-main');
+var hve_load         = $('#hv-load');
+var hve_regin        = $('#hv-regin');
+var html_body        = $('html, body');
+var regin_icon       = $('#hv-regin-icon');
+var btn_user_text    = $('#hv-user-text');
+var btn_post_user    = $('#hv-post-user');
+var btn_post_guest   = $('#hv-post-guest');
 msg_entry.focus();
-var earlier = $('#hve-earlier');
-var earlier_load = $('#hve-earlier-load');
-var newlink = $('#hve-new-text');
-var newtext = $('#hve-new-text');
-var mod_body = $('#mod-body');
-var mod_good = $('#mod-good');
-var sub_name = $('#sub-name');
-var sub_email = $('#sub-email');
-var err_show = $('#err');
-var main_con = $('#main-con');
-var hve_load = $('#hve-load');
-var hve_regin = $('#hve-regin');
-var html_body = $('html, body');
-var regin_icon = $('#regin-icon');
-var btn_user_text = $('#btn-user-text');
-var btn_post_user = $('#btn-post-user');
-var btn_post_guest = $('#btn-post-guest');
 function close_welcome () {
 	welcomer.addClass('none');
 	return false;
@@ -44,21 +41,9 @@ password.keyup(function (e) {
     if (e.keyCode == 13)
     	return regin_click();
 });
-sub_name.keyup(function (e) {
-    if (e.keyCode == 13) {
-    	sub_email.focus();
-        return false; 
-    }
-});
-sub_email.keyup(function (e) {
-    if (e.keyCode == 13)
-    	return submod();
-});
-var perm_store;
 function hve_loaded () {
 	if (bndl != null)
 		regin_click();
-
 	get_conversation_perm(url, function (err, perm) {
 		if (err) {
 			err_show.text('An error occured: ' + err).removeClass('none');
@@ -210,21 +195,11 @@ function show_new () {
 	newlink.addClass('none');
 	return false;
 };
-
 function report_msg (mid, report, hid) {
 	$('#' + hid).attr('class', 'none')
         .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
 	report_message(url, mid, report, function (err, res) {
 		if (err) throw err;
-	});
-	return false;
-};
-
-function submod () {
-	pst('rye?', {name: sub_name.val(), email: sub_email.val()}, function (err, bdy) {
-		if (err) throw err;
-		mod_body.addClass('none');
-		mod_good.removeClass('none');
 	});
 	return false;
 };

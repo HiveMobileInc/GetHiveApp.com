@@ -335,6 +335,7 @@
 				return false;
 			};
 			var new_cache = [];
+			var clicked_new = false;
 			function hve_newer () {
 				get_newer_messages(url, function (err, newer) {
 					if (err) { 
@@ -344,6 +345,10 @@
 					if (newer.length == 0)
 						return setTimeout(hve_newer, heart);
 					new_cache = new_cache.concat(newer);
+					if (clicked_new) {
+						show_new();
+						return setTimeout(hve_newer, 500);
+					}
 					newlink.removeClass('none');
 					newtext.text('Show ' + new_cache.length + ' new message' + (new_cache.length == 1 ? '' : 's'));
 					if (newer.length == page_size) return setTimeout(hve_newer, 500);
@@ -351,6 +356,7 @@
 				});
 			};
 			function show_new () {
+				clicked_new = true;
 				for (var n = 0; n < new_cache.length; n++)
 					add_msg(new_cache[n], true);
 				new_cache = [];

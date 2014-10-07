@@ -15,6 +15,7 @@
         <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'/>
         <link rel="shortcut icon" href="img/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="css/generate.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pyg/monokai.css"/>
     </head>
     <body>
         <img src="img/bg-full.jpg" class="bg" alt=""/>
@@ -147,7 +148,6 @@
                 });
                 return false;
             });
-
             function generated (bdy) {
                 con_main.addClass('none');
                 con_gen.removeClass('none');
@@ -156,7 +156,6 @@
                 gen_url2.attr('href', bdy.created.url_short);
                 setTimeout(function () {highlight(document.getElementById('gen-url'));}, 10);
             };
-
             function highlight (e) {
                 var range;
                 var selection;    
@@ -183,7 +182,6 @@
                 if (e.keyCode == 13)
                     return regin_click();
             });
-
             function regin_click () {
                 function logged_in () {
                     logout_link.removeClass('none');

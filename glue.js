@@ -1,4 +1,6 @@
 $('#type').tooltip();
+
+
 var welcomer = $('#welcomer');
 var short_url_link = $('#short-url');
 var modal_short_url = $('#modal-short-url');
@@ -45,7 +47,6 @@ $('#sub-email').keyup(function (e) {
     }
 });
 
-var url = decodeURIComponent(window.location.href.split('url=')[1]);
 var heart = 5000;
 
 // grab title

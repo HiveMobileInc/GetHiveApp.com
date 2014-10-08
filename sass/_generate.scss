@@ -1,0 +1,269 @@
+
+
+//_______________________________________________________
+//_______________________________________________________ GENERAL STYLES
+
+
+.hve-btn {
+	text-align: center;
+	margin-top:1em;
+	border:1px solid #f4f4f4;
+	padding:.4em 0;
+	color:#f4f4f4;
+	background:none;
+	@include border-radius(.3em);
+}
+.hve-btn.selected {
+	background:#fff;
+	color: #0092E4;
+}
+
+
+//_______________________________________________________
+//_______________________________________________________ LANDING / HEADER
+
+
+.landing.generate {
+	margin: 4em 0 3em 0;
+	color: #fff;
+	float:left;
+	text-align: center;
+	display: block; // NO NEED IF YOU fix section:display:inline-block
+
+	.logo {
+		width: 125px;
+		height: auto;
+		display: block;
+		margin:0 auto;
+	}
+	h1 {
+		font-size: 2.5em;
+		font-weight: 400;
+		line-height: 1.3em;
+		text-shadow: 1.5px 1.5px 0 #4197D1;	
+		width:100%;
+		text-align: center;
+		margin: .7em auto 0 auto;
+	}
+}
+
+
+//_______________________________________________________
+//_______________________________________________________ REGIN
+
+
+.regin {
+
+	.field {
+		margin:0 0 1em 0;
+	}
+
+	.hve-btn {
+		width:46%;
+		font-size:1.1em;
+		margin:0 0 1em 0;
+	}
+	.hve-btn.right {
+		float:right;
+	}	
+	input {
+		font-size: 1.05em;
+		padding: 0.6em .5em .4em .6em;
+		height: auto;
+		line-height: 1.4em;
+	}
+	.feedback {
+		margin: .3em 0 0 0;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+		padding: 0 0 0 .15em;
+		height:2em;
+		font-weight: 300;
+		
+		span {
+			display: none;
+		}
+		span.active,
+		span.active span {
+			display: inline-block;
+		}
+		
+		.fa {
+			margin:0 .4em 0 0;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+		}
+		.available .fa {
+			color: rgb(133, 255, 133);
+		}
+		.taken .fa {
+			color: rgb(255, 245, 0);
+		}
+		.error .fa {
+			color: rgb(255, 141, 141);
+		}
+	}
+}
+
+.regin {
+
+		.btn.send {
+			width: 100%;
+			font-size: 1.1em;
+			background: #34c5fd;
+			padding: .5em 0 .40em 0;
+			line-height: 1.5em;
+			text-shadow: 0px 1px 1px #0077B9;
+		}
+		.send:hover {
+			color:#fff;
+		}
+}
+
+
+.regin-err {
+	text-align: center;
+	padding: .7em;
+	margin: 0 0 1em 0;
+	color: rgb(80, 80, 80);
+	background: rgb(255, 233, 118);
+	border-radius: .3em;
+}
+
+//_______________________________________________________
+//_______________________________________________________ GENERATE
+
+
+.generate-link {
+	font-size: 1.2em;
+	color:#fff;
+	
+	.hve-name {
+		font-size: 1.2em;
+		height: 2em;
+		padding: 1.1em .6em;
+	}
+	.hve-type-btn {
+		
+	}
+	
+	p.desc {
+		float: left;
+		margin: 1.5em 0 0 0;
+		font-weight: 300;
+		padding:0 0 0 1.5em;
+		line-height: 1.4em;
+		
+		a {
+			color:#fff;	
+			font-weight: 500;
+			text-decoration: underline;
+		}
+		
+		i {
+			margin:0 .5em 0 -1.4em;
+		}
+	}
+	p.desc.hve-warning {
+		color: rgb(71, 71, 71);
+		font-weight: 500;
+		
+		a {
+			font-weight: 600;
+			color: rgb(71, 71, 71);
+		}
+	}
+	.send {
+		background: #0bd0a8;
+		box-shadow: 1px 1px 2px #3472b3;
+		border: none;
+		padding: .6em;
+		text-align: center;
+		text-shadow: 0px 1px 1px #1D7744;
+		font-size: 1.1em;
+		margin: 1em 0 0 0;
+		@include border-radius(.4em);
+		
+		span {
+			font-weight: 600;
+		}
+	}
+	.hve-link {
+		background: #fff;
+		color: gray;
+		margin: 1em 0 0 0;
+		padding: .6em .8em;
+		position: relative;
+		box-shadow: 0 0 20px #fff;
+		@include border-radius(.4em);
+		
+		.copy {
+			border:none;
+			background:none;
+			color:$blue1;
+			font-weight: 600;
+			position:absolute;
+			right:.5em;
+		}
+	}
+}
+
+.faded {
+	@include opacity(.4);
+}
+
+
+footer.generate {
+	color:#cccccc;
+	margin:4em 0 0 0;
+	
+	a {
+		color:#fff;
+	}
+}
+
+
+@media (max-width: 600px) {
+	
+	.landing.generate {
+		margin:1.5em 0;
+		
+		.logo {
+			width:110px;
+		}
+		h1 {
+			font-size: 1.8em;
+			margin: .5em auto 0 auto;
+		}
+	}
+	
+	form.generate {
+		padding:0;
+	}
+	
+	footer.generate .col-xxs-12 { 
+		padding:0;
+	}
+}
+
+
+//_______________________________________________________
+//_______________________________________________________ LOGOUT
+
+.hve-logout {
+	width:100%;
+	float:left;
+	text-align: center;
+	margin:3em 0 0 0;
+	font-weight: 300;
+	color: #E6E6E6;
+	
+	span {
+		border-right: 1px solid #fff;
+		padding: 0 .6em 0 0;
+	}
+	a {
+		margin: 0 0 0 .6em;
+		font-weight: 400;
+		color:#fff;
+	}
+}
+

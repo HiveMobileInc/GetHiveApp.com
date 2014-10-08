@@ -101,8 +101,7 @@ function regin_click () {
 	} else return logged_in();
 };
 function logout () {
-	bndl = null;
-	localStorage.removeItem('hvebndl');
+	hvlogout();
 	logout_link.addClass('none');
 	regin_icon.attr('class', 'fa fa-sign-in');
 	btn_user_text.text('Register or Login');

@@ -119,7 +119,6 @@ function add_msg (msg, newmsg) {
 	                  .split('HMSG')         .join(msg.message)
 	                  .split('HDISPLAYNAME') .join(msg.author.display_name)
 	                  .split('HCREATEDAGO')  .join(msg.created_ago);
-	console.log(html);
 	if (newmsg) new_mrk.before(html);
 	else old_mrk.after(html);
 };

@@ -209,3 +209,4 @@ function report_msg (mid, report, hid) {
 	});
 	return false;
 };
+

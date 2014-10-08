@@ -48,6 +48,11 @@
 							<div class="graphic"><i class="fa fa-code"></i></div>
 							<p>Quickly and easily embed conversations directly into your blog, website or app by copy/pasting the provided code snippet.</p>
 						</div>
+						<div class="item col-xxs-12 col-xs-4 col-sm-12">
+							<a class="call" href="#" onclick="return togen();">
+								Create Your Conversation Now!
+							</a>
+						</div>
 					</div>
 					
 					<div id="hv-main" class="plugin col-xxs-12 col-xs-12 col-sm-7 col-md-7 col-md-offset-1">
@@ -190,7 +195,7 @@
 		<section class="index-generate" data-stretch="img/bgbg.jpg">
 		<div class="container">
 			
-		<section class="generate-link">
+		<section class="generate-link" id="jump-gen">
                 <div class="generate col-xxs-12 col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
                     <div id="con-main" class="top">
                         <span id="load" class="none" style="text-align:center;">
@@ -271,6 +276,7 @@
             var btn_create = $('#btn-create');
             var loader = $('#load');
             var gen = $('#gen');
+            var jump_gen = $('#jump-gen');
             var con_main = $('#con-main');
             var con_gen = $('#con-gen');
             var gen_url = $('#gen-url');
@@ -279,7 +285,7 @@
             var gen_err = $('#gen-err');
 
             function togen () {
-            	html_body.animate({scrollTop: con_main.offset().top - 30}, 500);
+            	html_body.animate({scrollTop: jump_gen.offset().top - 30}, 500);
 				inp_title.focus();
             	return false;
             };

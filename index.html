@@ -34,17 +34,18 @@
 
 		<section class="meat">
 		<div class="container">
-					<div class="left col-xxs-12 col-xs-12 col-sm-5 col-md-4">
+				<!--
+	<div class="left col-xxs-12 col-xs-12 col-sm-5 col-md-4">
 						<div class="item col-xxs-12 col-xs-4 col-sm-12">
 							<div class="graphic"><i class="fa fa-comments fa-2x"></i></div>
 							<p>Create your conversation</p>
 						</div>
 						<div class="item col-xxs-12 col-xs-4 col-sm-12">
 							<div class="graphic"><i class="fa fa-share-square-o fa-2x"></i></div>
-							<p>Share it with anyone you want</p>
+							<p class="middle">Share it with anyone you want</p>
 						</div>
 						<div class="item col-xxs-12 col-xs-4 col-sm-12">
-							<div class="graphic"><i class="fa fa-thumbs-o-up fa-2x"></i></div>
+							<div class="graphic"><i class="fa fa-smile-o fa-2x"></i></div>
 							<p>Keep being awesome</p>
 						</div>
 						<div class="item col-xxs-12 col-xs-4 col-sm-12">
@@ -53,8 +54,9 @@
 							</a>
 						</div>
 					</div>
+-->
 					
-					<div id="hv-main" class="plugin col-xxs-12 col-xs-12 col-sm-7 col-md-7 col-md-offset-1">
+					<div id="hv-main" class="plugin col-xxs-12 col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 						
 					<div class="hve-header">
 						<h1 class="hve-title" id="hv-title">
@@ -156,12 +158,8 @@
 						</div>
 					</div>		
 					<div class="hve-footer">
-						<span class="copyright none" id="hv-logout">
+						<span style="font-size:1.4em" class="copyright none" id="hv-logout">
 							<a href="#" onclick="return logout();">Logout</a>
-						</span>
-						<span class="copyright">
-							&#169; 2014 
-							<a href="http://gethiveapp.com">Hive Mobile</a> Inc.
 						</span>
 					</div>			
 				</div>
@@ -222,7 +220,7 @@
                         <span id="gen" class="">
                         	<div class="header">Create your conversation now!</div>
                         	<div id="gen-err" class="none"></div>
-                            <input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
+                            	<input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
                             <div class="hve-type" cursor="type=help;">
 															<i id="type2" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i>
 														</div>
@@ -235,7 +233,7 @@
                     <div id="con-gen" class="con-gen bottom none">
                     	<div class="header">Awesome! You did it!</div>
                         <div class="hve-link col-xs-12" style="text-align:center;">
-                            <span id="gen-url">https://see.rest/URL</span>
+                            <input id="gen-url" class="form-control hve-name" style="text-align:center;" value="https://see.rest/URL"></input>
                         </div>
                         <a id="gen-url2" class="call" href="#" target="_blank">Launch Your Conversation Now!!</a>
                         <p class="desc none">
@@ -262,7 +260,7 @@
 			<div class="container">
 				<div class="col-xxs-12 col-lg-10 col-lg-offset-1">
 					<ul class="social">
-						<li><a href="#"><i class="fa fa-twitter"></i><span>Follow us!</span></a></li>
+						<li><a href="https://twitter.com/GetHiveApp" target="_blank"><i class="fa fa-twitter"></i><span>Follow us!</span></a></li>
 					</ul>
 					<a href="http://gethiveapp.com"><img class="logo-footer" src="img/logo-w.png" alt=""/></a>
 					<ul class="legal">
@@ -330,7 +328,7 @@
                 con_main.addClass('none');
                 con_gen.removeClass('none');
                 btn_create.addClass('none');
-                gen_url.text(bdy.created.url_short);
+                gen_url.val(bdy.created.url_short);
                 gen_url2.attr('href', bdy.created.url_short);
                 setTimeout(function () {highlight(document.getElementById('gen-url'));}, 10);
             };

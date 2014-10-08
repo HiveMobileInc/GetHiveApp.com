@@ -693,15 +693,24 @@ section.meat {
 		float:left;
 		font-size:1.2em;
 		color: #767676;
-
+	}
+	
+	.item p {
+		font-size: 1.3em;
+		line-height: 1.2em;
+		margin: 1em 0 0 0;
+	}
+	
+	.item p.middle {
+		margin:.4em 0 0 0;
 	}
 	
 	.graphic {
-		font-size:2.8em;
+		font-size:2.6em;
 		color: #24ACFF;
 		line-height: 0;
 		float:left;
-		min-width: 1.4em;
+		min-width: 2.4em;
 		margin: 0 0 1em 0;
 	}
 }
@@ -899,6 +908,21 @@ ul.social {
 section.meat {
 	padding:2em 0;
 	background: #F7F7F7;
+	
+	.call {
+		color: #fff;
+		background: rgb(255, 100, 100);
+		display: block;
+		font-weight: 600;
+		padding: .8em 0;
+		font-size: 1.05em;
+		@include border-radius(.3em);
+		margin:1em 0;
+		text-align: center;
+	}
+	.call:hover {
+		background: rgba(252,74,74,1);
+	}
 }
 
 @media (max-width: 768px) {
@@ -1002,7 +1026,13 @@ section.meat {
 }
 
 
-
+.modal-title {
+	font-size:1.4em;
+}
+.modal-content {
+	font-size:1.3em;
+	color:#5A5A5A;
+}
 
 
 

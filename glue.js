@@ -1,4 +1,5 @@
 $('#type').tooltip();
+$('#type2').tooltip();
 
 var heart = 5000;
 var perm_store;

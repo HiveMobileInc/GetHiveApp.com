@@ -35,7 +35,6 @@
 		<section class="meat">
 		<div class="container">
 					<div class="left col-xxs-12 col-xs-12 col-sm-5 col-md-4">
-						<div class="header">What is Hive?</div>
 						<div class="item col-xxs-12 col-xs-4 col-sm-12">
 							<div class="graphic"><i class="fa fa-comments"></i></div>
 							<p>Instantly create a conversation and share it with your closest friends, or Tweet it from the rooftops for everyone to enjoy!</p>
@@ -224,9 +223,9 @@
                         	<div class="header">Create your conversation now!</div>
                         	<div id="gen-err" class="none"></div>
                             <input id="inp-title" type="text" placeholder="Choose a title" class="form-control hve-name"/>
-                            <p id="dsc-pub" class="desc public">
-                                <i class="fa fa-globe"></i>This conversation can be viewed by anyone.
-                            </p>
+                            <div class="hve-type" cursor="type=help;">
+															<i id="type" class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Public Conversation"></i>
+														</div>
                             <button id="btn-create" class="send col-xs-12">Create 
                                 <span id="txt-title">your conversation</span>
                             </button>

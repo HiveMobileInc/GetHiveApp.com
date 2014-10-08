@@ -190,22 +190,9 @@
 		<section class="index-generate" data-stretch="img/bgbg.jpg">
 		<div class="container">
 			
-<section class="generate-link">
+		<section class="generate-link">
                 <div class="generate col-xxs-12 col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
                     <div id="con-main" class="top">
-                        <span id="regin" class="regin none">
-                            <div id="regin-err" class="regin-err none"></div>
-                            <div class="field">
-                                <input id="username" class="form-control" type="text" name="username" placeholder="username"/>
-                            </div>
-                            <div class="field">
-                                <input id="password" class="form-control" type="password" name="password" placeholder="password"/>
-                            </div>
-                            <button id="btn-regin" class="btn send">
-                                Login or Register
-                            </button>
-                        </span>
-
                         <span id="load" class="none" style="text-align:center;">
                             <i class="fa fa-refresh fa-spin"></i>
                         </span>
@@ -273,6 +260,59 @@
 			$('section.landing').anystretch();
 			$('section.index-generate').anystretch();
 			var hvurl = 'http://see.rest/i0zfr3fj3ik9';
-		</script>
+            
+
+            var txt_title = $('#txt-title');
+            var txt_title_start = txt_title.text();
+            var inp_title = $('#inp-title');
+            var btn_create = $('#btn-create');
+            var loader = $('#load');
+            var gen = $('#gen');
+            var con_main = $('#con-main');
+            var con_gen = $('#con-gen');
+            var gen_url = $('#gen-url');
+            var gen_url2 = $('#gen-url2');;
+
+            inp_title.keyup(function (e) {
+                var l = inp_title.val().length;
+                if (l == 0) 
+                    txt_title.text(txt_title_start);
+                else 
+                    txt_title.text(l > 21 ? inp_title.val().substr(0, 21) + '...' : inp_title.val());
+                if (e.keyCode == 13)
+                    return btn_create.click();
+            });
+            btn_create.click(function () {
+                create_conversation(null, inp_title.val(), 'public', function (err, bdy) {
+                    if (err) throw err;
+                    generated(bdy);
+                });
+                return false;
+            });
+            function generated (bdy) {
+                con_main.addClass('none');
+                con_gen.removeClass('none');
+                btn_create.addClass('none');
+                gen_url.text(bdy.created.url_short);
+                gen_url2.attr('href', bdy.created.url_short);
+                setTimeout(function () {highlight(document.getElementById('gen-url'));}, 10);
+            };
+            function highlight (e) {
+                var range;
+                var selection;    
+                if (document.body.createTextRange) {
+                    range = document.body.createTextRange();
+                    range.moveToElementText(e);
+                    range.select();
+                } else if (window.getSelection) {
+                    selection = window.getSelection();        
+                    range = document.createRange();
+                    range.selectNodeContents(e);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }
+                return false;
+            }
+        </script>
 	</body>
 </html>

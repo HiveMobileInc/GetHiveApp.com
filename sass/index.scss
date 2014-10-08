@@ -738,10 +738,38 @@ section.meat {
 		@include border-radius(.4em);
 	}
 	
-	.generate-link p.desc {
-		font-weight: 400;
-		color: rgb(181, 181, 181);
+	p.desc.hve-warning a {
+		color:#e8e8e8;
+		font-weight: 300;
 	}
+	
+	.generate-link p.desc {
+		font-weight: 300;
+		color: #ADADAD;
+		padding: 0 17%;
+		text-align: center;
+	}
+	
+	.con-gen {
+	
+		// Launch Your Conversation
+		a.call {
+			display: block;
+			background: rgb(6, 169, 255);
+			text-align: center;
+			color: #fff;
+			padding: .6em;
+			font-size: 1.2em;
+			width:100%;
+			float:left;
+			margin:1em 0 0 0;
+			@include border-radius(.2em);
+		}
+	}
+	.hve-link {
+		display: block;
+	}
+	
 	.generate-link .send {
 		background: #E86060;
 		text-shadow: none;
@@ -900,6 +928,12 @@ section.meat {
 		.header {
 			font-size: 1.6em;
 			font-weight: 400;
+		}
+		.generate-link p.desc {
+			padding:0 1em;
+		}
+		.con-gen a.call {
+			font-size:1em;
 		}
 	}
 	.meat .item {

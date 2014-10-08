@@ -25,7 +25,7 @@
 					<img class="logo" src="img/logo-w.png" alt="Hive logo"/>
 				</a>
 				<h1>Where Conversations Happen</h1>
-				<a class="call" href="http://gethiveapp.com/generate.html">
+				<a class="call" href="#" onclick="return togen();">
 					Create Your Conversation Now!
 				</a>
 			</div>
@@ -271,7 +271,14 @@
             var con_main = $('#con-main');
             var con_gen = $('#con-gen');
             var gen_url = $('#gen-url');
-            var gen_url2 = $('#gen-url2');;
+            var gen_url2 = $('#gen-url2');
+            var html_body         = $('html, body');
+
+            function togen () {
+            	html_body.animate({scrollTop: con_main.offset().top - 30}, 200);
+				inp_title.focus();
+            	return false;
+            };
 
             inp_title.keyup(function (e) {
                 var l = inp_title.val().length;

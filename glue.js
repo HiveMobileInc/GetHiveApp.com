@@ -75,7 +75,7 @@ function hve_loaded () {
 };
 function show_regin () {
 	if (bndl != null) return post_as_user();
-	hve_regin.attr('class', 'none');
+	hve_regin.removeClass('none');
 	html_body.animate({scrollTop: hve_regin.offset().top - 30}, 200);
 	username.focus();
     return false;
@@ -85,7 +85,7 @@ function regin_click () {
 		logout_link.removeClass('none');
 		regin_icon.attr('class', 'fa fa-comment-o');
 		btn_user_text.text(bndl.profile.display_name);
-		btn_post_guest.addClass('none');
+		btn_post_guest.attr('class', 'none');
 		return false;
 	};
 	if (bndl == null) {

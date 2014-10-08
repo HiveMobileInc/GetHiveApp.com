@@ -558,6 +558,18 @@ ul.report {
 }
 
 
+// ______________________________________________________ MARKUP
+
+
+code .highlight pre {
+	border:none;
+	padding:.5em;
+}
+
+pre {
+	background: rgb(73, 73, 73);
+}
+
 // ______________________________________________________ FOOTERR
 
 
@@ -567,6 +579,8 @@ ul.report {
 	color: rgb(201, 201, 201);
 	margin: 2em 0 3em 0;
 }
+
+
 
 
 

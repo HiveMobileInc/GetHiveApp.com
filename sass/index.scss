@@ -693,6 +693,7 @@ section.meat {
 		float:left;
 		font-size:1.2em;
 		color: #767676;
+
 	}
 	
 	.graphic {
@@ -723,6 +724,15 @@ section.meat {
 .index-generate {
 	background: black;
 	padding:13em 0;
+	
+	.top {
+		position: relative;
+	}
+	.hve-type {
+		bottom: .19em;
+		font-size: 1.5em;
+		top:auto;
+	}
 	
 	.header {
 		font-size: 2.7em;
@@ -898,16 +908,21 @@ section.meat {
 	.meat .item {
 		text-align: center;
 		margin: 1em 0 0 0;
-		font-size:1.3em;
+		font-size:1.1em;
 	}
 	.meat .graphic {
 		text-align: center;
-		font-size:4.2em;
-		margin:0 0 .1em 0;
+		font-size:3.8em;
+		margin:0;
 		width:100%;
 	}
 	.meat .left .header {
 		display: none;
+	}
+	.meat .item p {
+		font-size: 1.3em;
+		color: #7a7a7a;
+		line-height: 1.2em;
 	}
 }
 
@@ -921,8 +936,13 @@ section.meat {
 		padding: 7em 0 6em 0;
 		display: block;
 		
-		generate .top {
-			position: relative;
+		.hve-type {
+			font-size: 1.1em;
+			bottom: .37em;
+		}
+		
+		input#inp-title {
+			font-size: 1.05em;
 		}
 		
 		.generate {
@@ -932,6 +952,9 @@ section.meat {
 		.header {
 			font-size: 1.6em;
 			font-weight: 400;
+		}
+		.generate-link .send {
+			font-size:1.05em;
 		}
 		.generate-link p.desc {
 			padding:0 1em;

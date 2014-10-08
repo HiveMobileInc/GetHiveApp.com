@@ -104,6 +104,7 @@ function regin_click () {
 };
 function logout () {
 	hvlogout();
+	btn_post_guest.attr('class', 'btn guest');
 	logout_link.addClass('none');
 	regin_icon.attr('class', 'fa fa-sign-in');
 	btn_user_text.text('Register or Login');

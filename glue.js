@@ -85,6 +85,7 @@ function regin_click () {
 		logout_link.removeClass('none');
 		regin_icon.attr('class', 'fa fa-comment-o');
 		btn_user_text.text(bndl.profile.display_name);
+		btn_post_guest.addClass('none');
 		return false;
 	};
 	if (bndl == null) {

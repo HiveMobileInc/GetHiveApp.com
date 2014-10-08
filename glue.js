@@ -46,7 +46,7 @@ password.keyup(function (e) {
 function hve_loaded () {
 	if (bndl != null)
 		regin_click();
-	get_conversation_perm(url, function (err, perm) {
+	get_conversation_perm(hvurl, function (err, perm) {
 		if (err) {
 			err_show.text('An error occured: ' + err).removeClass('none');
 			main_con.addClass('none');
@@ -59,7 +59,7 @@ function hve_loaded () {
 		short_url_link.text(perm.url_short);
 		modal_short_url.text(perm.url_short);
 		modal_short_url.attr('href', perm.url_short);
-		get_conversation_base(url,  function (err, base) {
+		get_conversation_base(hvurl,  function (err, base) {
 			if (err) throw err;
 			if (base.length == 0)
 				welcomer.removeClass('none');
@@ -140,12 +140,12 @@ function enable_post (clear) {
 };
 function post_as_user () {
 	disable_post();
-	post_message(url, msg_entry.val(), null, null, posted, false);
+	post_message(hvurl, msg_entry.val(), null, null, posted, false);
 	return false;
 };
 function post_as_guest () {
 	disable_post();
-	post_message(url, msg_entry.val(), null, null, posted, true);
+	post_message(hvurl, msg_entry.val(), null, null, posted, true);
 	return false;
 };
 function posted (err, msg) {
@@ -162,7 +162,7 @@ function posted (err, msg) {
 function hve_earlier () {
 	earlier.addClass('none');
 	earlier_load.removeClass('none');
-	get_older_messages(url, function (err, older) {
+	get_older_messages(hvurl, function (err, older) {
 		earlier_load.addClass('none');
 		if (err || older.length == page_size)
 			earlier.removeClass('none');
@@ -175,7 +175,7 @@ function hve_earlier () {
 var new_cache = [];
 var clicked_new = false;
 function hve_newer () {
-	get_newer_messages(url, function (err, newer) {
+	get_newer_messages(hvurl, function (err, newer) {
 		if (err) { 
 			throw err;
 			return setTimeout(hve_newer, heart);
@@ -204,7 +204,7 @@ function show_new () {
 function report_msg (mid, report, hid) {
 	$('#' + hid).attr('class', 'none')
         .before('<p><i>Thank you for reporting this message, humans will review it shortly.</i></p>');
-	report_message(url, mid, report, function (err, res) {
+	report_message(hvurl, mid, report, function (err, res) {
 		if (err) throw err;
 	});
 	return false;

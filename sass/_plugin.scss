@@ -209,6 +209,12 @@ body, html {
 	line-height: 1.5em;
 	border-bottom: 1px solid #f1f1f1;
 	padding: 0 0 .5em 0;
+	
+	p {
+		margin: 0;
+		line-height: 1.7em;
+		color: #7C7C7C;
+	}
 }
 
 p.msg {

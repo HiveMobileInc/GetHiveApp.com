@@ -75,7 +75,7 @@ function hve_loaded () {
 };
 function show_regin () {
 	if (bndl != null) return post_as_user();
-	hve_regin.removeClass('none');
+	hve_regin.attr('class', 'none');
 	html_body.animate({scrollTop: hve_regin.offset().top - 30}, 200);
 	username.focus();
     return false;

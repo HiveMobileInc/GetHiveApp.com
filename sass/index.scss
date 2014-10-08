@@ -921,6 +921,10 @@ section.meat {
 		padding: 7em 0 6em 0;
 		display: block;
 		
+		.top {
+			position: relative;
+		}
+		
 		.generate {
 			padding:2em 1em;
 		}

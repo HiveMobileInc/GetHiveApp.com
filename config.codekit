@@ -396,17 +396,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/img\/beta.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/img\/beta.png",
-		"outputAbbreviatedPath": "\/img\/beta.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/bg-full.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -517,17 +506,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/img.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 41438,
-		"inputAbbreviatedPath": "\/img\/img.jpg",
-		"outputAbbreviatedPath": "\/img\/img.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/logo-dark.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -568,28 +546,6 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/img\/profile-success.png",
 		"outputAbbreviatedPath": "\/img\/profile-success.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/profile2.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 13484,
-		"inputAbbreviatedPath": "\/img\/profile2.jpg",
-		"outputAbbreviatedPath": "\/img\/profile2.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/profile3.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 13880,
-		"inputAbbreviatedPath": "\/img\/profile3.jpg",
-		"outputAbbreviatedPath": "\/img\/profile3.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -658,11 +614,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/index2.html": {
+	"\/index_old.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/index2.html",
+		"inputAbbreviatedPath": "\/index_old.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1090,15 +1046,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/sass\/index2.scss": {
+	"\/sass\/index_old.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 5,
 		"fileType": 4,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/sass\/index2.scss",
-		"outputAbbreviatedPath": "\/css\/index2.css",
+		"inputAbbreviatedPath": "\/sass\/index_old.scss",
+		"outputAbbreviatedPath": "\/css\/index_old.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

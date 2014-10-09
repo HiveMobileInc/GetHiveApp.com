@@ -1,7 +1,7 @@
 $('#type').tooltip();
 $('#type2').tooltip();
 
-var heart = 5000;
+var heart = 10000;
 var perm_store;
 var welcomer          = $('#hv-welcome');
 var short_url_link    = $('#hv-shurl1');
@@ -180,10 +180,10 @@ function hve_newer () {
 	get_newer_messages(hvurl, function (err, newer) {
 		if (err) { 
 			throw err;
-			return setTimeout(hve_newer, heart);
+			return setTimeout(hve_newer, heart * 5);
 		}
 		if (newer.length == 0)
-			return setTimeout(hve_newer, heart);
+			return setTimeout(hve_newer, heart * 2);
 		new_cache = new_cache.concat(newer);
 		if (clicked_new) {
 			show_new();
@@ -191,7 +191,7 @@ function hve_newer () {
 		}
 		newlink.removeClass('none');
 		newtext.text('Show ' + new_cache.length + ' new message' + (new_cache.length == 1 ? '' : 's'));
-		if (newer.length == page_size) return setTimeout(hve_newer, 500);
+		if (newer.length == page_size) return setTimeout(hve_newer, 1000);
 		else return setTimeout(hve_newer, heart);
 	});
 };

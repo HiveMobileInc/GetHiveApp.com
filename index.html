@@ -235,7 +235,7 @@
                         <div class="hve-link col-xs-12" style="text-align:center;">
                             <span id="gen-url" style="text-align:center;">https://see.rest/URL</span>
                         </div>
-                        <a id="gen-url2" class="call" href="#" target="_blank">Launch Your Conversation Now!!</a>
+                        <a id="gen-url2" onclick="return launch();" class="call" href="#" target="_blank">Launch Your Conversation Now!!</a>
                         <p class="desc none">
                           <i class="fa fa-comment"></i>Share your conversation by copy-pasting the link above!
                         </p>
@@ -300,6 +300,8 @@
             var gen_err = $('#gen-err');
 
             function togen () {
+            	var action = (bndl == null ? 'guest' : bndl.profile.username) + ': ' + (hvurl == null ? '(null)' : hvurl);
+				ga('send', 'event', 'jumptogen', action, '(null)', new Date().getTime());
             	html_body.animate({scrollTop: jump_gen.offset().top - 30}, 500);
 				inp_title.focus();
             	return false;
@@ -315,12 +317,18 @@
                     return btn_create.click();
             });
             btn_create.click(function () {
+            	var sent_at = new Date().getTime();
+				var action = (bndl == null ? 'guest' : bndl.profile.username);
+				ga('send', 'event', 'create_conversation-send', action, inp_title.val());
                 create_conversation(null, inp_title.val(), 'public', function (err, bdy) {
-                    if (err) {
-                    	gen_err.removeClass('none').text(err);
+                    sent_at = new Date().getTime() - sent_at;
+					if (err) {
+						ga('send', 'event', 'create_conversation-err', action, err + ':' + inp_title.val(), sent_at);
+						gen_err.removeClass('none').text(err);
                     	throw err;
-                    }
-                    generated(bdy);
+					}
+					ga('send', 'event', 'create_conversation-200', action, inp_title.val(), sent_at);
+					generated(bdy);
                 });
                 return false;
             });
@@ -348,6 +356,11 @@
                 }
                 return false;
             }
+            function launch () {
+            	var action = (bndl == null ? 'guest' : bndl.profile.username);
+            	ga('send', 'event', 'launch_conversation', action, inp_title.val());
+            	return true;
+            };
         </script>
 	</body>
 </html>

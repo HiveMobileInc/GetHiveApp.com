@@ -24,7 +24,7 @@
 					<i class="fa fa-circle-o-notch fa-1x fa-spin" style="font-size: 75%;"></i>
 				</h1>
 				<div class="hve-share">
-					<a href="#" data-toggle="modal" data-target="#share-modal">
+					<a href="#" data-toggle="modal" data-target="#share-modal" onclick="return sharemodal();">
 						<i class="fa fa-share-square-o"></i>
 						<span>Share</span>
 					</a>
@@ -155,6 +155,11 @@
 		<script src="glue.min.js"></script>
 		<script>
 			var hvurl = decodeURIComponent(window.location.href.split('url=')[1]);
+			function sharemodal () {
+            	var action = (bndl == null ? 'guest' : bndl.profile.username);
+            	ga('send', 'event', 'share_modal', action, hvurl);
+            	return true;
+            };
 		</script>
 	</body>
 </html>

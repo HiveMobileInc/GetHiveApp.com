@@ -32,7 +32,7 @@ var btn_post_guest    = $('#hv-post-guest');
 msg_entry.focus();
 function close_welcome () {
 	var action = (bndl == null ? 'guest' : bndl.profile.username) + ': ' + (hvurl == null ? '(null)' : hvurl);
-	ga('send', 'event', 'welcome-close', action, '(null)', new Date().getTime());
+	ga('send', 'event', 'welcome-close', action, '(null)');
 	welcomer.addClass('none');
 	return false;
 };

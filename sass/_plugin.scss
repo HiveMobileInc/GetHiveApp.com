@@ -36,6 +36,7 @@ body, html {
 .hve-header {
 	height:auto;
 	position: relative;
+	border-bottom: 1px solid rgb(209, 209, 209);
 }
 
 
@@ -49,7 +50,6 @@ body, html {
 	margin: 0;
 	color: #666;
 	padding: 0 1.6em .5em 0;
-	border-bottom: 1px solid rgb(228, 228, 228);
 }
 
 @media (max-width: 600px) {
@@ -90,12 +90,17 @@ body, html {
 
 @media (max-width: 600px) {
 	
+	.hve-title {
+		padding: 0 1.6em .2em 0;
+	}
 	.hve-type {
 		top:.2em;
 	}
 	.hve-share {
-		right: 1.6em;
+		right: 0;
 		top: .2em;
+		text-align: right;
+		top:auto;
 		
 		.fa {
 			margin:0;

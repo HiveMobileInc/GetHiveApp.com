@@ -1,25 +1,5 @@
-// essentials
-@import '_base';
-@import '_bootstrap';
-@import '_web-general';
+@import '_mixins';
+@import '_general';
+@import '_bootstrap-hive';
+@import '_font-awesome';
 @import '_plugin';
-
-// Temporary
-i.fa.report {
-	display: none !important;
-}
-
-body {
-/* 	background: url(http://subtlepatterns.com/patterns/cream_dust.png); */
-}
-
-#ava-editor, 
-.author-img {
-	display: none;
-}
-
-span.copyright.logout {
-	margin: 1em;
-	font-size: 1.1em;
-	display: block;
-}

@@ -1,5 +1,14 @@
-@import '_base';
 
+// ______________________________________________________ TEMPORARY STYLES
+// ______________________________________________________ 
+
+
+i.fa.report {
+	display: none !important;
+}
+#ava-editor, .author-img {
+	display: none;
+}
 
 
 // ______________________________________________________ CONTAINER
@@ -592,8 +601,11 @@ pre {
 	margin: 2em 0 3em 0;
 }
 
-
-
+span.copyright.logout {
+	margin: 1em;
+	font-size: 1.1em;
+	display: block;
+}
 
 
 

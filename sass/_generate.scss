@@ -1,5 +1,4 @@
 
-
 //_______________________________________________________
 //_______________________________________________________ GENERAL STYLES
 
@@ -16,35 +15,6 @@
 .hve-btn.selected {
 	background:#fff;
 	color: #0092E4;
-}
-
-
-//_______________________________________________________
-//_______________________________________________________ LANDING / HEADER
-
-
-.landing.generate {
-	margin: 4em 0 3em 0;
-	color: #fff;
-	float:left;
-	text-align: center;
-	display: block; // NO NEED IF YOU fix section:display:inline-block
-
-	.logo {
-		width: 125px;
-		height: auto;
-		display: block;
-		margin:0 auto;
-	}
-	h1 {
-		font-size: 2.5em;
-		font-weight: 400;
-		line-height: 1.3em;
-		text-shadow: 1.5px 1.5px 0 #4197D1;	
-		width:100%;
-		text-align: center;
-		margin: .7em auto 0 auto;
-	}
 }
 
 
@@ -243,6 +213,17 @@ footer.generate {
 		padding:0;
 	}
 }
+
+
+
+// globe positioning
+i#type2 {
+right: .6em;
+position: absolute;
+bottom: .17em;
+}
+
+
 
 
 //_______________________________________________________

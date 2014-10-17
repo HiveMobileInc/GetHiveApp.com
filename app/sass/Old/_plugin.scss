@@ -1,0 +1,611 @@
+
+// ______________________________________________________ TEMPORARY STYLES
+// ______________________________________________________ 
+
+
+i.fa.report {
+	display: none !important;
+}
+#ava-editor, .author-img {
+	display: none;
+}
+
+
+// ______________________________________________________ CONTAINER
+// ______________________________________________________ 
+
+
+body, html {
+	height:100%;
+}
+
+.hve-container {
+	max-width: 45em;
+	min-width:20em;
+	height:100%;
+	margin:0 auto;
+	padding:2em;
+	font-size: 11.5pt;
+	font-family: 'Open Sans';
+}
+
+@media (max-width: 600px) {
+	
+	.hve-container {
+		padding: 2em 1em;
+		min-width: 17em;
+	}
+}
+
+
+// ______________________________________________________ HEADER
+// ______________________________________________________ section
+
+
+.hve-header {
+	height:auto;
+	position: relative;
+	border-bottom: 1px solid rgb(209, 209, 209);
+	padding: 0 0 .3em 0;
+}
+
+
+// ______________________________________________________ hive
+// ______________________________________________________ TITLE
+
+
+.hve-title {
+	font-size: 1.7em;
+	line-height: 1.2em;
+	margin: 0;
+	color: #666;
+	padding: 0 1.6em .5em 0;
+}
+
+@media (max-width: 600px) {
+	
+	h1.hve-title {
+		font-size:1.5em;
+	}
+}
+
+// ______________________________________________________ hive
+// ______________________________________________________ META BAR ITEMS
+
+
+.hve-type,
+.hve-share {
+	position: absolute;
+	right: 0;
+	top: .4em;
+	color: #B9B9B9;
+	font-size: 1.2em;
+}
+.hve-share {
+	right: 2em;
+	top: .45em;
+	
+	.fa {
+		margin:0 .25em 0 0;
+	}
+	span {
+		font-size:.9em;
+	}
+}
+
+.hve-type:hover .type {
+	display: block !important;
+}
+
+
+@media (max-width: 600px) {
+	
+	.hve-title {
+		padding: 0 1.6em .2em 0;
+	}
+	.hve-type {
+		top:.2em;
+	}
+	.hve-share {
+		right: 0;
+		top: .2em;
+		text-align: right;
+		top:auto;
+		position: relative;
+		
+		.fa {
+			margin:0;
+			font-size:.9em;
+		}
+		span {
+			font-size:.8em;
+		}
+	}
+}
+
+// ______________________________________________________ hive
+// ______________________________________________________ LOADINGG
+
+.hve-load {
+	font-size: 1.3em;
+	font-weight: 400;
+	color: rgb(146,146,146);
+	text-align: center;
+	margin: 1em 0 .8em 0;
+
+	i {
+		line-height: 1.7em;
+		font-size: 1.5em;
+		color: rgb(226, 226, 226);
+	}
+}
+
+
+// ______________________________________________________ DEFAULT
+// ______________________________________________________ NEW
+// ______________________________________________________ message
+
+
+
+.hve-new-default {
+	min-height: 5em;
+	padding: .8em;
+	text-align: center;
+	font-size: 1.1em;
+	line-height: 1.5em;
+	margin: 1em 3em 2em 3em;
+	position: relative;
+	border: 1px solid #edf0ed;
+	color: #585858;
+	
+	.fa {
+		position: absolute;
+		right: -.3em;
+		font-size: 1.3em;
+		top: -.3em;
+	}
+}
+
+
+@media (max-width: 600px) {
+	
+	.hve-new-default {
+		font-size: 1em;
+		font-weight: 400;
+		margin: 0 1em 2em 1em;
+	}
+}
+
+
+// ______________________________________________________ EARLIERR
+// ______________________________________________________ NEWW
+// ______________________________________________________ msg
+
+
+.hve-earlier,
+.hve-new {
+	text-align: center;
+	
+	a {
+		padding: .2em .7em;
+		font-size: .75em;
+		font-weight: 400;
+		border: 1px solid #529fe7;
+		border-radius: .6em;
+	}
+}
+.hve-earlier {
+	height: 4.5em;
+	line-height: 4.7em;
+}
+.hve-new {
+	height:3.5em;
+	margin:-2em 0 0 0;
+	line-height: 2.8em;
+}
+
+@media (max-width: 600px) {
+	
+	.hve-new {
+		line-height: 3.3em;
+	}
+}
+
+// ______________________________________________________ MESSAGES
+// ______________________________________________________ in 
+// ______________________________________________________ feed
+
+
+.hve-msg {
+	width: 100%;
+	display: inline-block;
+	margin: 0 0 3em 0;
+	position: relative;
+	line-height: 1.5em;
+	border-bottom: 1px solid #f1f1f1;
+	padding: 0 0 .5em 0;
+	
+	p {
+		margin: 0;
+		line-height: 1.7em;
+		color: #7C7C7C;
+	}
+}
+
+p.msg {
+	margin: 0;
+	line-height: 1.7em;
+	color: #7C7C7C;
+}
+
+.hve-msg-meta {
+	line-height: 1.1em;
+	margin: .5em 0 0 0;
+	display: inline-block;
+	width:100%;
+
+	div {
+		float:left;
+	}
+	.author-img {
+		margin: -.27em .4em 0 0;
+		overflow: hidden;
+		@include border-radius(2em);
+	}
+	.author-img img {
+		width:2em;
+		height:auto;
+	}
+	.author-name {
+		font-size: .85em;
+		line-height: .9em;
+		color:$blue1;
+	}
+	.author-name.guest {
+		color:rgb(134, 134, 134);
+	}
+}
+.hve-time {
+	font-size: .8em;
+	line-height: 1em;
+	color: #B8B8B8;
+	font-weight: 300;
+	margin: 0 0 0 0.5em;
+}
+.truncate {
+	font-size:.9em;
+	padding: 0 0 0 .3em;
+}
+
+.attachment {
+	width:100%;
+	margin:1em 0 0 0;
+	color:#888;
+	display: inline-block;
+	
+	.img {
+		float:left;
+		margin:0 .5em .7em 0;
+	}
+	img {
+		width:3.2em;
+		@include border-radius(.2em);
+	}
+	.title {
+		line-height: 1em;
+	}
+	.download, span { // span: JPG (3.2MB)
+		font-size:.9em;
+		line-height: 1.9em;
+	}
+}
+
+
+@media (max-width: 600px) {
+
+	.hve-msg {
+		font-size:1.03em;
+		margin: 0 0 2em 0;
+	}
+	.msg .details .author-name {
+		line-height: .7em;
+	}
+}
+
+// ______________________________________________________ REPORT
+// ______________________________________________________ msg
+
+
+i.fa.report {
+	float:left;
+	margin:0 .4em 0 0;
+	font-size: .8em;
+	line-height: 1.4em;
+	color:#bababa;
+}
+.report-label {
+	font-size: .85em;
+	margin:0 .5em 0 0;
+	color:#989898;
+	float:left;
+}
+ul.report {
+	font-size: .85em;
+	line-height: 1.4em;
+	display: inline-block;
+	
+	label {
+		display: none;
+	}
+	li {
+		display: inline-block;
+	}
+	a {
+		text-decoration: underline;
+		margin:0 .5em 0 0;
+	}
+	a.close, a.close .fa {
+		text-decoration: none;
+		color: #989898;
+	}
+}
+
+@media (max-width: 600px) {
+
+	.report-label {
+		font-size:.95em;
+		width:100%;
+		margin:.5em 0 0 0;
+	}
+	ul.report {
+		font-size:1em;
+		line-height: 1.6em
+	}
+}
+
+
+
+// ______________________________________________________ POST
+// ______________________________________________________ (write message)
+
+
+.hve-post {
+	width:100%;
+	display: inline-block;
+	padding: 0 0 .25em 0; // for the bottom of the native button:focus fuz
+	
+	.hve-textbox {
+		margin: 0 0 .7em 0;
+	}
+	
+	.hve-textarea {
+		width:100%;
+		max-width: 100%;
+		font-size: 1.05em;
+		color: rgb(117, 117, 117);
+		border:none;
+		border-radius: .4em;
+		padding: .7em .7em 0 .7em;
+		min-height: 5em;
+		background: #FAFCFD;
+		border: 1px solid rgb(231, 231, 231);
+	}
+	.hve-textarea:focus {
+		outline: 0;
+	}
+	
+	.btn {
+		padding: .7em 1.5em .6em 1em;
+		margin:0 0 0 .5em;
+		float:right;
+		color:#fff;
+		background: #b0b0b0;
+		border:none;
+		@include border-radius(3px);
+		
+		.fa {
+			font-size: 1.3em;
+			padding: 0 .3em 0 0;
+		}
+	}
+	.btn:hover {
+		background:#898989
+	}
+	.btn.user {
+		background:$blue1;
+	}
+	.btn.user:hover {
+		background: $blue2;
+	}
+}
+
+.attach {
+	display: inline-block;
+	
+	.fa {
+		font-size:1.2em;
+	}
+	img {
+		float:left;
+		margin: 0 .2em 0 0;
+		width:3.2em;
+		@include border-radius(.2em);
+	}
+}
+
+@media (max-width: 600px) {
+
+	.attach {
+	
+		img {
+			width:2.5em;
+		}
+		.fa {
+			font-size:1.2em;
+		}
+	}
+}
+
+// ______________________________________________________ Post-area
+// ______________________________________________________ EXTRAS
+// ______________________________________________________ container
+
+
+.hve-controls {
+	width:100%;
+	display: inline-block;
+	position: relative;	
+}
+
+// ______________________________________________________ REGISTER
+// ______________________________________________________ &
+// ______________________________________________________ LOGIN
+
+
+.hve-regin {
+	width:100%;
+	text-align: center;
+	float:left;
+	
+	// "Register below"
+	span.header {
+		display: block;
+		font-size: 1.4em;
+		line-height: .6em;
+		color: $blue2;
+		margin: 1.2em 0 0;
+		
+		span {
+			font-size:.85em;
+		}
+	}
+	// "You won't lose your comment!
+	span.desc {
+		@extend span.header;
+		color: rgba(169,169,169,1);
+		font-size: .95em;
+		margin: 0;
+		line-height: 1.1;
+	}
+	
+	div {
+		max-width: 17.6em;
+		margin:0 auto;
+	}
+	label {
+		padding: .7em 0 .1em 0;
+		display: inline-block;
+		font-size:.9em;
+		display: none; // for now TEMPORARY? 
+	}
+	input {
+		width: 100%;
+		float:right;
+		padding: .7em .7em .55em;
+		font-size: .85em;
+		border:1px solid #b7b7b7;
+		margin: .5em 0;
+		@include border-radius(2px);
+	}
+	.btn {
+		background: $green1;
+		color: #fff;
+		float: left;
+		margin:.3em 0 0 0;
+		width: 100%;
+		padding: .7em 0 .75em;
+		@include border-radius(4px);
+	}
+	.btn:hover {
+		background:$green11;
+	}
+	.already-member {
+		line-height: 3em;
+	}
+}
+
+
+// ______________________________________________________ EDIT
+// ______________________________________________________ PROFILE
+// ______________________________________________________ img
+
+
+#ava-editor {
+	float:left;
+}
+
+#edit-avatar {
+	width:100%;
+	position:relative;
+	z-index: 1;
+	margin: -30px 0 0 0;
+	height: 100px;
+}
+#edit-avatar:focus {
+	outline:none;
+}
+
+#edit-avatar-can {
+	position: absolute;
+	left: 0;
+	top:0;
+	z-index: 0;
+	width:35px;
+	height:35px;
+}
+
+.edit-ava-text {
+	width: 85px;
+	position: relative;
+	left: 40px;
+	line-height: 1.1em;
+	font-size: .95em;
+	top: .1em;
+}
+
+@media (max-width: 600px) {
+	
+	#ava-editor {
+		height:70px;
+	}
+	.edit-ava-text {
+		left: 0;
+		width: 52px;
+		top: 37px;
+	}
+	.hve-post .btn.user {
+		margin: 0 0 0.5em .5em;
+	}
+}
+
+
+// ______________________________________________________ MARKUP
+
+
+code .highlight pre {
+	border:none;
+	padding:.5em;
+}
+
+pre {
+	background: rgb(73, 73, 73);
+}
+
+// ______________________________________________________ FOOTERR
+
+
+.hve-footer {
+	text-align: right;
+	font-size: .8em;
+	color: rgb(201, 201, 201);
+	margin: 2em 0 3em 0;
+}
+
+span.copyright.logout {
+	margin: 1em;
+	font-size: 1.1em;
+	display: block;
+}
+
+
+

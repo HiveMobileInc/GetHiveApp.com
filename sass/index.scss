@@ -26,6 +26,10 @@ a.login {
 	border:1px solid #00A4FF;
 	@include border-radius(.3em);
 
+	&:hover {
+		background: #00A4FF;
+		color:#fff;
+	}
 }
 
 .landing {
@@ -138,12 +142,12 @@ footer {
 
 		.logo {
 			display: block;
-			margin:6em auto 2em auto;
+			margin:7,5em auto 2em auto;
 			width:200px;
 		}
 		span.desc {
 			text-align: center;
-			font-size:1.3em;
+			font-size:1.5em;
 			margin: 0 0 2em 0;
 		}
 		.container {
@@ -156,6 +160,7 @@ footer {
 			margin:0 auto .5em auto;
 			float:none;
 			display: block;
+			min-height: 70px;
 		}
 		.app-preview img {
 			margin:2em 0 0 0;
@@ -168,6 +173,7 @@ footer {
 	}
 
 	footer {
+		margin:1em 0;
 
 		ul {
 			margin:0;
@@ -175,6 +181,7 @@ footer {
 
 		li {
 			display: block;
+			margin:0 0 0 .5em 0;
 		}
 	}
 }

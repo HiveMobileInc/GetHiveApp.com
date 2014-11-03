@@ -12,7 +12,7 @@
 .logo {
 	width:100%;
 	max-width:220px;
-	margin:5em 0 2.5em 0;
+	margin:5em 0 2em 0;
 }
 
 a.login {
@@ -31,29 +31,26 @@ a.login {
 .landing {
 
 	span.desc {
-		font-size:1.4em;
+		font-size:1.5em;
 		margin:0 0 1.5em 0;
 		display: block;
 		color:#888;
+		font-weight: 300;
+
+		b {
+			font-weight: 500;
+		}
 	}
 }
 
 .app-send {
 
-	label {
-		display: block;
-		font-weight: 500;
-		font-size: 1.7em;
-		margin: 1em 0 .2em 0;
-		color: #666;
-	}
-
-	// can clean up the two below
-
 	input {
 		border: 1px solid #00A4FF;
 		padding: .4em 1em;
 		min-width: 17em;
+		display: block;
+		width:100%;
 		margin:0 .3em 0 0;
 		font-size: 1.3em;
 		@include border-radius(.3em);
@@ -61,9 +58,12 @@ a.login {
 	a.send {
 		background: #00A4FF;
 		color:#fff;
-		border: 1px solid #00A4FF;
+		display: block;
+		border: 2px solid #00A4FF;
 		font-size: 1.3em;
-		padding: .4em .9em .4em 1em;
+		text-align: center;
+		margin:.5em 0 0 0;
+		padding: .35em .9em .4em 1em;
 		@include border-radius(.3em);
 
 		.fa {
@@ -76,10 +76,10 @@ a.login {
 	margin:2em 0 0 0;
 
 	img {
-		max-height: 60px;
+		max-height: 55px;
 		float:left;
 		width:auto;
-		margin:.5em .5em 0 0;
+		margin:1em 1em 0 0;
 	}
 }
 

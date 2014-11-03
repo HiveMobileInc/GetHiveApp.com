@@ -17,13 +17,15 @@
 
 a.login {
 	position: absolute;
-	right:0;
-	top:4em;
-	background:#00A4FF;
-	color:#fff;
 	font-size:1.1em;
 	padding:.4em 1em;
+	top:3em;
+	z-index: 999;
+	right:1em;
+	color: #00A4FF;
+	border:1px solid #00A4FF;
 	@include border-radius(.3em);
+
 }
 
 .landing {
@@ -49,7 +51,7 @@ a.login {
 	// can clean up the two below
 
 	input {
-		border: 2px solid #00A4FF;
+		border: 1px solid #00A4FF;
 		padding: .4em 1em;
 		min-width: 17em;
 		margin:0 .3em 0 0;
@@ -59,7 +61,7 @@ a.login {
 	a.send {
 		background: #00A4FF;
 		color:#fff;
-		border: 2px solid #00A4FF;
+		border: 1px solid #00A4FF;
 		font-size: 1.3em;
 		padding: .4em .9em .4em 1em;
 		@include border-radius(.3em);
@@ -92,6 +94,28 @@ a.login {
 
 
 
+footer {
+
+	ul {
+		padding:0;
+		margin:4em 0 0 0;
+	}
+	li {
+		list-style: none;
+		display: inline;
+		padding:0 .5em 0 0;
+		margin:0 0 0 .5em;
+		border-right:1px solid rgb(221, 221, 221);;
+
+		&:first-child {
+			margin:0;
+		}
+		&:last-child {
+			border:none;
+		}
+	}
+}
+
 
 
 
@@ -114,13 +138,6 @@ a.login {
 			margin:6em auto 2em auto;
 			width:200px;
 		}
-		a.login {
-			top:1em;
-			right:1em;
-			background:none;
-			color: #00A4FF;
-			border:1px solid #00A4FF;
-		}
 		span.desc {
 			text-align: center;
 			font-size:1.3em;
@@ -141,11 +158,18 @@ a.login {
 			margin:2em 0 0 0;
 		}
 	}
+
+	footer {
+
+		ul {
+			margin:0;
+		}
+
+		li {
+			display: block;
+		}
+	}
 }
-
-
-
-
 
 
 

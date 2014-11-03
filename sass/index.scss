@@ -21,7 +21,7 @@ a.login {
 	padding:.4em 1em;
 	top:3em;
 	z-index: 999;
-	right:1em;
+	right:32px;
 	color: #00A4FF;
 	border:1px solid #00A4FF;
 	@include border-radius(.3em);
@@ -86,12 +86,11 @@ a.login {
 .app-preview {
 
 	img {
-		margin:8em 0 0 0;
+		margin:10em 0 0 0;
 		width:100%;
 		height:auto;
 	}
 }
-
 
 
 footer {
@@ -117,17 +116,21 @@ footer {
 }
 
 
-
+.ipad {
+	display: none;
+}
 
 @media (max-width: 990px) {
 	.app-send input {
 		min-width:initial;
 	}
+	.ipad {
+		display: block;
+	}
+	.desktop {
+		display: none;
+	}
 }
-
-
-
-
 
 @media (max-width: 600px) {
 
@@ -159,6 +162,11 @@ footer {
 		}
 	}
 
+	a.login {
+		top:1em;
+		right:15px;
+	}
+
 	footer {
 
 		ul {
@@ -174,6 +182,19 @@ footer {
 
 
 
+
+.terms,
+.privacy {
+	padding:4em 0;
+	font-size:1.7em;
+	color:#444;
+
+	.logo {
+		width:140px;
+		height:auto;
+		margin: 0 0 1em 0;
+	}
+}
 
 
 

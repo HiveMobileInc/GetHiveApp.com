@@ -28,14 +28,16 @@ a.login {
 	top:3em;
 	z-index: 999;
 	right:32px;
-	color: #00A4FF;
-	border:1px solid #00A4FF;
+	color:#fff;
+	background: #00A4FF;
+	// color: #00A4FF;
+	// border:1px solid #00A4FF;
 	@include border-radius(.3em);
 
-	&:hover {
-		background: #00A4FF;
-		color:#fff;
-	}
+	// &:hover {
+	// 	background: #00A4FF;
+	// 	color:#fff;
+	// }
 }
 
 .landing {

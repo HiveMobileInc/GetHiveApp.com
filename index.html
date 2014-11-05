@@ -16,7 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 	  <link rel="stylesheet" type="text/css" href="css/pyg/monokai.css"/>
 	</head>
-	<body class="index">
+	<body class="index" data-stretch="./img/bg.jpg">
 		<section class="landing">
 			<div class="container">
 				<a class="login" href="#">Register / Login</a>
@@ -46,7 +46,7 @@
 			<div class="container">
 				<div class="col-sm-12">
 					<ul class="legal">
-						<li>&#169; 2014 Hive Mobile Inc, Nu Messaging</li>
+						<li>&#169; 2014 Hive Mobile Inc.</li>
 						<li>Contact: <a href="mailto:Hello@NuMessenger.com">Hello@NuMessenger.com</a></li>
 						<li><a href="./privacy.html">Privacy Policy</a></li>
 						<li><a href="./terms.html">Terms of Use</a></li>
@@ -54,5 +54,9 @@
 				</div>
 			</div>
 		</footer>
+		<script src="js/min/index-min.js"></script>
+		<script>
+			$(".index").anystretch();
+		</script>
 	</body>
 </html>

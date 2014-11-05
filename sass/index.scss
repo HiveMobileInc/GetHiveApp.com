@@ -4,6 +4,12 @@
 @import '_general';
 @import '_font-awesome';
 
+html,
+body {
+	height:100%;
+	width:100%;
+}
+
 
 .container {
 	position: relative;
@@ -111,7 +117,7 @@ footer {
 		border-right:1px solid rgb(221, 221, 221);;
 
 		&:first-child {
-			margin:0;
+			margin-left:0;
 		}
 		&:last-child {
 			border:none;
@@ -174,7 +180,7 @@ footer {
 
 	footer {
 		margin:1em 0;
-		font-size:1.1em;
+		font-size:1.15em;
 
 		ul {
 			margin:0;
@@ -182,13 +188,10 @@ footer {
 
 		li {
 			display: block;
-			margin:0 0 1em 0;
+			margin:0 0 .5em 0;
 		}
 	}
 }
-
-
-
 
 
 .terms,
